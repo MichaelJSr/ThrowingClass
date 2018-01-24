@@ -1,23 +1,21 @@
 using System;
-using Microsoft.Xna.Framework;
+using System.Reflection;
 using Terraria;
-using Terraria.Graphics.Effects;
-using Terraria.Graphics.Shaders;
 using Terraria.ID;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace ThrowingClass
 {
     public class ThrowingClass : Mod
     {
-        public ThrowingClass()
+        public static ThrowingClass Instance;
+
+        public override void Load()
         {
-            Properties = new ModProperties()
-            {
-                Autoload = true,
-                AutoloadGores = true,
-                AutoloadSounds = true
-            };
+            Instance = this;
+            LanguageManager.Instance.OnLanguageChanged += ThrowingTweaksLang.EditTooltips;
+            ThrowingTweaksLang.AddText();
         }
     }
 }

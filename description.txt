@@ -1,1 +1,61 @@
-This is a mod meant to allow you to use the throwing class in hardmode, as well as adding items for it in pre-hardmode! The items this mod adds are:
+	This is a mod meant to allow you to use the throwing class in hardmode, as well as adding items for it in pre-hardmode! Currently, the items inside of this mod are:
+
+- 3 rebalanced sets of armor (gladiator, obsidian, and viking)
+- 1 new throwing projectile
+- 1 new throwing launcher
+
+	Also, the mod adds set bonuses to the gladiator, obsidian, and viking sets; the set bonuses are:
+
+Gladiator Armor (16 defense overall):
+- 10% increased meelee and throwing critical strike chance.
+- 10% increased meelee and throwing damage.
+
+Obsidian Armor (13 defense overall):
+- 10% increased movement speed.
+- 10% increased throwing damage.
+
+Viking Armor (Not implemented yet):
+- 15% increased meelee and throwing damage.
+
+Javelins:
+- Javelins are now ammo, and can be used in the Javelin launcher and Stake launcher.
+
+Clothier:
+- The clothier now sells javelins (will probably be changed in the future if I decide to add a custom npc)
+
+	Here are the stats of each item, starting with the throwing projectiles;
+
+Throwing Projectiles:
+
+- Javelin Launcher:
+	- 25 damage (adds onto the javelins damage similarly to ammo)
+	- Throwing Damage modifiers
+	- 25 use time
+	- Adds 4 to the velocity of the javelins fired
+
+	Crafted at any anvil:
+	- 1 Illegal gunparts
+	- 1 Handgun
+	- 15 Iron/Lead bars
+	=
+	- 1 Javelin Launcher
+
+- Hellfire Javelin:
+	- 50 damage
+	- Throwing Damage modifiers
+	- 25 use time
+	- Explosive (AOE) damage
+	
+	Crafted at a Hellforge:
+		- 1 Hellstone bar
+		- 70 Javelins
+		=
+		- 70 Hellfire Javelins
+
+	- 999 Hellfire Javelins can be combined into an infinite Hellfire Javelin at a Hellforge.
+
+****This mod is going to be updated frequently until there is enough content, with new throwing weapons, projectile, and armors constantly being added.
+
+Update Notes:
+*V 1.0: Fresh release, has 2 new weapons and 3 rebalanced sets of armor.
+*V 1.1: Added a mod icon.
