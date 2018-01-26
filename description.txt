@@ -1,7 +1,7 @@
 	This is a mod meant to allow you to use the throwing class in hardmode, as well as adding items for it in pre-hardmode! Currently, the items inside of this mod are:
 
 - 3 rebalanced sets of armor (gladiator, obsidian, and viking)
-- 1 new throwing projectile
+- 2 new throwing projectiles
 - 1 new throwing launcher
 
 	Also, the mod adds set bonuses to the gladiator, obsidian, and viking sets; the set bonuses are:
@@ -54,10 +54,24 @@ Throwing Projectiles:
 
 	- 999 Hellfire Javelins can be combined into an infinite Hellfire Javelin at a Hellforge.
 
+- Amethyst Javelin:
+	- 22 damage
+	- Throwing Damage modifiers
+	- 25 use time
+	
+	Crafted at any anvil:
+		- 1 Amethyst
+		- 70 Javelins
+		=
+		- 70 Amethyst Javelins
+
+	- 999 Hellfire Javelins can be combined into an infinite Hellfire Javelin at a Hellforge.
+
 ****This mod is going to be updated frequently until there is enough content, with new throwing weapons, projectile, and armors constantly being added.
 
 Update Notes:
 *V 1.0: Fresh release, has 2 new weapons and 3 rebalanced sets of armor.
 *V 1.1: Added a mod icon.
 *V 1.3: Mod Browser difficulties.
-*v 1.4: Updating mod icon.
+*V 1.4: Updating mod icon.
+*V 1.5: Updated mod icon, Javelin Ballista (WIP, currently vanity), Amethyst Javelins (Will add the rest of the gem javelins in the future).

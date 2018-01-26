@@ -14,6 +14,8 @@ namespace ThrowingClass.NPCs
                 case NPCID.Clothier:  //change NPC with whatg you want
                     shop.item[nextSlot].SetDefaults(ItemID.Javelin);  //this is an example of how to add your item
                     nextSlot++;
+                    shop.item[nextSlot].SetDefaults(mod.ItemType("JavelinBallista"));  //this is an example of how to add your item
+                    nextSlot++;
                     break;
             }
         }
