@@ -13,13 +13,14 @@ namespace ThrowingClass.Items.Weapons
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Infinite Amethyst Javelin");
+            Tooltip.SetDefault("Has an extremely high knockback.");
         }
         public override void SetDefaults()
         {
             // Alter any of these values as you see fit, but you should probably keep useStyle on 1, as well as the noUseGraphic and noMelee bools
             item.shootSpeed = 12f;
-            item.damage = 22;
-            item.knockBack = 5f;
+            item.damage = 20;
+            item.knockBack = 20f;
             item.useStyle = 1;
             item.useAnimation = 25;
             item.useTime = 25;

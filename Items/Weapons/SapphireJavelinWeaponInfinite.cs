@@ -8,22 +8,22 @@ using Terraria.ModLoader;
 
 namespace ThrowingClass.Items.Weapons
 {
-    public class HellfireJavelinWeaponInfinite : ModItem
+    public class SapphireJavelinWeaponInfinite : ModItem
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Infinite Hellfire Javelin");
-            Tooltip.SetDefault("Explodes upon contact.");
+            DisplayName.SetDefault("Infinite Sapphire Javelin");
+            Tooltip.SetDefault("Has a high fire-rate.");
         }
         public override void SetDefaults()
         {
             // Alter any of these values as you see fit, but you should probably keep useStyle on 1, as well as the noUseGraphic and noMelee bools
             item.shootSpeed = 12f;
-            item.damage = 50;
-            item.knockBack = 5f;
+            item.damage = 10;
+            item.knockBack = 0.5f;
             item.useStyle = 1;
-            item.useAnimation = 25;
-            item.useTime = 25;
+            item.useAnimation = 5;
+            item.useTime = 5;
             item.width = 16;
             item.height = 16;
             item.maxStack = 1;
@@ -37,7 +37,7 @@ namespace ThrowingClass.Items.Weapons
             item.thrown = true;
 
             item.UseSound = SoundID.Item1;
-            item.shoot = mod.ProjectileType("HellfireJavelin");
+            item.shoot = mod.ProjectileType("SapphireJavelin");
             item.value = Item.sellPrice(0, 1, 0, 0);
         }
         public override void AddRecipes()
@@ -45,8 +45,8 @@ namespace ThrowingClass.Items.Weapons
             if (ThrowingConfig.InfiniteJavelins)
             {
                 ModRecipe recipe = new ModRecipe(mod);
-                recipe.AddIngredient(mod.GetItem("HellfireJavelinWeapon"), 999);
-                recipe.AddTile(TileID.Hellforge);
+                recipe.AddIngredient(mod.GetItem("SapphireJavelinWeapon"), 999);
+                recipe.AddTile(TileID.Anvils);
                 recipe.SetResult(this);
                 recipe.AddRecipe();
             }

@@ -13,6 +13,7 @@ namespace ThrowingClass.Items.Weapons
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Hellfire Javelin");
+            Tooltip.SetDefault("Explodes upon contact.");
         }
         public override void SetDefaults()
         {

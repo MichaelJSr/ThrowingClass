@@ -8,18 +8,18 @@ using Terraria.ModLoader;
 
 namespace ThrowingClass.Items.Weapons
 {
-    public class HellfireJavelinWeaponInfinite : ModItem
+    public class TopazJavelinWeaponInfinite : ModItem
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Infinite Hellfire Javelin");
-            Tooltip.SetDefault("Explodes upon contact.");
+            DisplayName.SetDefault("Infinite Topaz Javelin");
+            Tooltip.SetDefault("20% Chance to confuse enemies.");
         }
         public override void SetDefaults()
         {
             // Alter any of these values as you see fit, but you should probably keep useStyle on 1, as well as the noUseGraphic and noMelee bools
             item.shootSpeed = 12f;
-            item.damage = 50;
+            item.damage = 20;
             item.knockBack = 5f;
             item.useStyle = 1;
             item.useAnimation = 25;
@@ -37,16 +37,28 @@ namespace ThrowingClass.Items.Weapons
             item.thrown = true;
 
             item.UseSound = SoundID.Item1;
-            item.shoot = mod.ProjectileType("HellfireJavelin");
-            item.value = Item.sellPrice(0, 1, 0, 0);
+            item.shoot = mod.ProjectileType("TopazJavelin");
+            item.value = Item.sellPrice(0, 0, 80, 0);
+        }
+
+        public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
+        {
+            switch (Main.rand.Next(10))
+            {
+                case 1: type = mod.ProjectileType("TopazJavelinTrue"); break;
+                case 2: type = mod.ProjectileType("TopazJavelinTrue"); break;
+                default: break;
+            }
+            Projectile.NewProjectile(position.X, position.Y, speedX, speedY, type, damage, knockBack, Main.myPlayer);
+            return false;
         }
         public override void AddRecipes()
         {
             if (ThrowingConfig.InfiniteJavelins)
             {
                 ModRecipe recipe = new ModRecipe(mod);
-                recipe.AddIngredient(mod.GetItem("HellfireJavelinWeapon"), 999);
-                recipe.AddTile(TileID.Hellforge);
+                recipe.AddIngredient(mod.GetItem("TopazJavelinWeapon"), 999);
+                recipe.AddTile(TileID.Anvils);
                 recipe.SetResult(this);
                 recipe.AddRecipe();
             }

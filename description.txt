@@ -1,48 +1,15 @@
 	This is a mod meant to allow you to use the throwing class in hardmode, as well as adding items for it in pre-hardmode! Currently, the items inside of this mod are:
+
 - 3 rebalanced sets of armor (gladiator, obsidian, and viking)
-- 2 new throwing projectiles
+- 4 new throwing projectiles
 - 1 new throwing launcher
-	Also, the mod adds set bonuses to the gladiator, obsidian, and viking sets; the set bonuses are:
-	Gladiator Armor (16 defense overall):
-- 10% increased meelee and throwing critical strike chance.
-- 10% increased meelee and throwing damage.
-	Obsidian Armor (13 defense overall):
-- 10% increased movement speed.
-- 10% increased throwing damage.
-	Viking Armor (Not implemented yet):
-- 15% increased meelee and throwing damage.
-	Javelins:
-- Javelins are now ammo, and can be used in the Javelin launcher and Stake launcher.
-	Clothier:
-- The clothier now sells javelins (will probably be changed in the future if I decide to add a custom npc)
-	Throwing Projectiles:
-- Javelin Launcher: 25 damage (adds onto the javelins damage similarly to ammo)
-	Crafted at any anvil:
-	- 1 Illegal gunparts
-	- 1 Handgun
-	- 15 Iron/Lead bars
-	=
-	- 1 Javelin Launcher
 
-- Hellfire Javelin: 50 explosive (AOE) damage
-	Crafted at a Hellforge:
-		- 1 Hellstone bar
-		- 70 Javelins
-		=
-		- 70 Hellfire Javelins
-	- 999 Hellfire Javelins can be combined into an infinite Hellfire Javelin at a Hellforge.
-- Amethyst Javelin: 22 damage, 4 piercing
-	Crafted at any anvil:
-		- 1 Amethyst
-		- 70 Javelins
-		=
-		- 70 Amethyst Javelins
-	- 999 Amethyst Javelins can be combined into an infinite Amethyst Javelin at any anvil.
+	This mod is going to be updated frequently until there is enough content, with new throwing weapons, projectile, and armors constantly being added.
 
-This mod is going to be updated frequently until there is enough content, with new throwing weapons, projectile, and armors constantly being added.
-Update Notes:
-*V 1.0: Fresh release, has 2 new weapons and 3 rebalanced sets of armor.
-*V 1.1: Added a mod icon.
-*V 1.3: Mod Browser difficulties.
-*V 1.4: Updating mod icon.
-*V 1.5: Updated mod icon, Javelin Ballista (WIP, currently vanity), Amethyst Javelins (Will add the rest of the gem javelins in the future).
+	Update Notes:
+V 1.0: Fresh release, has 2 new weapons and 3 rebalanced sets of armor.
+V 1.1: Added a mod icon.
+V 1.3: Mod Browser difficulties.
+V 1.4: Updating mod icon.
+V 1.5: Updated mod icon, Javelin Ballista (WIP, currently vanity), Amethyst Javelins.
+v 1.6: Added Topaz and Sapphire Javelins.
