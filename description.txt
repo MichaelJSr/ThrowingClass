@@ -1,8 +1,8 @@
 	This is a mod meant to allow you to use the throwing class in hardmode, as well as adding items for it in pre-hardmode! Currently, the items inside of this mod are:
 
 - 3 rebalanced sets of armor (gladiator, obsidian, and viking)
-- 4 new throwing projectiles
-- 1 new throwing launcher
+- 5 new throwing projectiles
+- 2 new throwing launchers
 
 	This mod is going to be updated frequently until there is enough content, with new throwing weapons, projectile, and armors constantly being added.
 
@@ -13,3 +13,4 @@ V 1.3: Mod Browser difficulties.
 V 1.4: Updating mod icon.
 V 1.5: Updated mod icon, Javelin Ballista (WIP, currently vanity), Amethyst Javelins.
 v 1.6: Added Topaz and Sapphire Javelins.
+V 1.7: Added Wooden Javelins and Shuriken Launcher.

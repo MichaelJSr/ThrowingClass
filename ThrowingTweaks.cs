@@ -24,28 +24,76 @@ namespace ThrowingClass
 						item.rare = 1;
 						item.defense = 5;
 					return;
+
 				case ItemID.GladiatorBreastplate:
 						item.rare = 1;
 						item.defense = 6;
 					return;
+
 				case ItemID.GladiatorLeggings:
 						item.rare = 1;
 						item.defense = 5;
 					return;
+
 				case ItemID.ObsidianHelm:
 				case ItemID.ObsidianShirt:
 				case ItemID.ObsidianPants:
 						item.rare = 1;
 					return;
+
+                case ItemID.StakeLauncher:
+                        item.ranged = false;
+                        item.thrown = true;
+                    return;
+
                 case ItemID.Javelin:
                 case ItemID.BoneJavelin:
                 case ItemID.FrostDaggerfish:
                         item.ammo = AmmoID.Stake;
+                        item.autoReuse = true;
                         item.value = Item.buyPrice(0, 0, 4, 0);
                     return;
-                case ItemID.StakeLauncher:
-                        item.ranged = false;
-                        item.thrown = true;
+
+                case ItemID.Shuriken:
+                case ItemID.StarAnise:
+                        item.autoReuse = true;
+                        item.ammo = ItemID.Shuriken;
+                    return;
+
+                case ItemID.ThrowingKnife:
+                case ItemID.PoisonedKnife:
+                case ItemID.BoneDagger:
+                        item.autoReuse = true;
+                        item.ammo = ItemID.ThrowingKnife;
+                    return;
+
+                case ItemID.Grenade:
+                case ItemID.StickyGrenade:
+                case ItemID.BouncyGrenade:
+                case ItemID.PartyGirlGrenade:
+                case ItemID.Beenade:
+                case ItemID.MolotovCocktail:
+                        item.autoReuse = true;
+                        item.ammo = ItemID.Grenade;
+                    return;
+
+                case ItemID.SpikyBall:
+                        item.autoReuse = true;
+                        item.ammo = ItemID.SpikyBall;
+                    return;
+
+                case ItemID.Snowball:
+                        item.autoReuse = true;
+                    return;
+
+                case ItemID.Bone:
+                        item.autoReuse = true;
+                        item.ammo = ItemID.Bone;
+                    return;
+
+                case ItemID.RottenEgg:
+                        item.autoReuse = true;
+                        item.ammo = ItemID.RottenEgg;
                     return;
             }
 		}
