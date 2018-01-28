@@ -14,3 +14,4 @@ V 1.4: Updating mod icon.
 V 1.5: Updated mod icon, Javelin Ballista (WIP, currently vanity), Amethyst Javelins.
 v 1.6: Added Topaz and Sapphire Javelins.
 V 1.7: Added Wooden Javelins and Shuriken Launcher.
+V 1.8: Added a new npc: The Gladiator. He will sell throwing-related equipment.

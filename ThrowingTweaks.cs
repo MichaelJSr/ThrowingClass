@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -21,50 +22,50 @@ namespace ThrowingClass
 			switch(item.type)
 			{
 				case ItemID.GladiatorHelmet:
-						item.rare = 1;
-						item.defense = 5;
+					item.rare = 1;
+					item.defense = 5;
 					return;
 
 				case ItemID.GladiatorBreastplate:
-						item.rare = 1;
-						item.defense = 6;
+					item.rare = 1;
+					item.defense = 6;
 					return;
 
 				case ItemID.GladiatorLeggings:
-						item.rare = 1;
-						item.defense = 5;
+				    item.rare = 1;
+					item.defense = 5;
 					return;
 
 				case ItemID.ObsidianHelm:
 				case ItemID.ObsidianShirt:
 				case ItemID.ObsidianPants:
-						item.rare = 1;
+				    item.rare = 1;
 					return;
 
                 case ItemID.StakeLauncher:
-                        item.ranged = false;
-                        item.thrown = true;
+                    item.ranged = false;
+                    item.thrown = true;
                     return;
 
                 case ItemID.Javelin:
                 case ItemID.BoneJavelin:
-                case ItemID.FrostDaggerfish:
-                        item.ammo = AmmoID.Stake;
-                        item.autoReuse = true;
-                        item.value = Item.buyPrice(0, 0, 4, 0);
+                    item.ammo = AmmoID.Stake;
+                    item.autoReuse = true;
+                    item.value = Item.buyPrice(0, 0, 4, 0);
                     return;
 
                 case ItemID.Shuriken:
                 case ItemID.StarAnise:
-                        item.autoReuse = true;
-                        item.ammo = ItemID.Shuriken;
+                    item.autoReuse = true;
+                    item.ammo = ItemID.Shuriken;
                     return;
 
                 case ItemID.ThrowingKnife:
                 case ItemID.PoisonedKnife:
                 case ItemID.BoneDagger:
-                        item.autoReuse = true;
-                        item.ammo = ItemID.ThrowingKnife;
+                case ItemID.FrostDaggerfish:
+                    item.autoReuse = true;
+                    item.ammo = ItemID.ThrowingKnife;
                     return;
 
                 case ItemID.Grenade:
@@ -73,8 +74,8 @@ namespace ThrowingClass
                 case ItemID.PartyGirlGrenade:
                 case ItemID.Beenade:
                 case ItemID.MolotovCocktail:
-                        item.autoReuse = true;
-                        item.ammo = ItemID.Grenade;
+                    item.autoReuse = true;
+                    item.ammo = ItemID.Grenade;
                     return;
 
                 case ItemID.SpikyBall:
@@ -87,16 +88,103 @@ namespace ThrowingClass
                     return;
 
                 case ItemID.Bone:
-                        item.autoReuse = true;
-                        item.ammo = ItemID.Bone;
+                    item.autoReuse = true;
+                    item.ammo = ItemID.Bone;
                     return;
 
                 case ItemID.RottenEgg:
-                        item.autoReuse = true;
-                        item.ammo = ItemID.RottenEgg;
+                    item.autoReuse = true;
+                    item.ammo = ItemID.RottenEgg;
                     return;
             }
-		}
+
+            if (ModLoader.GetLoadedMods().Contains("Infinity"))
+                if (item.type == ModLoader.GetMod("Infinity").ItemType("EndlessJavelin"))
+                {
+                    item.ammo = AmmoID.Stake;
+                    item.autoReuse = true;
+                }
+            if (item.type == ModLoader.GetMod("Infinity").ItemType("EndlessBoneJavelin"))
+            {
+                item.ammo = AmmoID.Stake;
+                item.autoReuse = true;
+            }
+            if (item.type == ModLoader.GetMod("Infinity").ItemType("EndlessShuriken"))
+            {
+                item.ammo = ItemID.Shuriken;
+                item.autoReuse = true;
+            }
+            if (item.type == ModLoader.GetMod("Infinity").ItemType("EndlessStarAnise"))
+            {
+                item.ammo = ItemID.Shuriken;
+                item.autoReuse = true;
+            }
+            if (item.type == ModLoader.GetMod("Infinity").ItemType("EndlessThrowingKnife"))
+            {
+                item.ammo = ItemID.ThrowingKnife;
+                item.autoReuse = true;
+            }
+            if (item.type == ModLoader.GetMod("Infinity").ItemType("EndlessPoisonedKnife"))
+            {
+                item.ammo = ItemID.ThrowingKnife;
+                item.autoReuse = true;
+            }
+            if (item.type == ModLoader.GetMod("Infinity").ItemType("EndlessBoneDagger"))
+            {
+                item.ammo = ItemID.ThrowingKnife;
+                item.autoReuse = true;
+            }
+            if (item.type == ModLoader.GetMod("Infinity").ItemType("EndlessFrostDaggerfish"))
+            {
+                item.ammo = ItemID.ThrowingKnife;
+                item.autoReuse = true;
+            }
+            if (item.type == ModLoader.GetMod("Infinity").ItemType("EndlessGrenade"))
+            {
+                item.ammo = ItemID.Grenade;
+                item.autoReuse = true;
+            }
+            if (item.type == ModLoader.GetMod("Infinity").ItemType("EndlessGrenadeSticky"))
+            {
+                item.ammo = ItemID.Grenade;
+                item.autoReuse = true;
+            }
+            if (item.type == ModLoader.GetMod("Infinity").ItemType("EndlessGrenadeBouncy"))
+            {
+                item.ammo = ItemID.Grenade;
+                item.autoReuse = true;
+            }
+            if (item.type == ModLoader.GetMod("Infinity").ItemType("EndlessPartyGirlGrenade"))
+            {
+                item.ammo = ItemID.Grenade;
+                item.autoReuse = true;
+            }
+            if (item.type == ModLoader.GetMod("Infinity").ItemType("EndlessBeenade"))
+            {
+                item.ammo = ItemID.Grenade;
+                item.autoReuse = true;
+            }
+            if (item.type == ModLoader.GetMod("Infinity").ItemType("EndlessMolotovCocktail"))
+            {
+                item.ammo = ItemID.Grenade;
+                item.autoReuse = true;
+            }
+            if (item.type == ModLoader.GetMod("Infinity").ItemType("EndlessSpikyBall"))
+            {
+                item.ammo = ItemID.SpikyBall;
+                item.autoReuse = true;
+            }
+            if (item.type == ModLoader.GetMod("Infinity").ItemType("EndlessBone"))
+            {
+                item.ammo = ItemID.Bone;
+                item.autoReuse = true;
+            }
+            if (item.type == ModLoader.GetMod("Infinity").ItemType("EndlessRottenEgg"))
+            {
+                item.ammo = ItemID.RottenEgg;
+                item.autoReuse = true;
+            }
+        }
 		
 		public override void UpdateEquip(Item item, Player player)
 		{
