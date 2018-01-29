@@ -8,21 +8,21 @@ using Terraria.ModLoader;
 
 namespace ThrowingClass.Items.Weapons
 {
-    public class TopazJavelinWeapon : ModItem
+    public class AmberJavelinWeapon : ModItem
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Topaz Javelin");
-            Tooltip.SetDefault("25% Chance to confuse enemies.");
+            DisplayName.SetDefault("Amber Javelin");
+            Tooltip.SetDefault("Enemies drop more money.");
         }
         public override void SetDefaults()
         {
-            item.shootSpeed = 12f;
-            item.damage = 20;
+            item.shootSpeed = 14f;
+            item.damage = 28;
             item.knockBack = 5f;
             item.useStyle = 1;
-            item.useAnimation = 25;
-            item.useTime = 25;
+            item.useAnimation = 20;
+            item.useTime = 20;
             item.width = 16;
             item.height = 16;
             item.maxStack = 999;
@@ -36,25 +36,13 @@ namespace ThrowingClass.Items.Weapons
             item.thrown = true;
 
             item.UseSound = SoundID.Item1;
-            item.shoot = mod.ProjectileType("TopazJavelin");
-            item.value = Item.sellPrice(0, 0, 8, 0);
-        }
-
-        public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
-        {
-            switch (Main.rand.Next(10))
-            {
-                case 1: type = mod.ProjectileType("TopazJavelinTrue"); break;
-                case 2: type = mod.ProjectileType("TopazJavelinTrue"); break;
-                default: break;
-            }
-            Projectile.NewProjectile(position.X, position.Y, speedX, speedY, type, damage, knockBack, Main.myPlayer);
-            return false;
+            item.shoot = mod.ProjectileType("AmberJavelin");
+            item.value = Item.sellPrice(0, 0, 14, 0);
         }
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemID.Topaz, 1);
+            recipe.AddIngredient(ItemID.Amber, 1);
             recipe.AddIngredient(ItemID.Javelin, 70);
             recipe.AddTile(TileID.Anvils);
             recipe.SetResult(this, 70);

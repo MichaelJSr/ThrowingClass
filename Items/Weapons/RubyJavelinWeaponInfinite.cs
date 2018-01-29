@@ -8,17 +8,17 @@ using Terraria.ModLoader;
 
 namespace ThrowingClass.Items.Weapons
 {
-    public class TopazJavelinWeaponInfinite : ModItem
+    public class RubyJavelinWeaponInfinite : ModItem
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Infinite Topaz Javelin");
-            Tooltip.SetDefault("25% Chance to confuse enemies.");
+            DisplayName.SetDefault("Infinite Ruby Javelin");
+            Tooltip.SetDefault("Lights enemies on fire.");
         }
         public override void SetDefaults()
         {
             item.shootSpeed = 12f;
-            item.damage = 20;
+            item.damage = 24;
             item.knockBack = 5f;
             item.useStyle = 1;
             item.useAnimation = 25;
@@ -26,7 +26,7 @@ namespace ThrowingClass.Items.Weapons
             item.width = 16;
             item.height = 16;
             item.maxStack = 1;
-            item.rare = 3;
+            item.rare = 10;
             item.ammo = AmmoID.Stake;
 
             item.consumable = false;
@@ -36,27 +36,15 @@ namespace ThrowingClass.Items.Weapons
             item.thrown = true;
 
             item.UseSound = SoundID.Item1;
-            item.shoot = mod.ProjectileType("TopazJavelin");
-            item.value = Item.sellPrice(0, 0, 80, 0);
-        }
-
-        public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
-        {
-            switch (Main.rand.Next(8))
-            {
-                case 1: type = mod.ProjectileType("TopazJavelinTrue"); break;
-                case 2: type = mod.ProjectileType("TopazJavelinTrue"); break;
-                default: break;
-            }
-            Projectile.NewProjectile(position.X, position.Y, speedX, speedY, type, damage, knockBack, Main.myPlayer);
-            return false;
+            item.shoot = mod.ProjectileType("RubyJavelin");
+            item.value = Item.sellPrice(0, 1, 20, 0);
         }
         public override void AddRecipes()
         {
             if (ThrowingConfig.InfiniteJavelins)
             {
                 ModRecipe recipe = new ModRecipe(mod);
-                recipe.AddIngredient(mod.GetItem("TopazJavelinWeapon"), 999);
+                recipe.AddIngredient(mod.GetItem("RubyJavelinWeapon"), 999);
                 recipe.AddTile(TileID.Anvils);
                 recipe.SetResult(this);
                 recipe.AddRecipe();

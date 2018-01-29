@@ -11,6 +11,8 @@ namespace ThrowingClass
     {
         public static bool InfiniteJavelins = true;
         const string InfiniteJavelinsKey = "Infinite Javelins";
+        public static bool InfiniteShurikens = true;
+        const string InfiniteShurikensKey = "Infinite Shurikens";
         public static bool InfiniteKnives = true;
         const string InfiniteKnivesKey = "Infinite Knives";
     }

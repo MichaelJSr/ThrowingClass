@@ -39,6 +39,18 @@ namespace ThrowingClass.Items.Weapons
             item.shoot = mod.ProjectileType("WoodenJavelin");
             item.value = Item.sellPrice(0, 0, 0, 0);
         }
+
+        public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
+        {
+            switch (Main.rand.Next(8))
+            {
+                case 1: type = mod.ProjectileType("TopazJavelinTrue"); break;
+                case 2: type = mod.ProjectileType("TopazJavelinTrue"); break;
+                default: break;
+            }
+            Projectile.NewProjectile(position.X, position.Y, speedX, speedY, type, damage, knockBack, Main.myPlayer);
+            return false;
+        }
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);

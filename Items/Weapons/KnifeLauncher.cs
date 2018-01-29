@@ -39,16 +39,19 @@ namespace ThrowingClass.Items.Weapons
         {
             if (type == 599)
             {
+                item.damage = 20;
                 item.useTime = 13;
                 item.useAnimation = 13;
             }
             if (type == 520)
             {
+                item.damage = 20;
                 item.useTime = 12;
                 item.useAnimation = 12;
             }
             if (type == 497)
             {
+                item.damage = 20;
                 item.useTime = 11;
                 item.useAnimation = 11;
             }
