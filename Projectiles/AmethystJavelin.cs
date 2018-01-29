@@ -17,8 +17,8 @@ namespace ThrowingClass.Projectiles
 
         public override void SetDefaults()
         {
-            projectile.width = 16;
-            projectile.height = 16;
+            projectile.width = 56;
+            projectile.height = 15;
             projectile.aiStyle = -1;
             projectile.friendly = true;
             projectile.penetrate = 4;

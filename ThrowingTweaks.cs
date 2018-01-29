@@ -119,17 +119,17 @@ namespace ThrowingClass
                 item.ammo = ItemID.Shuriken;
                 item.autoReuse = true;
             }
-            if (item.type == ModLoader.GetMod("Infinity").ItemType("EndlessThrowingKnife"))
+            if (item.type == ModLoader.GetMod("Infinity").ItemType("EndlessKnife"))
             {
                 item.ammo = ItemID.ThrowingKnife;
                 item.autoReuse = true;
             }
-            if (item.type == ModLoader.GetMod("Infinity").ItemType("EndlessPoisonedKnife"))
+            if (item.type == ModLoader.GetMod("Infinity").ItemType("EndlessKnifePoisoned"))
             {
                 item.ammo = ItemID.ThrowingKnife;
                 item.autoReuse = true;
             }
-            if (item.type == ModLoader.GetMod("Infinity").ItemType("EndlessBoneDagger"))
+            if (item.type == ModLoader.GetMod("Infinity").ItemType("EndlessBoneKnife"))
             {
                 item.ammo = ItemID.ThrowingKnife;
                 item.autoReuse = true;

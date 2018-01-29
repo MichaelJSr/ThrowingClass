@@ -17,8 +17,8 @@ namespace ThrowingClass.Projectiles
 
         public override void SetDefaults()
         {
-            projectile.width = 16;
-            projectile.height = 16;
+            projectile.width = 56;
+            projectile.height = 15;
             projectile.aiStyle = -1;
             projectile.friendly = true;
             projectile.penetrate = 1;
@@ -135,19 +135,6 @@ namespace ThrowingClass.Projectiles
                 projectile.rotation =
                     projectile.velocity.ToRotation() +
                     MathHelper.ToRadians(0f); // Please notice the MathHelper usage, offset the rotation by 90 degrees (to radians because rotation uses radians) because the sprite's rotation is not aligned!
-            for (int i = 0; i < Main.npc.Length - 1; i++)
-            {
-                NPC N = Main.npc[i];
-                //Find the rectangles or "hitboxes" of the npc and projectile
-                Rectangle MB = new Rectangle((int)projectile.position.X + (int)projectile.velocity.X, (int)projectile.position.Y + (int)projectile.velocity.Y, projectile.width, projectile.height);
-                Rectangle NB = new Rectangle((int)N.position.X, (int)N.position.Y, N.width, N.height);
-
-                //If the two cross together
-                if (MB.Intersects(NB) && N.life > 0 && N.active && !N.friendly)
-                {
-                    projectile.Kill();
-                }
-            }
         }
 
     }

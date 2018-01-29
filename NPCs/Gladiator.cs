@@ -176,8 +176,22 @@ namespace Gladiator.NPCs
         {
             shop.item[nextSlot].SetDefaults(ItemID.Javelin);  //this is an example of how to add your item
             nextSlot++;
-            //shop.item[nextSlot].SetDefaults(mod.ItemType("JavelinBallista"));
-            //nextSlot++;
+
+            for (int k = 0; k < 255; k++)
+            {
+                Player player = Main.player[k];
+                if (player.active)
+                {
+                    for (int j = 0; j < player.inventory.Length; j++)
+                    {
+                        if (player.inventory[j].type == ItemID.ShadowFlameKnife)
+                        {
+                            shop.item[nextSlot].SetDefaults(mod.ItemType("ShadowflameKnifeWeapon"));
+                            nextSlot++;
+                        }
+                    }
+                }
+            }
             /*if (Main.LocalPlayer.GetModPlayer<Gladiator>(mod).Desert)
             {
                 shop.item[nextSlot].SetDefaults(mod.ItemType("BoneJavelin"));

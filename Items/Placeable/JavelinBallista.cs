@@ -17,7 +17,7 @@ namespace ThrowingClass.Items.Placeable
             item.useTime = 10;
             item.useStyle = 1;
             item.consumable = true;
-            item.rare = 10;
+            item.rare = 2;
             item.value = Item.buyPrice(0, 25, 0, 0);
             item.createTile = mod.TileType("JavelinBallista");
         }

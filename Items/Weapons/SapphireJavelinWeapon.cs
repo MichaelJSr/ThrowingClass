@@ -17,7 +17,6 @@ namespace ThrowingClass.Items.Weapons
         }
         public override void SetDefaults()
         {
-            // Alter any of these values as you see fit, but you should probably keep useStyle on 1, as well as the noUseGraphic and noMelee bools
             item.shootSpeed = 12f;
             item.damage = 10;
             item.knockBack = 0.5f;
@@ -27,7 +26,7 @@ namespace ThrowingClass.Items.Weapons
             item.width = 16;
             item.height = 16;
             item.maxStack = 999;
-            item.rare = 5;
+            item.rare = 1;
             item.ammo = AmmoID.Stake;
 
             item.consumable = true;

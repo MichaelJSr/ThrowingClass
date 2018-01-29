@@ -18,33 +18,34 @@ namespace ThrowingClass.Items.Weapons
         public override void SetDefaults()
         {
             item.damage = 18;
+            item.crit = 4;
             item.noMelee = true;
-            item.thrown = true;
+            item.ranged = true;
             item.width = 40;
             item.height = 20;
             item.useTime = 14;
             item.useAnimation = 14;
             item.useStyle = 5;
-            item.knockBack = 1f;
+            item.knockBack = 0.5f;
             item.value = Item.buyPrice(0, 20, 0, 0); // 5 times the sell price, in brackets it's (platinum coins, gold coins, silver coins, copper coins)*
-            item.rare = 5;
+            item.rare = 2;
             item.UseSound = SoundID.Item1;
             item.autoReuse = true;
             item.useAmmo = ItemID.Shuriken;
             item.shoot = 10;
-            item.shootSpeed = 6f; //How fast the projectile fires
+            item.shootSpeed = 4f; //How fast the projectile fires
         }
         /*public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
             if (type == mod.ProjectileType("SapphireShuriken"))
             {
                 item.damage = 8;
-                item.knockBack = 0.5f;
                 item.useTime = 4;
                 item.useAnimation = 4;
             }
             else
             {
+                item.damage = 18;
                 item.useTime = 14;
                 item.useAnimation = 14;
             }
