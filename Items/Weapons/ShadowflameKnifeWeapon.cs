@@ -37,7 +37,7 @@ namespace ThrowingClass.Items.Weapons
 
             item.UseSound = SoundID.Item1;
             item.shoot = 497;
-            item.value = Item.buyPrice(0, 0, 5, 0);
+            item.value = Item.buyPrice(0, 0, 7, 50);
         }
     }
 }
