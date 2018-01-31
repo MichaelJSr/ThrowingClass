@@ -17,7 +17,7 @@ namespace ThrowingClass.Items.Weapons
         }
         public override void SetDefaults()
         {
-            item.damage = 25;
+            item.damage = 8;
             item.crit = 4;
             item.noMelee = true;
             item.ranged = true;
@@ -39,21 +39,21 @@ namespace ThrowingClass.Items.Weapons
         {
             if (type == mod.ProjectileType("SapphireJavelin"))
             {
-                item.damage = 10;
+                item.damage = 4;
                 item.knockBack = 0.5f;
                 item.useTime = 5;
                 item.useAnimation = 5;
             }
             if (type == mod.ProjectileType("DiamondJavelin") || type == mod.ProjectileType("AmberJavelin"))
             {
-                item.damage = 25;
+                item.damage = 8;
                 item.knockBack = 1f;
                 item.useTime = 20;
                 item.useAnimation = 20;
             }
             else
             {
-                item.damage = 25;
+                item.damage = 8;
                 item.knockBack = 1f;
                 item.useTime = 25;
                 item.useAnimation = 25;

@@ -19,14 +19,14 @@ namespace ThrowingClass.Items.Weapons
         {
             item.shootSpeed = 12f;
             item.damage = 20;
-            item.knockBack = 20f;
+            item.knockBack = 12;
             item.useStyle = 1;
             item.useAnimation = 25;
             item.useTime = 25;
             item.width = 16;
             item.height = 16;
             item.maxStack = 1;
-            item.rare = 6;
+            item.rare = 1;
             item.ammo = AmmoID.Stake;
 
             item.consumable = false;

@@ -90,5 +90,10 @@ namespace ThrowingClass.Projectiles
                     projectile.velocity.ToRotation() +
                     MathHelper.ToRadians(0f); // Please notice the MathHelper usage, offset the rotation by 90 degrees (to radians because rotation uses radians) because the sprite's rotation is not aligned!
         }
+
+        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+        {
+            target.AddBuff(mod.BuffType("DiamondBreak"), 240);    //this adds the buff to the npc that got hit by this projectile , 600 is the time the buff lasts
+        }
     }
 }

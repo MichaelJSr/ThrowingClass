@@ -26,7 +26,7 @@ namespace ThrowingClass.Items.Weapons
             item.width = 16;
             item.height = 16;
             item.maxStack = 1;
-            item.rare = 10;
+            item.rare = 2;
             item.ammo = AmmoID.Stake;
 
             item.consumable = false;

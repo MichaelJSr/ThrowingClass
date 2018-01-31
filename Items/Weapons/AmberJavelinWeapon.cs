@@ -43,9 +43,9 @@ namespace ThrowingClass.Items.Weapons
         {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(ItemID.Amber, 1);
-            recipe.AddIngredient(ItemID.Javelin, 70);
+            recipe.AddIngredient(ItemID.Javelin, 40);
             recipe.AddTile(TileID.Anvils);
-            recipe.SetResult(this, 70);
+            recipe.SetResult(this, 40);
             recipe.AddRecipe();
         }
     }

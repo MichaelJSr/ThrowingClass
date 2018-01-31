@@ -17,7 +17,7 @@ namespace ThrowingClass.Items.Weapons
         }
         public override void SetDefaults()
         {
-            item.damage = 20;
+            item.damage = 6;
             item.crit = 4;
             item.noMelee = true;
             item.ranged = true;
@@ -39,25 +39,25 @@ namespace ThrowingClass.Items.Weapons
         {
             if (type == 599)
             {
-                item.damage = 20;
+                item.damage = 5;
                 item.useTime = 13;
                 item.useAnimation = 13;
             }
             if (type == 520)
             {
-                item.damage = 20;
+                item.damage = 5;
                 item.useTime = 12;
                 item.useAnimation = 12;
             }
             if (type == 497)
             {
-                item.damage = 20;
+                item.damage = 5;
                 item.useTime = 11;
                 item.useAnimation = 11;
             }
             else
             {
-                item.damage = 20;
+                item.damage = 5;
                 item.useTime = 14;
                 item.useAnimation = 14;
             }

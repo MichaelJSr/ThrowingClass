@@ -26,7 +26,7 @@ namespace ThrowingClass.Items.Weapons
             item.width = 16;
             item.height = 16;
             item.maxStack = 999;
-            item.rare = 3;
+            item.rare = 1;
             item.ammo = AmmoID.Stake;
 
             item.consumable = true;
@@ -55,9 +55,9 @@ namespace ThrowingClass.Items.Weapons
         {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(ItemID.Topaz, 1);
-            recipe.AddIngredient(ItemID.Javelin, 70);
+            recipe.AddIngredient(ItemID.Javelin, 40);
             recipe.AddTile(TileID.Anvils);
-            recipe.SetResult(this, 70);
+            recipe.SetResult(this, 40);
             recipe.AddRecipe();
         }
     }

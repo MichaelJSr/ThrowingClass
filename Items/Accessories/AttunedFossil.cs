@@ -13,7 +13,7 @@ namespace ThrowingClass.Items.Accessories
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Attuned Fossil");
-            Tooltip.SetDefault("8% increased throwing damage and velocity.");
+            Tooltip.SetDefault("10% increased throwing velocity.");
         }
 
         public override void SetDefaults()
@@ -27,18 +27,7 @@ namespace ThrowingClass.Items.Accessories
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            player.thrownDamage += 0.08f;
-            player.thrownVelocity += 0.08f;
-        }
-
-        public override void AddRecipes()
-        {
-            ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemID.FossilOre, 15);
-            recipe.AddIngredient(ItemID.Amber, 4);
-            recipe.AddTile(TileID.Anvils);
-            recipe.SetResult(this, 1);
-            recipe.AddRecipe();
+            player.thrownVelocity += 0.1f;
         }
     }
 }

@@ -18,7 +18,7 @@ namespace ThrowingClass.Items.Weapons
         public override void SetDefaults()
         {
             item.shootSpeed = 12f;
-            item.damage = 40;
+            item.damage = 28;
             item.knockBack = 5f;
             item.useStyle = 1;
             item.useAnimation = 25;
@@ -43,9 +43,9 @@ namespace ThrowingClass.Items.Weapons
         {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(ItemID.HellstoneBar, 1);
-            recipe.AddIngredient(ItemID.Javelin, 70);
+            recipe.AddIngredient(ItemID.Javelin, 40);
             recipe.AddTile(TileID.Hellforge);
-            recipe.SetResult(this, 70);
+            recipe.SetResult(this, 40);
             recipe.AddRecipe();
         }
     }

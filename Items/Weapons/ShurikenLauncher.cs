@@ -17,7 +17,7 @@ namespace ThrowingClass.Items.Weapons
         }
         public override void SetDefaults()
         {
-            item.damage = 18;
+            item.damage = 5;
             item.crit = 4;
             item.noMelee = true;
             item.ranged = true;
@@ -33,19 +33,19 @@ namespace ThrowingClass.Items.Weapons
             item.autoReuse = true;
             item.useAmmo = ItemID.Shuriken;
             item.shoot = 10;
-            item.shootSpeed = 4f; //How fast the projectile fires
+            item.shootSpeed = 8f; //How fast the projectile fires
         }
         /*public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
             if (type == mod.ProjectileType("SapphireShuriken"))
             {
-                item.damage = 8;
+                item.damage = 3;
                 item.useTime = 4;
                 item.useAnimation = 4;
             }
             else
             {
-                item.damage = 18;
+                item.damage = 5;
                 item.useTime = 14;
                 item.useAnimation = 14;
             }

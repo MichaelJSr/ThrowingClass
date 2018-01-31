@@ -17,11 +17,11 @@ namespace ThrowingClass.Projectiles
 
         public override void SetDefaults()
         {
-            projectile.width = 40;
+            projectile.width = 39;
             projectile.height = 5;
             projectile.aiStyle = -1;
             projectile.friendly = true;
-            projectile.penetrate = 2;
+            projectile.penetrate = 1;
         }
 
         public override bool TileCollideStyle(ref int width, ref int height, ref bool fallThrough)

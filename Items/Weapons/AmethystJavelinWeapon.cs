@@ -19,14 +19,14 @@ namespace ThrowingClass.Items.Weapons
         {
             item.shootSpeed = 12f;
             item.damage = 20;
-            item.knockBack = 20f;
+            item.knockBack = 12f;
             item.useStyle = 1;
             item.useAnimation = 25;
             item.useTime = 25;
             item.width = 16;
             item.height = 16;
             item.maxStack = 999;
-            item.rare = 6;
+            item.rare = 1;
             item.ammo = AmmoID.Stake;
 
             item.consumable = true;
@@ -43,9 +43,9 @@ namespace ThrowingClass.Items.Weapons
         {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(ItemID.Amethyst, 1);
-            recipe.AddIngredient(ItemID.Javelin, 70);
+            recipe.AddIngredient(ItemID.Javelin, 40);
             recipe.AddTile(TileID.Anvils);
-            recipe.SetResult(this, 70);
+            recipe.SetResult(this, 40);
             recipe.AddRecipe();
         }
     }
