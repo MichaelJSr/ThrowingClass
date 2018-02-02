@@ -8,11 +8,11 @@ using Terraria.ModLoader;
 
 namespace ThrowingClass.Projectiles
 {
-    public class CopperJavelin : ModProjectile
+    public class LeadJavelin : ModProjectile
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("CopperJavelin");
+            DisplayName.SetDefault("LeadJavelin");
         }
 
         public override void SetDefaults()

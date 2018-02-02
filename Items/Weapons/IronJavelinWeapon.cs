@@ -8,16 +8,16 @@ using Terraria.ModLoader;
 
 namespace ThrowingClass.Items.Weapons
 {
-    public class CopperJavelinWeapon : ModItem
+    public class IronJavelinWeapon : ModItem
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Copper Javelin");
+            DisplayName.SetDefault("Iron Javelin");
         }
         public override void SetDefaults()
         {
             item.shootSpeed = 12f;
-            item.damage = 13;
+            item.damage = 16;
             item.knockBack = 5f;
             item.useStyle = 1;
             item.useAnimation = 25;
@@ -35,14 +35,14 @@ namespace ThrowingClass.Items.Weapons
             item.thrown = true;
 
             item.UseSound = SoundID.Item1;
-            item.shoot = mod.ProjectileType("CopperJavelin");
-            item.value = Item.sellPrice(0, 0, 0, 2);
+            item.shoot = mod.ProjectileType("IronJavelin");
+            item.value = Item.sellPrice(0, 0, 0, 4);
         }
 
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemID.CopperBar, 1);
+            recipe.AddIngredient(ItemID.IronBar, 1);
             recipe.AddTile(TileID.Anvils);
             recipe.SetResult(this, 40);
             recipe.AddRecipe();

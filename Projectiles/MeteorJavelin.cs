@@ -8,11 +8,11 @@ using Terraria.ModLoader;
 
 namespace ThrowingClass.Projectiles
 {
-    public class CopperJavelin : ModProjectile
+    public class MeteorJavelin : ModProjectile
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("CopperJavelin");
+            DisplayName.SetDefault("MeteorJavelin");
         }
 
         public override void SetDefaults()
@@ -21,7 +21,8 @@ namespace ThrowingClass.Projectiles
             projectile.height = 9;
             projectile.aiStyle = -1;
             projectile.friendly = true;
-            projectile.penetrate = 2;
+            projectile.tileCollide = true; //Tells the game whether or not it can collide with a tile
+            projectile.penetrate = 4;
         }
 
         public override bool TileCollideStyle(ref int width, ref int height, ref bool fallThrough)
@@ -42,16 +43,6 @@ namespace ThrowingClass.Projectiles
             return projHitbox.Intersects(targetHitbox);
         }
 
-        public override bool OnTileCollide(Vector2 oldVelocity)
-        {                                                           // sound that the projectile make when hiting the terrain
-            {
-                projectile.Kill();
-
-                Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 10);
-            }
-            return false;
-        }
-
         public float targetWhoAmI
         {
             get { return projectile.ai[1]; }
@@ -63,6 +54,7 @@ namespace ThrowingClass.Projectiles
 
         public override void AI()
         {
+            projectile.light = 0.05f;
             // Slowly remove alpha as it is present
             if (projectile.alpha > 0)
             {
@@ -90,5 +82,31 @@ namespace ThrowingClass.Projectiles
                     projectile.velocity.ToRotation() +
                     MathHelper.ToRadians(0f); // Please notice the MathHelper usage, offset the rotation by 90 degrees (to radians because rotation uses radians) because the sprite's rotation is not aligned!
         }
+
+        //When the projectile hits a tile
+        public override bool OnTileCollide(Vector2 oldVelocity)
+        {
+            //If collide with tile, reduce the penetrate.
+            //So the projectile can reflect at most 5 times
+            projectile.penetrate--;
+            if (projectile.penetrate <= 0)
+            {
+                projectile.Kill();
+            }
+            else
+            {
+                if (projectile.velocity.X != oldVelocity.X)
+                {
+                    projectile.velocity.X = -0.75f * oldVelocity.X;
+                }
+                if (projectile.velocity.Y != oldVelocity.Y)
+                {
+                    projectile.velocity.Y = -0.75f * oldVelocity.Y;
+                }
+                Main.PlaySound(SoundID.Item10, projectile.position);
+            }
+            return false;
+        }
+
     }
 }

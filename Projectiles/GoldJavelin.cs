@@ -8,11 +8,11 @@ using Terraria.ModLoader;
 
 namespace ThrowingClass.Projectiles
 {
-    public class CopperJavelin : ModProjectile
+    public class GoldJavelin : ModProjectile
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("CopperJavelin");
+            DisplayName.SetDefault("GoldJavelin");
         }
 
         public override void SetDefaults()
@@ -21,7 +21,7 @@ namespace ThrowingClass.Projectiles
             projectile.height = 9;
             projectile.aiStyle = -1;
             projectile.friendly = true;
-            projectile.penetrate = 2;
+            projectile.penetrate = 3;
         }
 
         public override bool TileCollideStyle(ref int width, ref int height, ref bool fallThrough)

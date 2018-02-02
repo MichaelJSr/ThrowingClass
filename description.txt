@@ -1,9 +1,9 @@
 	This is a mod meant to allow you to use the throwing class in hardmode, as well as adding items for it in pre-hardmode! Currently, the items inside of this mod are:
 
 - 3 rebalanced sets of armor (gladiator, obsidian, and viking)
-- 19 new throwing projectiles
+- 29 new throwing projectiles
 - 3 new throwing launchers
-- 3 new throwing accessorird
+- 3 new throwing accessories
 - 1 new NPC
 
 	This mod is going to be updated frequently until there is enough content, with new throwing weapons, projectile, and armors constantly being added.
@@ -21,3 +21,4 @@ V 1.9: Fixed glitches, added shadowflame knives (Gladiator sells the throwing co
 V 2.0: Added Emerald, Diamond, and Amber javelins.
 V 2.1: Added a config file, added Attuned Fossil accessory.
 V 2.2: Added copper javelins, added all wood variant javelins, added 3 new throwing accessories, rebalanced many items.
+V 2.3: Added meteor javelins and all pre-hardmode ore javelins.
