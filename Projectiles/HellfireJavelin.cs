@@ -109,7 +109,7 @@ namespace ThrowingClass.Projectiles
 
         public override void AI()
         {
-            projectile.light = 0.05f;
+            projectile.light = 0.1f;
             // Slowly remove alpha as it is present
             if (projectile.alpha > 0)
             {
