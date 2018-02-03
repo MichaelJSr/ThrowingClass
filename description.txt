@@ -2,7 +2,7 @@
 
 - 3 rebalanced sets of armor (gladiator, obsidian, and viking)
 - 30 new throwing projectiles
-- 3 new throwing launchers
+- 4 new throwing launchers
 - 3 new throwing accessories
 - 1 new NPC
 
@@ -23,3 +23,4 @@ V 2.1: Added a config file, added Attuned Fossil accessory.
 V 2.2: Added copper javelins, added all wood variant javelins, added 3 new throwing accessories, rebalanced many items.
 V 2.3: Added meteor javelins and all pre-hardmode ore javelins.
 V 2.4: Added Jester Javelins.
+V 2.5: Added a Throwing Grenade Launcher (fires grenades), bug fixes since version 2.4.

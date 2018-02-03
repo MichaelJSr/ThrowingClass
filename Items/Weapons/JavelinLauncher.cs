@@ -22,7 +22,7 @@ namespace ThrowingClass.Items.Weapons
             item.noMelee = true;
             item.ranged = true;
             item.width = 40;
-            item.height = 20;
+            item.height = 22;
             item.useTime = 25;
             item.useAnimation = 25;
             item.useStyle = 5;
@@ -39,12 +39,12 @@ namespace ThrowingClass.Items.Weapons
         {
             int i = 0;
             int k = 0;
-            if (item.crit == 1)
+            if (item.crit == 1) //If useTime 5 javelins were last shot
             {
                 k = 1;
                 i = 0;
             }
-            else if (item.crit == 2)
+            else if (item.crit == 2) //If useTime 20 javelins were last shot
             {
                 k = 0;
                 i = 1;
@@ -60,7 +60,7 @@ namespace ThrowingClass.Items.Weapons
                     item.useAnimation -= 15;
                     item.crit = 1;
                 }
-                else if (k < 1)
+                else if (k == 0)
                 {
                     item.damage -= 6;
                     item.knockBack -= 0.5f;
@@ -80,7 +80,7 @@ namespace ThrowingClass.Items.Weapons
                     item.useAnimation += 15;
                     item.crit = 2;
                 }
-                else if (i < 1)
+                else if (i == 0)
                 {
                     item.useTime -= 5;
                     item.useAnimation -= 5;
@@ -88,7 +88,7 @@ namespace ThrowingClass.Items.Weapons
                 }
             }
 
-            else
+            else //Neither useTime 5 or 20 javelins are shot
             {
                 if (k == 1)
                 {

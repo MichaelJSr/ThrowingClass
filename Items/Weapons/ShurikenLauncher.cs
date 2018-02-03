@@ -21,8 +21,8 @@ namespace ThrowingClass.Items.Weapons
             item.crit = 4;
             item.noMelee = true;
             item.ranged = true;
-            item.width = 40;
-            item.height = 20;
+            item.width = 52;
+            item.height = 32;
             item.useTime = 14;
             item.useAnimation = 14;
             item.useStyle = 5;
