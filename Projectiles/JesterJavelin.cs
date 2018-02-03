@@ -64,6 +64,7 @@ namespace ThrowingClass.Projectiles
         public override void AI()
         {
             projectile.light = 0.15f;
+            Gore.NewGore(new Vector2(projectile.position.X+4, projectile.position.Y-10), default(Vector2), 11, 0.25f);
             // Slowly remove alpha as it is present
             if (projectile.alpha > 0)
             {

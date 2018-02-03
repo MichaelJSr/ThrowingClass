@@ -17,7 +17,7 @@ namespace ThrowingClass.Items.Weapons
         }
         public override void SetDefaults()
         {
-            item.damage = 8;
+            item.damage = 10;
             item.crit = 4;
             item.noMelee = true;
             item.ranged = true;
@@ -27,7 +27,7 @@ namespace ThrowingClass.Items.Weapons
             item.useAnimation = 25;
             item.useStyle = 5;
             item.knockBack = 1f;
-            item.value = Item.buyPrice(0, 20, 0, 0); // 5 times the sell price, in brackets it's (platinum coins, gold coins, silver coins, copper coins)*
+            item.value = Item.sellPrice(0, 4, 0, 0); // 5 times the sell price, in brackets it's (platinum coins, gold coins, silver coins, copper coins)*
             item.rare = 3;
             item.UseSound = SoundID.Item1;
             item.autoReuse = true;
@@ -44,16 +44,16 @@ namespace ThrowingClass.Items.Weapons
                 item.useTime = 5;
                 item.useAnimation = 5;
             }
-            if (type == mod.ProjectileType("DiamondJavelin") || type == mod.ProjectileType("AmberJavelin") || type == mod.ProjectileType("MeteorJavelin") || type == mod.ProjectileType("JesterJavelin"))
+            if (type == mod.ProjectileType("DiamondJavelin") || type == mod.ProjectileType("AmberJavelin") || type == mod.ProjectileType("MeteorJavelin") || type == mod.ProjectileType("JesterJavelin") || type == mod.ProjectileType("HellfireJavelin"))
             {
-                item.damage = 8;
+                item.damage = 10;
                 item.knockBack = 1f;
                 item.useTime = 20;
                 item.useAnimation = 20;
             }
             else
             {
-                item.damage = 8;
+                item.damage = 10;
                 item.knockBack = 1f;
                 item.useTime = 25;
                 item.useAnimation = 25;

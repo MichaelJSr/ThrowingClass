@@ -18,11 +18,11 @@ namespace ThrowingClass.Items.Weapons
         public override void SetDefaults()
         {
             item.shootSpeed = 12f;
-            item.damage = 28;
+            item.damage = 30;
             item.knockBack = 5f;
             item.useStyle = 1;
-            item.useAnimation = 25;
-            item.useTime = 25;
+            item.useAnimation = 20;
+            item.useTime = 20;
             item.width = 16;
             item.height = 16;
             item.maxStack = 999;

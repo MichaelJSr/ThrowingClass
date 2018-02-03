@@ -52,8 +52,8 @@ namespace ThrowingClass.Projectiles
                 float dY = N.Center.Y - projectile.Center.Y;
                 float distance = (float)System.Math.Sqrt((double)(dX * dX + dY * dY));
 
-                //So if the distance between the killed projectile and the npc is less than 50 pixels...
-                if (distance < 50f && !N.friendly && N.active)
+                //So if the distance between the killed projectile and the npc is less than 80 pixels...
+                if (distance < 80f && !N.friendly && N.active)
                 {
                     N.StrikeNPC(projectile.damage, 0f, N.direction, false, false, false); //Damages and shows damage on the NPC, this accounts for the defense of the NPC as well.
                 }
