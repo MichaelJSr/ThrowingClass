@@ -18,7 +18,7 @@ namespace ThrowingClass.Items.Weapons
         public override void SetDefaults()
         {
             item.damage = 10;
-            item.crit = 4;
+            item.crit = 0;
             item.noMelee = true;
             item.ranged = true;
             item.width = 40;
@@ -37,26 +37,73 @@ namespace ThrowingClass.Items.Weapons
         }
         public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
+            int i = 0;
+            int k = 0;
+            if (item.crit == 1)
+            {
+                k = 1;
+                i = 0;
+            }
+            else if (item.crit == 2)
+            {
+                k = 0;
+                i = 1;
+            }
+
             if (type == mod.ProjectileType("SapphireJavelin"))
             {
-                item.damage = 4;
-                item.knockBack = 0.5f;
-                item.useTime = 5;
-                item.useAnimation = 5;
+                if (i == 1)
+                {
+                    item.damage -= 6;
+                    item.knockBack -= 0.5f;
+                    item.useTime -= 15;
+                    item.useAnimation -= 15;
+                    item.crit = 1;
+                }
+                else if (k < 1)
+                {
+                    item.damage -= 6;
+                    item.knockBack -= 0.5f;
+                    item.useTime -= 20;
+                    item.useAnimation -= 20;
+                    item.crit = 1;
+                }
             }
-            if (type == mod.ProjectileType("DiamondJavelin") || type == mod.ProjectileType("AmberJavelin") || type == mod.ProjectileType("MeteorJavelin") || type == mod.ProjectileType("JesterJavelin") || type == mod.ProjectileType("HellfireJavelin"))
+
+            else if (type == mod.ProjectileType("DiamondJavelin") || type == mod.ProjectileType("AmberJavelin") || type == mod.ProjectileType("MeteorJavelin") || type == mod.ProjectileType("JesterJavelin") || type == mod.ProjectileType("HellfireJavelin"))
             {
-                item.damage = 10;
-                item.knockBack = 1f;
-                item.useTime = 20;
-                item.useAnimation = 20;
+                if (k == 1)
+                {
+                    item.damage += 6;
+                    item.knockBack += 0.5f;
+                    item.useTime += 15;
+                    item.useAnimation += 15;
+                    item.crit = 2;
+                }
+                else if (i < 1)
+                {
+                    item.useTime -= 5;
+                    item.useAnimation -= 5;
+                    item.crit = 2;
+                }
             }
+
             else
             {
-                item.damage = 10;
-                item.knockBack = 1f;
-                item.useTime = 25;
-                item.useAnimation = 25;
+                if (k == 1)
+                {
+                    item.damage += 6;
+                    item.knockBack += 0.5f;
+                    item.useTime += 20;
+                    item.useAnimation += 20;
+                    item.crit = 0;
+                }
+                else if (i == 1)
+                {
+                    item.useTime += 5;
+                    item.useAnimation += 5;
+                    item.crit = 0;
+                }
             }
             Projectile.NewProjectile(position.X, position.Y, speedX, speedY, type, damage, knockBack, Main.myPlayer);
             return false;

@@ -18,7 +18,7 @@ namespace ThrowingClass.Items.Weapons
         public override void SetDefaults()
         {
             item.damage = 6;
-            item.crit = 4;
+            item.crit = 0;
             item.noMelee = true;
             item.ranged = true;
             item.width = 40;
@@ -37,29 +37,111 @@ namespace ThrowingClass.Items.Weapons
         }
         public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
+            int i = 0;
+            int k = 0;
+            int c = 0;
+            if (item.crit == 1)
+            {
+                k = 1;
+                i = 0;
+                c = 0;
+            }
+            else if (item.crit == 2)
+            {
+                k = 0;
+                i = 1;
+                c = 0;
+            }
+            else if (item.crit == 3)
+            {
+                k = 0;
+                i = 0;
+                c = 1;
+            }
+
             if (type == 599)
             {
-                item.damage = 5;
-                item.useTime = 13;
-                item.useAnimation = 13;
+                if (k == 0)
+                {
+                    item.useTime -= 1;
+                    item.useAnimation -= 1;
+                    item.crit = 1;
+                }
+                else if (i == 1)
+                {
+                    item.useTime += 1;
+                    item.useAnimation += 1;
+                    item.crit = 1;
+                }
+                else if (c == 1)
+                {
+                    item.useTime += 2;
+                    item.useAnimation += 2;
+                    item.crit = 1;
+                }
             }
-            if (type == 520)
+            else if (type == 520)
             {
-                item.damage = 5;
-                item.useTime = 12;
-                item.useAnimation = 12;
+                if (k == 1)
+                {
+                    item.useTime -= 1;
+                    item.useAnimation -= 1;
+                    item.crit = 2;
+                }
+                else if (i == 0)
+                {
+                    item.useTime -= 2;
+                    item.useAnimation -= 2;
+                    item.crit = 2;
+                }
+                else if (c == 1)
+                {
+                    item.useTime += 1;
+                    item.useAnimation += 1;
+                    item.crit = 2;
+                }
             }
-            if (type == 497)
+            else if (type == 497)
             {
-                item.damage = 5;
-                item.useTime = 11;
-                item.useAnimation = 11;
+                if (k == 1)
+                {
+                    item.useTime -= 2;
+                    item.useAnimation -= 2;
+                    item.crit = 3;
+                }
+                else if (i == 1)
+                {
+                    item.useTime -= 1;
+                    item.useAnimation -= 1;
+                    item.crit = 3;
+                }
+                else if (c == 0)
+                {
+                    item.useTime -= 3;
+                    item.useAnimation -= 3;
+                    item.crit = 3;
+                }
             }
             else
             {
-                item.damage = 5;
-                item.useTime = 14;
-                item.useAnimation = 14;
+                if (k == 1)
+                {
+                    item.useTime += 1;
+                    item.useAnimation += 1;
+                    item.crit = 0;
+                }
+                else if (i == 1)
+                {
+                    item.useTime += 2;
+                    item.useAnimation += 2;
+                    item.crit = 0;
+                }
+                else if (c == 1)
+                {
+                    item.useTime += 3;
+                    item.useAnimation += 3;
+                    item.crit = 0;
+                }
             }
             Projectile.NewProjectile(position.X, position.Y, speedX, speedY, type, damage, knockBack, Main.myPlayer);
             return false;
