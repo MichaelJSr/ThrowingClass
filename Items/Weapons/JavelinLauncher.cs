@@ -44,7 +44,7 @@ namespace ThrowingClass.Items.Weapons
                 item.useTime = 5;
                 item.useAnimation = 5;
             }
-            if (type == mod.ProjectileType("DiamondJavelin") || type == mod.ProjectileType("AmberJavelin") || type == mod.ProjectileType("MeteorJavelin"))
+            if (type == mod.ProjectileType("DiamondJavelin") || type == mod.ProjectileType("AmberJavelin") || type == mod.ProjectileType("MeteorJavelin") || type == mod.ProjectileType("JesterJavelin"))
             {
                 item.damage = 8;
                 item.knockBack = 1f;

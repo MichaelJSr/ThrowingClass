@@ -22,3 +22,4 @@ V 2.0: Added Emerald, Diamond, and Amber javelins.
 V 2.1: Added a config file, added Attuned Fossil accessory.
 V 2.2: Added copper javelins, added all wood variant javelins, added 3 new throwing accessories, rebalanced many items.
 V 2.3: Added meteor javelins and all pre-hardmode ore javelins.
+V 2.4: Added Jester Javelins.
