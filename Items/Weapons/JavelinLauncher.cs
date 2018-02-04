@@ -39,7 +39,7 @@ namespace ThrowingClass.Items.Weapons
         {
             int i = 0;
             int k = 0;
-            if (item.crit == 1) //If useTime 5 javelins were last shot
+            if (item.crit == 1) //If useTime 8 javelins were last shot
             {
                 k = 1;
                 i = 0;
@@ -54,18 +54,18 @@ namespace ThrowingClass.Items.Weapons
             {
                 if (i == 1)
                 {
-                    item.damage -= 6;
+                    item.damage -= 5;
                     item.knockBack -= 0.5f;
-                    item.useTime -= 15;
-                    item.useAnimation -= 15;
+                    item.useTime -= 12;
+                    item.useAnimation -= 12;
                     item.crit = 1;
                 }
                 else if (k == 0)
                 {
-                    item.damage -= 6;
+                    item.damage -= 5;
                     item.knockBack -= 0.5f;
-                    item.useTime -= 20;
-                    item.useAnimation -= 20;
+                    item.useTime -= 17;
+                    item.useAnimation -= 17;
                     item.crit = 1;
                 }
             }
@@ -74,10 +74,10 @@ namespace ThrowingClass.Items.Weapons
             {
                 if (k == 1)
                 {
-                    item.damage += 6;
+                    item.damage += 5;
                     item.knockBack += 0.5f;
-                    item.useTime += 15;
-                    item.useAnimation += 15;
+                    item.useTime += 12;
+                    item.useAnimation += 12;
                     item.crit = 2;
                 }
                 else if (i == 0)
@@ -92,10 +92,10 @@ namespace ThrowingClass.Items.Weapons
             {
                 if (k == 1)
                 {
-                    item.damage += 6;
+                    item.damage += 5;
                     item.knockBack += 0.5f;
-                    item.useTime += 20;
-                    item.useAnimation += 20;
+                    item.useTime += 17;
+                    item.useAnimation += 17;
                     item.crit = 0;
                 }
                 else if (i == 1)

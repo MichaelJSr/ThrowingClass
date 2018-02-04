@@ -20,7 +20,7 @@ namespace ThrowingClass.Items.Accessories
         {
             item.width = 15;
             item.height = 14;
-            item.value = Item.sellPrice(0, 1, 20, 0);
+            item.value = Item.sellPrice(0, 0, 40, 0);
             item.rare = 2;
             item.accessory = true;
         }
