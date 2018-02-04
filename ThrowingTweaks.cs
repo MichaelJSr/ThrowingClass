@@ -15,7 +15,6 @@ namespace ThrowingClass
 	{
 		const string GladiatorSet = "throwing gladiator";
 		const string ObsidianSet = "throwing obsidian";
-		const string VikingSet = "throwing viking";
 		
 		public override void SetDefaults(Item item)
 		{
@@ -23,22 +22,39 @@ namespace ThrowingClass
 			{
 				case ItemID.GladiatorHelmet:
 					item.rare = 1;
-					item.defense = 5;
+					item.defense = 4;
 					return;
 
 				case ItemID.GladiatorBreastplate:
 					item.rare = 1;
-					item.defense = 6;
-					return;
-
-				case ItemID.GladiatorLeggings:
-				    item.rare = 1;
 					item.defense = 5;
 					return;
 
-				case ItemID.ObsidianHelm:
+                case ItemID.GladiatorLeggings:
+                    item.rare = 1;
+                    item.defense = 4;
+                    return;
+
+                case ItemID.FossilHelm:
+                    item.defense = 5;
+                    return;
+
+                case ItemID.FossilPants:
+                    item.defense = 5;
+                    return;
+
+                case ItemID.ObsidianHelm:
+                    item.defense = 4;
+                    item.rare = 1;
+                    return;
+
 				case ItemID.ObsidianShirt:
+                    item.defense = 4;
+                    item.rare = 1;
+                    return;
+
 				case ItemID.ObsidianPants:
+                    item.defense = 3;
 				    item.rare = 1;
 					return;
 
@@ -195,6 +211,20 @@ namespace ThrowingClass
 				case ItemID.ObsidianPants:
 						player.thrownCrit += 3;
 					return;
+
+                case ItemID.GladiatorHelmet:
+                case ItemID.GladiatorBreastplate:
+                case ItemID.GladiatorLeggings:
+                        player.meleeCrit += 2;
+                        player.thrownCrit += 2;
+                        player.meleeDamage += 0.02f;
+                        player.thrownDamage += 0.02f;
+                    return;
+
+                case ItemID.VikingHelmet:
+                        player.thrownDamage += 0.02f;
+                        player.meleeDamage += 0.02f;
+                    return;
 			}
 		}
 
@@ -210,7 +240,7 @@ namespace ThrowingClass
 
         public override void UpdateArmorSet(Player player, string armorSet)
 		{
-			if(armorSet == GladiatorSet)
+			if (armorSet == GladiatorSet)
 			{
 				player.setBonus = Language.GetTextValue("Mods.ThrowingClass.ArmorSet.Gladiator");
 				player.meleeCrit += 10;
@@ -218,13 +248,7 @@ namespace ThrowingClass
                 player.meleeDamage += 0.1f;
                 player.thrownDamage += 0.1f;
             }
-            else if (armorSet == VikingSet)
-            {
-                player.setBonus = Language.GetTextValue("Mods.ThrowingClass.ArmorSet.Viking");
-                player.meleeDamage += 0.15f;
-                player.thrownDamage += 0.15f;
-            }
-            else if(armorSet == ObsidianSet)
+            else if (armorSet == ObsidianSet)
 			{
 				player.setBonus = Language.GetTextValue("Mods.ThrowingClass.ArmorSet.Obsidian");
 				player.moveSpeed += 0.1f;

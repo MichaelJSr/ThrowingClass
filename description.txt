@@ -24,3 +24,4 @@ V 2.2: Added copper javelins, added all wood variant javelins, added 3 new throw
 V 2.3: Added meteor javelins and all pre-hardmode ore javelins.
 V 2.4: Added Jester Javelins.
 V 2.5: Added a Throwing Grenade Launcher (fires grenades), bug fixes since version 2.4.
+V 2.6: Completed the viking set and added it as a drop from undead vikings.

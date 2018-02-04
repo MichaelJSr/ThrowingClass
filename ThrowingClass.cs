@@ -21,7 +21,6 @@ namespace ThrowingClass
         public override void Load()
         {
             Instance = this;
-            LanguageManager.Instance.OnLanguageChanged += ThrowingTweaksLang.EditTooltips;
             ThrowingTweaksLang.AddText();
             ThrowingConfig.Load();
         }
