@@ -20,7 +20,7 @@ namespace ThrowingClass.Buff
             Main.dust[num1].scale = 1f; //the dust scale , the higher is the value the large is the dust
             Main.dust[num1].velocity *= 1f; //the dust velocity
             Main.dust[num1].noGravity = true;
-            npc.defense -= 5;
+            npc.defense -= 10;
         }
     }
 }
