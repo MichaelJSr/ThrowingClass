@@ -113,6 +113,13 @@ namespace AccessoriesNPC.NPCs
                 if (Main.rand.NextFloat() < .01f)
                     Item.NewItem(npc.getRect(), mod.ItemType("AttunedBone"), 1);
             }
+            //Gladiator Emblem
+            if (npc.type == NPCID.WallofFlesh)
+            {
+                if (Main.rand.NextFloat() < .25f)
+                    Item.NewItem(npc.getRect(), mod.ItemType("GladiatorEmblem"), 1);
+
+            }
         }
         }
     }

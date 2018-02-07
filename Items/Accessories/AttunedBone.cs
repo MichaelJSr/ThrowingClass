@@ -13,7 +13,7 @@ namespace ThrowingClass.Items.Accessories
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Attuned Bone");
-            Tooltip.SetDefault("10% increased throwing damage.");
+            Tooltip.SetDefault("10% increased throwing damage");
         }
 
         public override void SetDefaults()

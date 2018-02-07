@@ -16,7 +16,6 @@ namespace ThrowingClass
     public class ThrowingClass : Mod
     {
         public static ThrowingClass Instance;
-        public enum ModMessageID { RotateTurret, ProjectileMakeHostile, KickFromChest }
 
         public override void Load()
         {

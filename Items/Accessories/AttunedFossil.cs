@@ -13,7 +13,7 @@ namespace ThrowingClass.Items.Accessories
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Attuned Fossil");
-            Tooltip.SetDefault("10% increased throwing velocity.");
+            Tooltip.SetDefault("10% increased throwing velocity");
         }
 
         public override void SetDefaults()
