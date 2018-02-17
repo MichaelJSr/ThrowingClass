@@ -3,7 +3,7 @@
 - 3 rebalanced sets of armor (gladiator, obsidian, and viking)
 - 30 new throwing projectiles
 - 4 new throwing launchers
-- 3 new throwing accessories
+- 5 new throwing accessories
 - 1 new NPC
 
 	This mod is going to be updated frequently until there is enough content, with new throwing weapons, projectile, and armors constantly being added.
@@ -26,3 +26,4 @@ V 2.4: Added Jester Javelins.
 V 2.5: Added a Throwing Grenade Launcher (fires grenades), bug fixes since version 2.4.
 V 2.6: Completed the viking set and added it as a drop from undead vikings.
 V 2.6.5: Added a Throwing Emblem drop from the wall of flesh.
+V 2.7: Added the spartan shield accessory.
