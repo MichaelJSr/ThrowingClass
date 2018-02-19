@@ -69,9 +69,9 @@ namespace ThrowingClass.Items.Weapons
                 }
                 else if (c == 1)
                 {
-                    item.damage += 10;
-                    item.useTime += 25;
-                    item.useAnimation += 25;
+                    item.damage += 12;
+                    item.useTime += 21;
+                    item.useAnimation += 21;
                     item.crit = 1;
                 }
                 else if (k == 0)
@@ -91,9 +91,9 @@ namespace ThrowingClass.Items.Weapons
                 }
                 else if (c == 1)
                 {
-                    item.damage += 10;
-                    item.useTime += 5;
-                    item.useAnimation += 5;
+                    item.damage += 12;
+                    item.useTime += 1;
+                    item.useAnimation += 1;
                     item.crit = 2;
                 }
                 else if (i == 0)
@@ -107,23 +107,23 @@ namespace ThrowingClass.Items.Weapons
             {
                 if (k == 1)
                 {
-                    item.damage -= 10;
-                    item.useTime -= 25;
-                    item.useAnimation -= 25;
+                    item.damage -= 12;
+                    item.useTime -= 21;
+                    item.useAnimation -= 21;
                     item.crit = 3;
                 }
                 else if (i == 1)
                 {
-                    item.damage -= 10;
-                    item.useTime -= 5;
-                    item.useAnimation -= 5;
+                    item.damage -= 12;
+                    item.useTime -= 1;
+                    item.useAnimation -= 1;
                     item.crit = 3;
                 }
                 else if (c == 0)
                 {
-                    item.damage -= 10;
-                    item.useTime -= 30;
-                    item.useAnimation -= 30;
+                    item.damage -= 12;
+                    item.useTime -= 26;
+                    item.useAnimation -= 26;
                     item.crit = 3;
                 }
             }
@@ -143,9 +143,9 @@ namespace ThrowingClass.Items.Weapons
                 }
                 else if (c == 1)
                 {
-                    item.damage += 10;
-                    item.useTime += 30;
-                    item.useAnimation += 30;
+                    item.damage += 12;
+                    item.useTime += 26;
+                    item.useAnimation += 26;
                     item.crit = 0;
                 }
             }

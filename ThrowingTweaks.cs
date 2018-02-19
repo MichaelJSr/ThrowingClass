@@ -87,14 +87,9 @@ namespace ThrowingClass
                 case ItemID.Grenade:
                 case ItemID.StickyGrenade:
                 case ItemID.BouncyGrenade:
+                case ItemID.Beenade:
                 case ItemID.PartyGirlGrenade:
                 case ItemID.MolotovCocktail:
-                    item.autoReuse = true;
-                    item.ammo = ItemID.Grenade;
-                    return;
-
-                case ItemID.Beenade:
-                    item.damage = 10;
                     item.autoReuse = true;
                     item.ammo = ItemID.Grenade;
                     return;
@@ -183,6 +178,7 @@ namespace ThrowingClass
             if (item.type == ModLoader.GetMod("Infinity").ItemType("EndlessBeenade"))
             {
                 item.damage = 10;
+                item.useTime = 18;
                 item.ammo = ItemID.Grenade;
                 item.autoReuse = true;
             }
