@@ -17,14 +17,14 @@ namespace ThrowingClass.Items.Weapons
         }
         public override void SetDefaults()
         {
-            item.damage = 10;
+            item.damage = 12;
             item.crit = 0;
             item.noMelee = true;
             item.ranged = true;
             item.width = 40;
             item.height = 22;
-            item.useTime = 25;
-            item.useAnimation = 25;
+            item.useTime = 24;
+            item.useAnimation = 24;
             item.useStyle = 5;
             item.knockBack = 1f;
             item.value = Item.sellPrice(0, 4, 0, 0); // 5 times the sell price, in brackets it's (platinum coins, gold coins, silver coins, copper coins)*
