@@ -182,6 +182,7 @@ namespace ThrowingClass
             }
             if (item.type == ModLoader.GetMod("Infinity").ItemType("EndlessBeenade"))
             {
+                item.damage = 10;
                 item.ammo = ItemID.Grenade;
                 item.autoReuse = true;
             }
