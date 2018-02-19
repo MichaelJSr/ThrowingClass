@@ -61,7 +61,7 @@ namespace ThrowingClass.Items.Weapons
                 c = 1;
             }
 
-            if (type == 599) //Bone Throwing Knives
+            if (type == ProjectileID.BoneDagger) //Bone Throwing Knives
             {
                 if (i == 1)
                 {
@@ -82,7 +82,7 @@ namespace ThrowingClass.Items.Weapons
                     item.crit = 1;
                 }
             }
-            else if (type == 520) //Frost Daggerfish
+            else if (type == ProjectileID.FrostDaggerfish) //Frost Daggerfish
             {
                 if (k == 1)
                 {
@@ -103,7 +103,7 @@ namespace ThrowingClass.Items.Weapons
                     item.crit = 2;
                 }
             }
-            else if (type == 497) //Shadowflame Knives
+            else if (type == ProjectileID.ShadowFlameKnife) //Shadowflame Knives
             {
                 if (k == 1)
                 {

@@ -61,7 +61,7 @@ namespace ThrowingClass.Items.Weapons
                 c = 1;
             }
 
-            if (type == 517 || type == 399) //Bouncy Grenades or Molotov Cocktails
+            if (type == ProjectileID.BouncyGrenade || type == ProjectileID.MolotovCocktail) //Bouncy Grenades or Molotov Cocktails
             {
                 if (i == 1)
                 {
@@ -83,7 +83,7 @@ namespace ThrowingClass.Items.Weapons
                     item.crit = 1;
                 }
             }
-            else if (type == 75) //Happy grenades
+            else if (type == ProjectileID.HappyBomb) //Happy grenades
             {
                 if (k == 1)
                 {
@@ -105,7 +105,7 @@ namespace ThrowingClass.Items.Weapons
                     item.crit = 2;
                 }
             }
-            else if (type == 183) //Beenades
+            else if (type == ProjectileID.Beenade) //Beenades
             {
                 if (k == 1)
                 {
