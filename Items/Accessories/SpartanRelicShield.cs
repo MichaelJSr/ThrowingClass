@@ -9,19 +9,19 @@ using Terraria.ModLoader;
 namespace ThrowingClass.Items.Accessories
 {
     [AutoloadEquip(EquipType.Shield)]
-    public class SpartanShield : ModItem
+    public class SpartanRelicShield : ModItem
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Spartan Shield");
-            Tooltip.SetDefault("5% increased throwing damage and velocity\nGrants the ability to dash");
+            DisplayName.SetDefault("Spartan Relic Shield");
+            Tooltip.SetDefault("15% increased throwing damage and velocity\nGrants the ability to dash");
         }
 
         public override void SetDefaults()
         {
             item.width = 30;
             item.height = 28;
-            item.value = Item.sellPrice(0, 2, 0, 0);
+            item.value = Item.sellPrice(0, 2, 40, 0);
             item.rare = 4;
             item.accessory = true;
             item.defense = 2;
@@ -29,8 +29,8 @@ namespace ThrowingClass.Items.Accessories
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            player.thrownDamage += 0.05f;
-            player.thrownVelocity += 0.05f;
+            player.thrownDamage += 0.15f;
+            player.thrownVelocity += 0.15f;
             player.dash = 2;
             /*if (Main.rand.Next(250) == 0) //On a 1/250 chance every tick, it'll spawn a projectile (to prevent lag)
             {
@@ -46,8 +46,8 @@ namespace ThrowingClass.Items.Accessories
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemID.EoCShield);
-            recipe.AddIngredient(ItemID.Javelin, 999);
+            recipe.AddIngredient(mod.ItemType("SpartanShield"));
+            recipe.AddIngredient(mod.ItemType("AttunedRelic"));
             recipe.AddTile(TileID.TinkerersWorkbench);
             recipe.SetResult(this, 1);
             recipe.AddRecipe();

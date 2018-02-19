@@ -67,7 +67,7 @@ namespace ThrowingClass
                 case ItemID.BoneJavelin:
                     item.ammo = AmmoID.Stake;
                     item.autoReuse = true;
-                    item.value = Item.buyPrice(0, 0, 4, 0);
+                    item.value = Item.buyPrice(0, 0, 2, 0);
                     return;
 
                 case ItemID.Shuriken:

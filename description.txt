@@ -3,7 +3,7 @@
 - 3 rebalanced sets of armor (gladiator, obsidian, and viking)
 - 30 new throwing projectiles
 - 4 new throwing launchers
-- 5 new throwing accessories
+- 6 new throwing accessories
 - 1 new NPC
 
 	This mod is going to be updated frequently until there is enough content, with new throwing weapons, projectile, and armors constantly being added.
