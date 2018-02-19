@@ -13,8 +13,9 @@ namespace ThrowingClass.Items.Weapons
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Knife Launcher");
-            Tooltip.SetDefault("Uses mechanization to fire knives at a much stronger velocity.");
+            Tooltip.SetDefault("Uses mechanization to fire knives at a much stronger velocity\nRight click when using the weapon to switch it between throwing and ranged damage");
         }
+
         public override void SetDefaults()
         {
             item.damage = 6;
@@ -35,6 +36,7 @@ namespace ThrowingClass.Items.Weapons
             item.shoot = 10;
             item.shootSpeed = 4f; //How fast the projectile fires
         }
+
         public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
             int i = 0;
@@ -146,6 +148,31 @@ namespace ThrowingClass.Items.Weapons
             Projectile.NewProjectile(position.X, position.Y, speedX, speedY, type, damage, knockBack, Main.myPlayer);
             return false;
         }
+
+        public override bool AltFunctionUse(Player player)
+        {
+            return true;
+        }
+
+        public override bool CanUseItem(Player player)
+        {
+            if (player.altFunctionUse == 2)
+            {
+                if (item.ranged == true)
+                {
+                    item.ranged = false;
+                    item.thrown = true;
+                }
+
+                else
+                {
+                    item.ranged = true;
+                    item.thrown = false;
+                }
+            }
+            return base.CanUseItem(player);
+        }
+
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);

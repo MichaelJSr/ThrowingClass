@@ -30,3 +30,4 @@ V 2.6.5: Added a Throwing Emblem drop from the wall of flesh.
 V 2.7: Added the Spartan Shield accessory.
 V 2.7.5: Added the Spartan Relic Shield.
 V 2.8: A lot of rebalancing, added a throwing variant helmet for all the hardmode ores.
+V 2.8.5: Added the ability to right click the throwing launchers to convert them between throwing and ranged damage.
