@@ -88,7 +88,6 @@ namespace ThrowingClass
                 case ItemID.StickyGrenade:
                 case ItemID.BouncyGrenade:
                 case ItemID.PartyGirlGrenade:
-                case ItemID.Beenade:
                 case ItemID.MolotovCocktail:
                     item.autoReuse = true;
                     item.ammo = ItemID.Grenade;
@@ -96,6 +95,8 @@ namespace ThrowingClass
 
                 case ItemID.Beenade:
                     item.damage = 10;
+                    item.autoReuse = true;
+                    item.ammo = ItemID.Grenade;
                     return;
 
                 case ItemID.SpikyBall:
