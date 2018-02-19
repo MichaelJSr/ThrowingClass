@@ -26,4 +26,5 @@ V 2.4: Added Jester Javelins.
 V 2.5: Added a Throwing Grenade Launcher (fires grenades), bug fixes since version 2.4.
 V 2.6: Completed the viking set and added it as a drop from undead vikings.
 V 2.6.5: Added a Throwing Emblem drop from the wall of flesh.
-V 2.7: Added the spartan shield accessory.
+V 2.7: Added the Spartan Shield accessory.
+V 2.7.5: Added the Spartan Relic Shield.

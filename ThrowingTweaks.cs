@@ -94,6 +94,10 @@ namespace ThrowingClass
                     item.ammo = ItemID.Grenade;
                     return;
 
+                case ItemID.Beenade:
+                    item.damage = 10;
+                    return;
+
                 case ItemID.SpikyBall:
                         item.autoReuse = true;
                         item.ammo = ItemID.SpikyBall;

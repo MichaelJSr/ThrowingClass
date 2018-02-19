@@ -17,7 +17,7 @@ namespace ThrowingClass.Items.Weapons
         }
         public override void SetDefaults()
         {
-            item.damage = 24;
+            item.damage = 20;
             item.crit = 0;
             item.noMelee = true;
             item.ranged = true;
@@ -69,6 +69,7 @@ namespace ThrowingClass.Items.Weapons
                 }
                 else if (c == 1)
                 {
+                    item.damage += 10;
                     item.useTime += 25;
                     item.useAnimation += 25;
                     item.crit = 1;
@@ -90,6 +91,7 @@ namespace ThrowingClass.Items.Weapons
                 }
                 else if (c == 1)
                 {
+                    item.damage += 10;
                     item.useTime += 5;
                     item.useAnimation += 5;
                     item.crit = 2;
@@ -105,18 +107,21 @@ namespace ThrowingClass.Items.Weapons
             {
                 if (k == 1)
                 {
+                    item.damage -= 10;
                     item.useTime -= 25;
                     item.useAnimation -= 25;
                     item.crit = 3;
                 }
                 else if (i == 1)
                 {
+                    item.damage -= 10;
                     item.useTime -= 5;
                     item.useAnimation -= 5;
                     item.crit = 3;
                 }
                 else if (c == 0)
                 {
+                    item.damage -= 10;
                     item.useTime -= 30;
                     item.useAnimation -= 30;
                     item.crit = 3;
@@ -138,6 +143,7 @@ namespace ThrowingClass.Items.Weapons
                 }
                 else if (c == 1)
                 {
+                    item.damage += 10;
                     item.useTime += 30;
                     item.useAnimation += 30;
                     item.crit = 0;
