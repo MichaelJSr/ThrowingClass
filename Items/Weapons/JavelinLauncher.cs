@@ -32,7 +32,7 @@ namespace ThrowingClass.Items.Weapons
             item.rare = 3;
             item.UseSound = SoundID.Item1;
             item.autoReuse = true;
-            item.useAmmo = AmmoID.Stake;
+            item.useAmmo = ItemID.Javelin;
             item.shoot = 10;
             item.shootSpeed = 4f; //How fast the projectile fires
         }

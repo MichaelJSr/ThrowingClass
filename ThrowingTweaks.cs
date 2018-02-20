@@ -58,14 +58,9 @@ namespace ThrowingClass
 				    item.rare = 1;
 					return;
 
-                case ItemID.StakeLauncher:
-                    item.ranged = false;
-                    item.thrown = true;
-                    return;
-
                 case ItemID.Javelin:
                 case ItemID.BoneJavelin:
-                    item.ammo = AmmoID.Stake;
+                    item.ammo = ItemID.Javelin;
                     item.autoReuse = true;
                     item.value = Item.buyPrice(0, 0, 2, 0);
                     return;
@@ -117,12 +112,12 @@ namespace ThrowingClass
             if (ModLoader.GetLoadedMods().Contains("Infinity"))
                 if (item.type == ModLoader.GetMod("Infinity").ItemType("EndlessJavelin"))
                 {
-                    item.ammo = AmmoID.Stake;
+                    item.ammo = ItemID.Javelin;
                     item.autoReuse = true;
                 }
             if (item.type == ModLoader.GetMod("Infinity").ItemType("EndlessBoneJavelin"))
             {
-                item.ammo = AmmoID.Stake;
+                item.ammo = ItemID.Javelin;
                 item.autoReuse = true;
             }
             if (item.type == ModLoader.GetMod("Infinity").ItemType("EndlessShuriken"))

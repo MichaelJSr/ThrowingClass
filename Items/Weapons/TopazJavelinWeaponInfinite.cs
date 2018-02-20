@@ -27,7 +27,7 @@ namespace ThrowingClass.Items.Weapons
             item.height = 16;
             item.maxStack = 1;
             item.rare = 1;
-            item.ammo = AmmoID.Stake;
+            item.ammo = ItemID.Javelin;
 
             item.consumable = false;
             item.noUseGraphic = true;
