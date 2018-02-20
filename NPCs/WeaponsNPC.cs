@@ -15,7 +15,11 @@ namespace WeaponsNPC.NPCs
                 {
                     if (Main.rand.NextFloat() < .25f)
                         Item.NewItem(npc.getRect(), mod.ItemType("ThrowingGrenadeLauncher"), 1);
-
+                }
+                //Waspnades
+                if (npc.type == NPCID.Plantera)
+                {
+                    Item.NewItem(npc.getRect(), mod.ItemType("Waspnade"), Main.rand.Next(80, 100));
                 }
         }
     }

@@ -39,9 +39,9 @@ namespace ThrowingClass.Items.Weapons
 
         public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
-            int i = 0;
-            int k = 0;
-            int c = 0;
+            int k = 0; //Molotovs and Bouncy Grenades
+            int i = 0; //Happy Grenades
+            int c = 0; //Beenades and Waspnades
             if (item.crit == 1)
             {
                 k = 1;
@@ -105,7 +105,7 @@ namespace ThrowingClass.Items.Weapons
                     item.crit = 2;
                 }
             }
-            else if (type == ProjectileID.Beenade) //Beenades
+            else if (type == ProjectileID.Beenade || type == mod.ProjectileType("Waspnade")) //Beenades or Waspnades
             {
                 if (k == 1)
                 {

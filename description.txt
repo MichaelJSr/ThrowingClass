@@ -2,7 +2,7 @@
 
 - 3 rebalanced sets of armor (gladiator, obsidian, and viking)
 - 8 new throwing variant helmets (hardmode ores)
-- 30 new throwing projectiles
+- 31 new throwing projectiles
 - 4 new throwing launchers
 - 6 new throwing accessories
 - 1 new NPC
@@ -31,3 +31,4 @@ V 2.7: Added the Spartan Shield accessory.
 V 2.7.5: Added the Spartan Relic Shield.
 V 2.8: A lot of rebalancing, added a throwing variant helmet for all the hardmode ores.
 V 2.8.5: Added the ability to right click the throwing launchers to convert them between throwing and ranged damage.
+V 2.9: Added Waspnades, and made them a drop from plantera.
