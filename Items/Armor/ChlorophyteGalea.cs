@@ -38,7 +38,7 @@ namespace ThrowingClass.Items.Armor
         {
             player.setBonus = "10% increased throwing velocity\nSummons a powerful leaf crystal to shoot at nearby enemies";
             player.thrownVelocity += 0.1f;
-            player.AddBuff(BuffID.LeafCrystal, 0);
+            player.AddBuff(BuffID.LeafCrystal, 1);
         }
 
         public override void AddRecipes()

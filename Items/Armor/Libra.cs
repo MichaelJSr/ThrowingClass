@@ -39,7 +39,7 @@ namespace ThrowingClass.Items.Armor
         public override void UpdateArmorSet(Player player)
         {
             player.setBonus = "20% increased throwing damage and critical strike chance\n15% increased movement and throwing speed\n8% increased damage reduction\n+50 max health\nYou emanate divine light";
-            player.AddBuff(BuffID.Shine, 0);
+            player.AddBuff(BuffID.Shine, 1);
             player.thrownDamage += 0.2f;
             player.thrownCrit += 20;
             player.moveSpeed += 0.15f;

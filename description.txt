@@ -8,14 +8,10 @@
 - 6 new throwing accessories
 - 1 new NPC
 
-	This mod is going to be updated frequently until there is enough content, with new throwing weapons, projectile, and armors constantly being added.
-
 	Update Notes:
-V 1.0: Fresh release, has 2 new weapons and 3 rebalanced sets of armor.
+V 1.0: 2 new weapons and 3 rebalanced sets of armor.
 V 1.1: Added a mod icon.
-V 1.3: Mod Browser difficulties.
-V 1.4: Updating mod icon.
-V 1.5: Updated mod icon, Javelin Ballista (WIP, currently vanity), Amethyst Javelins.
+V 1.5: Updated mod icon, Javelin Ballista, Amethyst Javelins.
 v 1.6: Added Topaz and Sapphire Javelins.
 V 1.7: Added Wooden Javelins and Shuriken Launcher.
 V 1.8: Added a new npc: The Gladiator. He will sell throwing-related equipment.
@@ -25,7 +21,7 @@ V 2.1: Added a config file, added Attuned Fossil accessory.
 V 2.2: Added copper javelins, added all wood variant javelins, added 3 new throwing accessories, rebalanced many items.
 V 2.3: Added meteor javelins and all pre-hardmode ore javelins.
 V 2.4: Added Jester Javelins.
-V 2.5: Added a Throwing Grenade Launcher (fires grenades), bug fixes since version 2.4.
+V 2.5: Added a Throwing Grenade Launcher (fires grenades).
 V 2.6: Completed the viking set and added it as a drop from undead vikings.
 V 2.6.5: Added a Throwing Emblem drop from the wall of flesh.
 V 2.7: Added the Spartan Shield accessory.
