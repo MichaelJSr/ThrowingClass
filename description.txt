@@ -1,5 +1,6 @@
 	This is a mod meant to allow you to use the throwing class in hardmode, as well as adding items for it in pre-hardmode! Currently, the items inside of this mod are:
 
+- 1 new set(s) of throwing armor
 - 3 rebalanced sets of armor (gladiator, obsidian, and viking)
 - 8 new throwing variant helmets (hardmode ores)
 - 31 new throwing projectiles
@@ -32,3 +33,4 @@ V 2.7.5: Added the Spartan Relic Shield.
 V 2.8: A lot of rebalancing, added a throwing variant helmet for all the hardmode ores.
 V 2.8.5: Added the ability to right click the throwing launchers to convert them between throwing and ranged damage.
 V 2.9: Added Waspnades, and made them a drop from plantera.
+V 2.9.5: Added Libra armor.

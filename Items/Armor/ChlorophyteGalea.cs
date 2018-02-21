@@ -38,14 +38,14 @@ namespace ThrowingClass.Items.Armor
         {
             player.setBonus = "10% increased throwing velocity\nSummons a powerful leaf crystal to shoot at nearby enemies";
             player.thrownVelocity += 0.1f;
-            player.AddBuff(BuffID.LeafCrystal, 60);
+            player.AddBuff(BuffID.LeafCrystal, 0);
         }
 
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(ItemID.ChlorophyteBar, 12);
-            recipe.AddTile(TileID.Anvils);
+            recipe.AddTile(TileID.MythrilAnvil);
             recipe.SetResult(this, 1);
             recipe.AddRecipe();
         }
