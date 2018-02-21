@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace ThrowingClass.Items
 {
-    public class IcyShard : ExampleItem
+    public class IcyShard : ModItem
     {
         public override void SetStaticDefaults()
         {
