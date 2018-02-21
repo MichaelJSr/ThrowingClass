@@ -1,6 +1,7 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Microsoft.Xna.Framework;
 
 namespace ThrowingClass.Items.Armor
 {
@@ -39,13 +40,23 @@ namespace ThrowingClass.Items.Armor
         public override void UpdateArmorSet(Player player)
         {
             player.setBonus = "20% increased throwing damage and critical strike chance\n15% increased movement and throwing speed\n8% increased damage reduction\n+50 max health\nYou emanate divine light";
-            player.AddBuff(BuffID.Shine, 1);
             player.thrownDamage += 0.2f;
             player.thrownCrit += 20;
             player.moveSpeed += 0.15f;
             player.thrownVelocity += 0.15f;
             player.endurance += 0.08f;
             player.statLifeMax2 += 50;
+            Lighting.AddLight(player.position, 1f, 1f, 1f);
+        }
+
+        public override void Update(ref float gravity, ref float maxFallSpeed)
+        {
+            Lighting.AddLight(item.position, 0.5f, 0.5f, 0.5f);
+        }
+
+        public override void ArmorSetShadows(Player player)
+        {
+            player.armorEffectDrawShadow = true;
         }
 
         public override void AddRecipes()
