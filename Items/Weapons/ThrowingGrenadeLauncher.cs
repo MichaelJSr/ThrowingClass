@@ -71,7 +71,7 @@ namespace ThrowingClass.Items.Weapons
                 }
                 else if (c == 1)
                 {
-                    item.damage += 18;
+                    item.damage += 20;
                     item.useTime += 15;
                     item.useAnimation += 15;
                     item.crit = 1;
@@ -93,7 +93,7 @@ namespace ThrowingClass.Items.Weapons
                 }
                 else if (c == 1)
                 {
-                    item.damage += 18;
+                    item.damage += 20;
                     item.useTime -= 5;
                     item.useAnimation -= 5;
                     item.crit = 2;
@@ -109,21 +109,21 @@ namespace ThrowingClass.Items.Weapons
             {
                 if (k == 1)
                 {
-                    item.damage -= 18;
+                    item.damage -= 20;
                     item.useTime -= 15;
                     item.useAnimation -= 15;
                     item.crit = 3;
                 }
                 else if (i == 1)
                 {
-                    item.damage -= 18;
+                    item.damage -= 20;
                     item.useTime += 5;
                     item.useAnimation += 5;
                     item.crit = 3;
                 }
                 else if (c == 0)
                 {
-                    item.damage -= 18;
+                    item.damage -= 20;
                     item.useTime -= 20;
                     item.useAnimation -= 20;
                     item.crit = 3;
@@ -145,7 +145,7 @@ namespace ThrowingClass.Items.Weapons
                 }
                 else if (c == 1)
                 {
-                    item.damage += 18;
+                    item.damage += 20;
                     item.useTime += 20;
                     item.useAnimation += 20;
                     item.crit = 0;

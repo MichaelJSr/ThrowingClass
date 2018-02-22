@@ -4,11 +4,11 @@ using Terraria.ModLoader;
 
 namespace ThrowingClass.Items
 {
-    public class IcyShard : ModItem
+    public class CryoShard : ModItem
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Icy Shard");
+            DisplayName.SetDefault("Cryo Shard");
         }
 
         public override void SetDefaults()
