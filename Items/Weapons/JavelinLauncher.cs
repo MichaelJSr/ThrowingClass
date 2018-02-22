@@ -41,12 +41,12 @@ namespace ThrowingClass.Items.Weapons
         {
             int i = 0;
             int k = 0;
-            if (item.crit == 1) //If useTime 8 javelins were last shot
+            if (item.crit == 3) //If useTime 8 javelins were last shot
             {
                 k = 1;
                 i = 0;
             }
-            else if (item.crit == 2) //If useTime 20 javelins were last shot
+            else if (item.crit == 6) //If useTime 20 javelins were last shot
             {
                 k = 0;
                 i = 1;
@@ -60,7 +60,7 @@ namespace ThrowingClass.Items.Weapons
                     item.knockBack -= 0.5f;
                     item.useTime -= 12;
                     item.useAnimation -= 12;
-                    item.crit = 1;
+                    item.crit = 3;
                 }
                 else if (k == 0)
                 {
@@ -68,7 +68,7 @@ namespace ThrowingClass.Items.Weapons
                     item.knockBack -= 0.5f;
                     item.useTime -= 17;
                     item.useAnimation -= 17;
-                    item.crit = 1;
+                    item.crit = 3;
                 }
             }
 
@@ -80,13 +80,13 @@ namespace ThrowingClass.Items.Weapons
                     item.knockBack += 0.5f;
                     item.useTime += 12;
                     item.useAnimation += 12;
-                    item.crit = 2;
+                    item.crit = 6;
                 }
                 else if (i == 0)
                 {
                     item.useTime -= 5;
                     item.useAnimation -= 5;
-                    item.crit = 2;
+                    item.crit = 6;
                 }
             }
 

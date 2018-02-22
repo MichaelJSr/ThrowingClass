@@ -42,19 +42,19 @@ namespace ThrowingClass.Items.Weapons
             int i = 0;
             int k = 0;
             int c = 0;
-            if (item.crit == 1)
+            if (item.crit == 2)
             {
                 k = 1;
                 i = 0;
                 c = 0;
             }
-            else if (item.crit == 2)
+            else if (item.crit == 4)
             {
                 k = 0;
                 i = 1;
                 c = 0;
             }
-            else if (item.crit == 3)
+            else if (item.crit == 6)
             {
                 k = 0;
                 i = 0;
@@ -67,19 +67,19 @@ namespace ThrowingClass.Items.Weapons
                 {
                     item.useTime += 1;
                     item.useAnimation += 1;
-                    item.crit = 1;
+                    item.crit = 2;
                 }
                 else if (c == 1)
                 {
                     item.useTime += 2;
                     item.useAnimation += 2;
-                    item.crit = 1;
+                    item.crit = 2;
                 }
                 else if (k == 0)
                 {
                     item.useTime -= 1;
                     item.useAnimation -= 1;
-                    item.crit = 1;
+                    item.crit = 2;
                 }
             }
             else if (type == ProjectileID.FrostDaggerfish) //Frost Daggerfish
@@ -88,19 +88,19 @@ namespace ThrowingClass.Items.Weapons
                 {
                     item.useTime -= 1;
                     item.useAnimation -= 1;
-                    item.crit = 2;
+                    item.crit = 4;
                 }
                 else if (c == 1)
                 {
                     item.useTime += 1;
                     item.useAnimation += 1;
-                    item.crit = 2;
+                    item.crit = 4;
                 }
                 else if (i == 0)
                 {
                     item.useTime -= 2;
                     item.useAnimation -= 2;
-                    item.crit = 2;
+                    item.crit = 4;
                 }
             }
             else if (type == ProjectileID.ShadowFlameKnife) //Shadowflame Knives
@@ -109,19 +109,19 @@ namespace ThrowingClass.Items.Weapons
                 {
                     item.useTime -= 2;
                     item.useAnimation -= 2;
-                    item.crit = 3;
+                    item.crit = 6;
                 }
                 else if (i == 1)
                 {
                     item.useTime -= 1;
                     item.useAnimation -= 1;
-                    item.crit = 3;
+                    item.crit = 6;
                 }
                 else if (c == 0)
                 {
                     item.useTime -= 3;
                     item.useAnimation -= 3;
-                    item.crit = 3;
+                    item.crit = 6;
                 }
             }
             else //None of the above

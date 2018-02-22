@@ -42,19 +42,19 @@ namespace ThrowingClass.Items.Weapons
             int k = 0; //Molotovs and Bouncy Grenades
             int i = 0; //Happy Grenades
             int c = 0; //Beenades and Waspnades
-            if (item.crit == 1)
+            if (item.crit == 3)
             {
                 k = 1;
                 i = 0;
                 c = 0;
             }
-            else if (item.crit == 2)
+            else if (item.crit == 6)
             {
                 k = 0;
                 i = 1;
                 c = 0;
             }
-            else if (item.crit == 3)
+            else if (item.crit == 9)
             {
                 k = 0;
                 i = 0;
@@ -67,20 +67,20 @@ namespace ThrowingClass.Items.Weapons
                 {
                     item.useTime += 20;
                     item.useAnimation += 20;
-                    item.crit = 1;
+                    item.crit = 3;
                 }
                 else if (c == 1)
                 {
                     item.damage += 20;
                     item.useTime += 15;
                     item.useAnimation += 15;
-                    item.crit = 1;
+                    item.crit = 3;
                 }
                 else if (k == 0)
                 {
                     item.useTime -= 5;
                     item.useAnimation -= 5;
-                    item.crit = 1;
+                    item.crit = 3;
                 }
             }
             else if (type == ProjectileID.HappyBomb) //Happy grenades
@@ -89,20 +89,20 @@ namespace ThrowingClass.Items.Weapons
                 {
                     item.useTime -= 20;
                     item.useAnimation -= 20;
-                    item.crit = 2;
+                    item.crit = 6;
                 }
                 else if (c == 1)
                 {
                     item.damage += 20;
                     item.useTime -= 5;
                     item.useAnimation -= 5;
-                    item.crit = 2;
+                    item.crit = 6;
                 }
                 else if (i == 0)
                 {
                     item.useTime -= 25;
                     item.useAnimation -= 25;
-                    item.crit = 2;
+                    item.crit = 6;
                 }
             }
             else if (type == ProjectileID.Beenade || type == mod.ProjectileType("Waspnade")) //Beenades or Waspnades
@@ -112,21 +112,21 @@ namespace ThrowingClass.Items.Weapons
                     item.damage -= 20;
                     item.useTime -= 15;
                     item.useAnimation -= 15;
-                    item.crit = 3;
+                    item.crit = 9;
                 }
                 else if (i == 1)
                 {
                     item.damage -= 20;
                     item.useTime += 5;
                     item.useAnimation += 5;
-                    item.crit = 3;
+                    item.crit = 9;
                 }
                 else if (c == 0)
                 {
                     item.damage -= 20;
                     item.useTime -= 20;
                     item.useAnimation -= 20;
-                    item.crit = 3;
+                    item.crit = 9;
                 }
             }
             else //None of the above

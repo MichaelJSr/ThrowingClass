@@ -19,7 +19,7 @@ namespace ThrowingClass.Items.Weapons
         public override void SetDefaults()
         {
             item.damage = 5;
-            item.crit = 4;
+            item.crit = 6;
             item.noMelee = true;
             item.ranged = true;
             item.width = 52;
