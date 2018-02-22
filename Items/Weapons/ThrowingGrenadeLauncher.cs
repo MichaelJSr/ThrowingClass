@@ -23,7 +23,7 @@ namespace ThrowingClass.Items.Weapons
             item.noMelee = true;
             item.ranged = true;
             item.width = 56;
-            item.height = 32;
+            item.height = 22;
             item.useTime = 44;
             item.useAnimation = 44;
             item.useStyle = 5;

@@ -25,7 +25,7 @@ namespace ThrowingClass.Items
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(ItemID.ChlorophyteBar, 2);
             recipe.AddIngredient(mod.GetItem("CryoShard"), 1);
-            recipe.AddTile(TileID.MythrilAnvil);
+            recipe.AddTile(TileID.AdamantiteForge);
             recipe.SetResult(this, 2);
             recipe.AddRecipe();
         }

@@ -8,33 +8,33 @@ using Terraria.ModLoader;
 
 namespace ThrowingClass.Items.Weapons
 {
-    public class KnifeLauncher : ModItem
+    public class CryoKnifeLauncher : ModItem
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Knife Launcher");
-            Tooltip.SetDefault("Uses mechanization to fire knives at a much stronger velocity\nRight click when using the weapon to switch it between throwing and ranged damage");
+            DisplayName.SetDefault("Cryo Knife Launcher");
+            Tooltip.SetDefault("Uses mechanization to fire knives at a much stronger and faster velocity\nRight click when using the weapon to switch it between throwing and ranged damage");
         }
 
         public override void SetDefaults()
         {
-            item.damage = 6;
+            item.damage = 14;
             item.crit = 0;
             item.noMelee = true;
             item.ranged = true;
             item.width = 54;
             item.height = 22;
-            item.useTime = 14;
-            item.useAnimation = 14;
+            item.useTime = 9;
+            item.useAnimation = 9;
             item.useStyle = 5;
             item.knockBack = 0.5f;
-            item.value = Item.sellPrice(0, 4, 0, 0); // 5 times the sell price, in brackets it's (platinum coins, gold coins, silver coins, copper coins)*
-            item.rare = 2;
+            item.value = Item.sellPrice(0, 10, 0, 0); // 5 times the sell price, in brackets it's (platinum coins, gold coins, silver coins, copper coins)*
+            item.rare = 8;
             item.UseSound = SoundID.Item1;
             item.autoReuse = true;
             item.useAmmo = ItemID.ThrowingKnife;
             item.shoot = 10;
-            item.shootSpeed = 4f; //How fast the projectile fires
+            item.shootSpeed = 10f; //How fast the projectile fires
         }
 
         public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
@@ -176,15 +176,9 @@ namespace ThrowingClass.Items.Weapons
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemID.IllegalGunParts, 1);
-            recipe.AddIngredient(ItemID.IronBar, 15);
-            recipe.AddTile(TileID.Anvils);
-            recipe.SetResult(this);
-            recipe.AddRecipe();
-            recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemID.IllegalGunParts, 1);
-            recipe.AddIngredient(ItemID.LeadBar, 15);
-            recipe.AddTile(TileID.Anvils);
+            recipe.AddIngredient(mod.GetItem("KnifeLauncher"), 1);
+            recipe.AddIngredient(mod.GetItem("CryoIngot"), 15);
+            recipe.AddTile(TileID.MythrilAnvil);
             recipe.SetResult(this);
             recipe.AddRecipe();
         }

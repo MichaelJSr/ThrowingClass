@@ -93,7 +93,7 @@ namespace ThrowingClass.Projectiles
 
         public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
         {
-            target.AddBuff(mod.BuffType("DiamondBreak"), 240);    //this adds the buff to the npc that got hit by this projectile , 600 is the time the buff lasts
+            target.AddBuff(mod.BuffType("DiamondBreak"), 600);    //this adds the buff to the npc that got hit by this projectile , 600 is the time the buff lasts
         }
     }
 }

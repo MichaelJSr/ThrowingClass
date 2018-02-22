@@ -32,3 +32,4 @@ V 2.9: Added Waspnades, and made them a drop from plantera
 V 2.9.5: Added Libra armor
 V 2.9.9: Added Icy Shards
 V 3.0: Added Cryo armor
+V 3.0.5: Added Cryo Launchers
