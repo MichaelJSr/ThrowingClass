@@ -39,18 +39,6 @@ namespace ThrowingClass.Items.Weapons
 
         public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
-            /*if (type == mod.ProjectileType("SapphireShuriken"))
-            {
-                item.damage = 3;
-                item.useTime = 4;
-                item.useAnimation = 4;
-            }
-            else
-            {
-                item.damage = 5;
-                item.useTime = 14;
-                item.useAnimation = 14;
-            }*/
             Projectile.NewProjectile(position.X, position.Y, speedX, speedY, type, damage, knockBack, Main.myPlayer);
             return false;
         }

@@ -59,7 +59,6 @@ namespace ThrowingClass.Items.Weapons
                     item.damage -= 5;
                     item.knockBack -= 0.5f;
                     item.useTime -= 12;
-                    item.useAnimation -= 12;
                     item.crit = 3;
                 }
                 else if (k == 0)
@@ -67,7 +66,6 @@ namespace ThrowingClass.Items.Weapons
                     item.damage -= 5;
                     item.knockBack -= 0.5f;
                     item.useTime -= 17;
-                    item.useAnimation -= 17;
                     item.crit = 3;
                 }
             }
@@ -79,33 +77,34 @@ namespace ThrowingClass.Items.Weapons
                     item.damage += 5;
                     item.knockBack += 0.5f;
                     item.useTime += 12;
-                    item.useAnimation += 12;
                     item.crit = 6;
                 }
                 else if (i == 0)
                 {
                     item.useTime -= 5;
-                    item.useAnimation -= 5;
                     item.crit = 6;
                 }
             }
 
-            else //Neither useTime 5 or 20 javelins are shot
+            else //Neither useTime 8 or 20 javelins are shot
             {
                 if (k == 1)
                 {
                     item.damage += 5;
                     item.knockBack += 0.5f;
                     item.useTime += 17;
-                    item.useAnimation += 17;
                     item.crit = 0;
                 }
                 else if (i == 1)
                 {
                     item.useTime += 5;
-                    item.useAnimation += 5;
                     item.crit = 0;
                 }
+            }
+            item.useAnimation = item.useTime;
+            if (item.useAnimation < 2)
+            {
+                item.useAnimation = 2;
             }
             Projectile.NewProjectile(position.X, position.Y, speedX, speedY, type, damage, knockBack, Main.myPlayer);
             return false;
