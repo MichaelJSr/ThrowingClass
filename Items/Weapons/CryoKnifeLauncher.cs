@@ -37,6 +37,11 @@ namespace ThrowingClass.Items.Weapons
             item.shootSpeed = 10f; //How fast the projectile fires
         }
 
+        public override void PostReforge()
+        {
+            item.knockBack = 0.01f;
+        }
+
         public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
             bool ShadowFlame = false;
@@ -116,6 +121,10 @@ namespace ThrowingClass.Items.Weapons
                 item.knockBack = 0.01f;
             }
             else if (item.knockBack == 1f && Else == false)
+            {
+                item.knockBack = 0.01f;
+            }
+            else
             {
                 item.knockBack = 0.01f;
             }
