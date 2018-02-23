@@ -27,7 +27,7 @@ namespace ThrowingClass.Items.Weapons
             item.useTime = 24;
             item.useAnimation = 24;
             item.useStyle = 5;
-            item.knockBack = 0f;
+            item.knockBack = 0.01f;
             item.value = Item.sellPrice(0, 4, 0, 0); // 5 times the sell price, in brackets it's (platinum coins, gold coins, silver coins, copper coins)*
             item.rare = 3;
             item.UseSound = SoundID.Item1;
@@ -46,7 +46,7 @@ namespace ThrowingClass.Items.Weapons
             bool Else = false;
             if (type == mod.ProjectileType("TrueSapphireJavelin"))
             {
-                if (item.knockBack == 0f)
+                if (item.knockBack == 0.01f)
                 {
                     item.damage -= 10;
                     item.useTime -= 14;
@@ -61,7 +61,7 @@ namespace ThrowingClass.Items.Weapons
 
             else if (type == mod.ProjectileType("SapphireJavelin"))
             {
-                if (item.knockBack == 0f)
+                if (item.knockBack == 0.01f)
                 {
                     item.damage -= 5;
                     item.useTime -= 10;
@@ -76,7 +76,7 @@ namespace ThrowingClass.Items.Weapons
 
             else if (type == mod.ProjectileType("TrueDiamondJavelin") || type == mod.ProjectileType("TrueAmberJavelin"))
             {
-                if (item.knockBack == 0f)
+                if (item.knockBack == 0.01f)
                 {
                     item.useTime -= 8;
                     item.useAnimation -= 8;
@@ -90,7 +90,7 @@ namespace ThrowingClass.Items.Weapons
 
             else if (type == mod.ProjectileType("DiamondJavelin") || type == mod.ProjectileType("AmberJavelin") || type == mod.ProjectileType("MeteorJavelin") || type == mod.ProjectileType("JesterJavelin") || type == mod.ProjectileType("HellfireJavelin") || type == mod.ProjectileType("TrueAmethystJavelin") || type == mod.ProjectileType("TrueTopazJavelin") || type == mod.ProjectileType("TrueEmeraldJavelin") || type == mod.ProjectileType("TrueRubyJavelin"))
             {
-                if (item.knockBack == 0f)
+                if (item.knockBack == 0.01f)
                 {
                     item.useTime -= 4;
                     item.useAnimation -= 4;
@@ -104,7 +104,7 @@ namespace ThrowingClass.Items.Weapons
 
             else
             {
-                if (item.knockBack == 0f)
+                if (item.knockBack == 0.01f)
                 {
                     item.knockBack = 1f;
                 }
@@ -119,30 +119,30 @@ namespace ThrowingClass.Items.Weapons
                 item.damage += 10;
                 item.useTime += 14;
                 item.useAnimation += 14;
-                item.knockBack = 0f;
+                item.knockBack = 0.01f;
             }
             else if (item.knockBack == 0.1f && Sapphire == false)
             {
                 item.damage += 5;
                 item.useTime += 10;
                 item.useAnimation += 10;
-                item.knockBack = 0f;
+                item.knockBack = 0.01f;
             }
             else if (item.knockBack == 0.2f && TrueDiamond == false)
             {
                 item.useTime += 8;
                 item.useAnimation += 8;
-                item.knockBack = 0f;
+                item.knockBack = 0.01f;
             }
             else if (item.knockBack == 0.5f && Diamond == false)
             {
                 item.useTime += 4;
                 item.useAnimation += 4;
-                item.knockBack = 0f;
+                item.knockBack = 0.01f;
             }
             else if (item.knockBack == 1f && Else == false)
             {
-                item.knockBack = 0f;
+                item.knockBack = 0.01f;
             }
 
             if (item.useTime < 2 || item.useAnimation < 2)

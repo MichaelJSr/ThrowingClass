@@ -27,7 +27,7 @@ namespace ThrowingClass.Items.Weapons
             item.useTime = 44;
             item.useAnimation = 44;
             item.useStyle = 5;
-            item.knockBack = 0f;
+            item.knockBack = 0.01f;
             item.value = Item.sellPrice(0, 8, 0, 0); // 5 times the sell price, in brackets it's (platinum coins, gold coins, silver coins, copper coins)*
             item.rare = 7;
             item.UseSound = SoundID.Item1;
@@ -45,7 +45,7 @@ namespace ThrowingClass.Items.Weapons
             bool Else = false;
             if (type == ProjectileID.HappyBomb)
             {
-                if (item.knockBack == 0f)
+                if (item.knockBack == 0.01f)
                 {
                     item.useTime -= 25;
                     item.useAnimation -= 25;
@@ -59,7 +59,7 @@ namespace ThrowingClass.Items.Weapons
 
             else if (type == ProjectileID.Beenade || type == mod.ProjectileType("Waspnade"))
             {
-                if (item.knockBack == 0f)
+                if (item.knockBack == 0.01f)
                 {
                     item.damage -= 20;
                     item.useTime -= 20;
@@ -74,7 +74,7 @@ namespace ThrowingClass.Items.Weapons
 
             else if (type == ProjectileID.BouncyGrenade || type == ProjectileID.MolotovCocktail)
             {
-                if (item.knockBack == 0f)
+                if (item.knockBack == 0.01f)
                 {
                     item.useTime -= 5;
                     item.useAnimation -= 5;
@@ -88,7 +88,7 @@ namespace ThrowingClass.Items.Weapons
 
             else
             {
-                if (item.knockBack == 0f)
+                if (item.knockBack == 0.01f)
                 {
                     item.knockBack = 1f;
                 }
@@ -103,24 +103,24 @@ namespace ThrowingClass.Items.Weapons
 
                 item.useTime += 25;
                 item.useAnimation += 25;
-                item.knockBack = 0f;
+                item.knockBack = 0.01f;
             }
             else if (item.knockBack == 0.25f && Beenade == false)
             {
                 item.damage += 20;
                 item.useTime += 20;
                 item.useAnimation += 20;
-                item.knockBack = 0f;
+                item.knockBack = 0.01f;
             }
             else if (item.knockBack == 0.5f && Molotov == false)
             {
                 item.useTime += 5;
                 item.useAnimation += 5;
-                item.knockBack = 0f;
+                item.knockBack = 0.01f;
             }
             else if (item.knockBack == 1f && Else == false)
             {
-                item.knockBack = 0f;
+                item.knockBack = 0.01f;
             }
 
             if (item.useTime < 2 || item.useAnimation < 2)

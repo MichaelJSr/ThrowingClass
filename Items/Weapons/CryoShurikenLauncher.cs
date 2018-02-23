@@ -27,7 +27,7 @@ namespace ThrowingClass.Items.Weapons
             item.useTime = 9;
             item.useAnimation = 9;
             item.useStyle = 5;
-            item.knockBack = 0.5f;
+            item.knockBack = 0.01f;
             item.value = Item.sellPrice(0, 12, 0, 0); // 5 times the sell price, in brackets it's (platinum coins, gold coins, silver coins, copper coins)*
             item.rare = 8;
             item.UseSound = SoundID.Item1;

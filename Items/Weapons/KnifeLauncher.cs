@@ -27,7 +27,7 @@ namespace ThrowingClass.Items.Weapons
             item.useTime = 14;
             item.useAnimation = 14;
             item.useStyle = 5;
-            item.knockBack = 0f;
+            item.knockBack = 0.01f;
             item.value = Item.sellPrice(0, 4, 0, 0); // 5 times the sell price, in brackets it's (platinum coins, gold coins, silver coins, copper coins)*
             item.rare = 2;
             item.UseSound = SoundID.Item1;
@@ -45,7 +45,7 @@ namespace ThrowingClass.Items.Weapons
             bool Else = false;
             if (type == ProjectileID.ShadowFlameKnife)
             {
-                if (item.knockBack == 0f)
+                if (item.knockBack == 0.01f)
                 {
                     item.useTime -= 3;
                     item.useAnimation -= 3;
@@ -59,7 +59,7 @@ namespace ThrowingClass.Items.Weapons
 
             else if (type == ProjectileID.FrostDaggerfish)
             {
-                if (item.knockBack == 0f)
+                if (item.knockBack == 0.01f)
                 {
                     item.useTime -= 2;
                     item.useAnimation -= 2;
@@ -73,7 +73,7 @@ namespace ThrowingClass.Items.Weapons
 
             else if (type == ProjectileID.BoneDagger)
             {
-                if (item.knockBack == 0f)
+                if (item.knockBack == 0.01f)
                 {
                     item.useTime -= 1;
                     item.useAnimation -= 1;
@@ -87,7 +87,7 @@ namespace ThrowingClass.Items.Weapons
 
             else
             {
-                if (item.knockBack == 0f)
+                if (item.knockBack == 0.01f)
                 {
                     item.knockBack = 1f;
                 }
@@ -101,23 +101,23 @@ namespace ThrowingClass.Items.Weapons
             {
                 item.useTime += 3;
                 item.useAnimation += 3;
-                item.knockBack = 0f;
+                item.knockBack = 0.01f;
             }
             else if (item.knockBack == 0.25f && FrostDagger == false)
             {
                 item.useTime += 2;
                 item.useAnimation += 2;
-                item.knockBack = 0f;
+                item.knockBack = 0.01f;
             }
             else if (item.knockBack == 0.5f && BoneDagger == false)
             {
                 item.useTime += 1;
                 item.useAnimation += 1;
-                item.knockBack = 0f;
+                item.knockBack = 0.01f;
             }
             else if (item.knockBack == 1f && Else == false)
             {
-                item.knockBack = 0f;
+                item.knockBack = 0.01f;
             }
 
             if (item.useTime < 2 || item.useAnimation < 2)
