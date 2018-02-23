@@ -8,20 +8,20 @@ using Terraria.ModLoader;
 
 namespace ThrowingClass.Projectiles
 {
-    public class EmeraldJavelin : ModProjectile
+    public class TrueAmethystJavelin : ModProjectile
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("EmeraldJavelin");
+            DisplayName.SetDefault("TrueAmethystJavelin");
         }
 
         public override void SetDefaults()
         {
             projectile.width = 56;
-            projectile.height = 15;
+            projectile.height = 16;
             projectile.aiStyle = -1;
             projectile.friendly = true;
-            projectile.penetrate = 4;
+            projectile.penetrate = 10;
         }
 
         public override bool TileCollideStyle(ref int width, ref int height, ref bool fallThrough)
@@ -89,11 +89,6 @@ namespace ThrowingClass.Projectiles
                 projectile.rotation =
                     projectile.velocity.ToRotation() +
                     MathHelper.ToRadians(0f); // Please notice the MathHelper usage, offset the rotation by 90 degrees (to radians because rotation uses radians) because the sprite's rotation is not aligned!
-        }
-
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
-        {
-                target.AddBuff(BuffID.Venom, 300);
         }
     }
 }

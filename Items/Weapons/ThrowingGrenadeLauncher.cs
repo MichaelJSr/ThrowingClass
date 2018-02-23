@@ -19,7 +19,7 @@ namespace ThrowingClass.Items.Weapons
         public override void SetDefaults()
         {
             item.damage = 24;
-            item.crit = 0;
+            item.crit = 15;
             item.noMelee = true;
             item.ranged = true;
             item.width = 56;
@@ -27,7 +27,7 @@ namespace ThrowingClass.Items.Weapons
             item.useTime = 44;
             item.useAnimation = 44;
             item.useStyle = 5;
-            item.knockBack = 1f;
+            item.knockBack = 0f;
             item.value = Item.sellPrice(0, 8, 0, 0); // 5 times the sell price, in brackets it's (platinum coins, gold coins, silver coins, copper coins)*
             item.rare = 7;
             item.UseSound = SoundID.Item1;
@@ -39,117 +39,94 @@ namespace ThrowingClass.Items.Weapons
 
         public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
-            int k = 0; //Molotovs and Bouncy Grenades
-            int i = 0; //Happy Grenades
-            int c = 0; //Beenades and Waspnades
-            if (item.crit == 3)
+            bool Happy = false;
+            bool Beenade = false;
+            bool Molotov = false;
+            bool Else = false;
+            if (type == ProjectileID.HappyBomb)
             {
-                k = 1;
-                i = 0;
-                c = 0;
-            }
-            else if (item.crit == 6)
-            {
-                k = 0;
-                i = 1;
-                c = 0;
-            }
-            else if (item.crit == 9)
-            {
-                k = 0;
-                i = 0;
-                c = 1;
-            }
-
-            if (type == ProjectileID.BouncyGrenade || type == ProjectileID.MolotovCocktail) //Bouncy Grenades or Molotov Cocktails
-            {
-                if (i == 1)
-                {
-                    item.useTime += 20;
-                    item.useAnimation += 20;
-                    item.crit = 3;
-                }
-                else if (c == 1)
-                {
-                    item.damage += 20;
-                    item.useTime += 15;
-                    item.useAnimation += 15;
-                    item.crit = 3;
-                }
-                else if (k == 0)
-                {
-                    item.useTime -= 5;
-                    item.useAnimation -= 5;
-                    item.crit = 3;
-                }
-            }
-            else if (type == ProjectileID.HappyBomb) //Happy grenades
-            {
-                if (k == 1)
-                {
-                    item.useTime -= 20;
-                    item.useAnimation -= 20;
-                    item.crit = 6;
-                }
-                else if (c == 1)
-                {
-                    item.damage += 20;
-                    item.useTime -= 5;
-                    item.useAnimation -= 5;
-                    item.crit = 6;
-                }
-                else if (i == 0)
+                if (item.knockBack == 0f)
                 {
                     item.useTime -= 25;
                     item.useAnimation -= 25;
-                    item.crit = 6;
+                    item.knockBack = 0.1f;
+                }
+                if (item.knockBack == 0.1f)
+                {
+                    Happy = true;
                 }
             }
-            else if (type == ProjectileID.Beenade || type == mod.ProjectileType("Waspnade")) //Beenades or Waspnades
+
+            else if (type == ProjectileID.Beenade || type == mod.ProjectileType("Waspnade"))
             {
-                if (k == 1)
-                {
-                    item.damage -= 20;
-                    item.useTime -= 15;
-                    item.useAnimation -= 15;
-                    item.crit = 9;
-                }
-                else if (i == 1)
-                {
-                    item.damage -= 20;
-                    item.useTime += 5;
-                    item.useAnimation += 5;
-                    item.crit = 9;
-                }
-                else if (c == 0)
+                if (item.knockBack == 0f)
                 {
                     item.damage -= 20;
                     item.useTime -= 20;
                     item.useAnimation -= 20;
-                    item.crit = 9;
+                    item.knockBack = 0.25f;
+                }
+                if (item.knockBack == 0.25f)
+                {
+                    Beenade = true;
                 }
             }
-            else //None of the above
+
+            else if (type == ProjectileID.BouncyGrenade || type == ProjectileID.MolotovCocktail)
             {
-                if (k == 1)
+                if (item.knockBack == 0f)
                 {
-                    item.useTime += 5;
-                    item.useAnimation += 5;
-                    item.crit = 0;
+                    item.useTime -= 5;
+                    item.useAnimation -= 5;
+                    item.knockBack = 0.5f;
                 }
-                else if (i == 1)
+                if (item.knockBack == 0.5f)
                 {
-                    item.useTime += 25;
-                    item.useAnimation += 25;
-                    item.crit = 0;
+                    Molotov = true;
                 }
-                else if (c == 1)
+            }
+
+            else
+            {
+                if (item.knockBack == 0f)
                 {
-                    item.damage += 20;
-                    item.useTime += 20;
-                    item.useAnimation += 20;
-                    item.crit = 0;
+                    item.knockBack = 1f;
                 }
+                if (item.knockBack == 1f)
+                {
+                    Else = true;
+                }
+            }
+
+            if (item.knockBack == 0.1f && Happy == false)
+            {
+
+                item.useTime += 25;
+                item.useAnimation += 25;
+                item.knockBack = 0f;
+            }
+            else if (item.knockBack == 0.25f && Beenade == false)
+            {
+                item.damage += 20;
+                item.useTime += 20;
+                item.useAnimation += 20;
+                item.knockBack = 0f;
+            }
+            else if (item.knockBack == 0.5f && Molotov == false)
+            {
+                item.useTime += 5;
+                item.useAnimation += 5;
+                item.knockBack = 0f;
+            }
+            else if (item.knockBack == 1f && Else == false)
+            {
+                item.knockBack = 0f;
+            }
+
+            if (item.useTime < 2 || item.useAnimation < 2)
+            {
+                item.useTime = 2;
+                item.useAnimation = 2;
             }
             Projectile.NewProjectile(position.X, position.Y, speedX, speedY, type, damage, knockBack, Main.myPlayer);
             return false;

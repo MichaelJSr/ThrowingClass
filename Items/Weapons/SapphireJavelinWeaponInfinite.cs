@@ -21,7 +21,7 @@ namespace ThrowingClass.Items.Weapons
             item.damage = 10;
             item.knockBack = 0.5f;
             item.useStyle = 1;
-            item.useAnimation = 5;
+            item.useAnimation = 8;
             item.useTime = 8;
             item.width = 16;
             item.height = 16;

@@ -8,24 +8,25 @@ using Terraria.ModLoader;
 
 namespace ThrowingClass.Items.Weapons
 {
-    public class JesterJavelinWeapon : ModItem
+    public class TrueSapphireJavelinWeapon : ModItem
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Jester Javelin");
+            DisplayName.SetDefault("True Sapphire Javelin");
+            Tooltip.SetDefault("Has an insane fire-rate");
         }
         public override void SetDefaults()
         {
-            item.shootSpeed = 14f;
+            item.shootSpeed = 18f;
             item.damage = 20;
-            item.knockBack = 2f;
+            item.knockBack = 0.5f;
             item.useStyle = 1;
-            item.useAnimation = 20;
-            item.useTime = 20;
+            item.useAnimation = 4;
+            item.useTime = 4;
             item.width = 16;
             item.height = 16;
             item.maxStack = 999;
-            item.rare = 2;
+            item.rare = 5;
             item.ammo = ItemID.Javelin;
 
             item.consumable = true;
@@ -35,17 +36,18 @@ namespace ThrowingClass.Items.Weapons
             item.thrown = true;
 
             item.UseSound = SoundID.Item1;
-            item.shoot = mod.ProjectileType("JesterJavelin");
-            item.value = Item.sellPrice(0, 0, 0, 12);
+            item.shoot = mod.ProjectileType("TrueSapphireJavelin");
+            item.value = Item.sellPrice(0, 0, 20, 0);
         }
-
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemID.Javelin, 30);
-            recipe.AddIngredient(ItemID.FallenStar, 1);
-            recipe.AddTile(TileID.WorkBenches);
-            recipe.SetResult(this, 30);
+            recipe.AddIngredient(mod.GetItem("SapphireJavelinWeapon"), 40);
+            recipe.AddIngredient(ItemID.SoulofFright, 1);
+            recipe.AddIngredient(ItemID.SoulofMight, 1);
+            recipe.AddIngredient(ItemID.SoulofSight, 1);
+            recipe.AddTile(TileID.MythrilAnvil);
+            recipe.SetResult(this, 40);
             recipe.AddRecipe();
         }
     }

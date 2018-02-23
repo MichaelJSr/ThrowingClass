@@ -8,20 +8,20 @@ using Terraria.ModLoader;
 
 namespace ThrowingClass.Projectiles
 {
-    public class EmeraldJavelin : ModProjectile
+    public class TrueDiamondJavelin : ModProjectile
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("EmeraldJavelin");
+            DisplayName.SetDefault("TrueDiamondJavelin");
         }
 
         public override void SetDefaults()
         {
             projectile.width = 56;
-            projectile.height = 15;
+            projectile.height = 16;
             projectile.aiStyle = -1;
             projectile.friendly = true;
-            projectile.penetrate = 4;
+            projectile.penetrate = 20;
         }
 
         public override bool TileCollideStyle(ref int width, ref int height, ref bool fallThrough)
@@ -93,7 +93,7 @@ namespace ThrowingClass.Projectiles
 
         public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
         {
-                target.AddBuff(BuffID.Venom, 300);
+            target.AddBuff(mod.BuffType("TrueDiamondBreak"), 1800);
         }
     }
 }

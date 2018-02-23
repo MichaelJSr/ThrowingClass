@@ -17,7 +17,7 @@ namespace ThrowingClass.Items.Weapons
         public override void SetDefaults()
         {
             item.shootSpeed = 14f;
-            item.damage = 18;
+            item.damage = 20;
             item.knockBack = 2f;
             item.useStyle = 1;
             item.useAnimation = 20;

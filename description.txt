@@ -1,10 +1,10 @@
 	This is a mod meant to allow you to use the throwing class in hardmode, as well as adding items for it in pre-hardmode! Currently, the items inside of this mod are:
 
-- 1 new set(s) of throwing armor
+- 2 new sets of throwing armor
 - 3 rebalanced sets of armor (gladiator, obsidian, and viking)
 - 8 new throwing variant helmets (hardmode ores)
-- 31 new throwing projectiles
-- 4 new throwing launchers
+- 39 new throwing projectiles
+- 7 new throwing launchers
 - 6 new throwing accessories
 - 1 new NPC
 
@@ -33,3 +33,4 @@ V 2.9.5: Added Libra armor
 V 2.9.9: Added Icy Shards
 V 3.0: Added Cryo armor
 V 3.0.5: Added Cryo Launchers
+V 3.1: Added true javelins, many bug fixes

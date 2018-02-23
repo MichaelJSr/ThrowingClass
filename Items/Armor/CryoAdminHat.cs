@@ -36,7 +36,7 @@ namespace ThrowingClass.Items.Armor
 
         public override void UpdateArmorSet(Player player)
         {
-            player.setBonus = "50% increased movement speed\nYour mobility is greatly increased";
+            player.setBonus = "50% increased movement speed\nYour mobility is greatly increased\nWarning, does not protect against death";
             player.wingTimeMax += 1200;
             player.moveSpeed += 0.5f;
             player.runAcceleration += 0.5f;

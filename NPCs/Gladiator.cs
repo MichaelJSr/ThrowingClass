@@ -150,12 +150,13 @@ namespace Gladiator.NPCs
 			{
 				chat.Add("Can you please tell " + Main.npc[partyGirl].GivenName + " to stop decorating my house with colors?");
 			}
-            if (armsDealer >0 && Main.rand.Next(4) == 0)
+            if (armsDealer > 0 && Main.rand.Next(4) == 0)
             {
                 chat.Add(Main.npc[armsDealer].GivenName + " thinks he's so great with his guns? Let's see him shoot after getting stabbed in the eye with a javelin.");
             }
 			chat.Add("I will never lay down my weapon.");
-			chat.Add("I need to find the way to Uganda in order to claim my prize.", 0.1);
+            chat.Add("This. Is. Sparta!!!");
+            chat.Add("I need to find the way to Uganda in order to claim my prize.", 0.1);
 			return chat; // chat is implicitly cast to a string. You can also do "return chat.Get();" if that makes you feel better
 		}
 

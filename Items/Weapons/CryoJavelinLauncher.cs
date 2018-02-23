@@ -19,7 +19,7 @@ namespace ThrowingClass.Items.Weapons
         public override void SetDefaults()
         {
             item.damage = 24;
-            item.crit = 0;
+            item.crit = 12;
             item.noMelee = true;
             item.ranged = true;
             item.width = 40;
@@ -27,8 +27,8 @@ namespace ThrowingClass.Items.Weapons
             item.useTime = 18;
             item.useAnimation = 18;
             item.useStyle = 5;
-            item.knockBack = 1f;
-            item.value = Item.sellPrice(0, 10, 0, 0); // 5 times the sell price, in brackets it's (platinum coins, gold coins, silver coins, copper coins)*
+            item.knockBack = 0f;
+            item.value = Item.sellPrice(0, 12, 0, 0); // 5 times the sell price, in brackets it's (platinum coins, gold coins, silver coins, copper coins)*
             item.rare = 8;
             item.UseSound = SoundID.Item1;
             item.autoReuse = true;
@@ -39,71 +39,115 @@ namespace ThrowingClass.Items.Weapons
 
         public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
-            int i = 0;
-            int k = 0;
-            if (item.crit == 3) //If useTime 8 javelins were last shot
+            bool TrueSapphire = false;
+            bool Sapphire = false;
+            bool TrueDiamond = false;
+            bool Diamond = false;
+            bool Else = false;
+            if (type == mod.ProjectileType("TrueSapphireJavelin"))
             {
-                k = 1;
-                i = 0;
-            }
-            else if (item.crit == 6) //If useTime 20 javelins were last shot
-            {
-                k = 0;
-                i = 1;
+                if (item.knockBack == 0f)
+                {
+                    item.damage -= 10;
+                    item.useTime -= 14;
+                    item.useAnimation -= 14;
+                    item.knockBack = 0.05f;
+                }
+                if (item.knockBack == 0.05f)
+                {
+                    TrueSapphire = true;
+                }
             }
 
-            if (type == mod.ProjectileType("SapphireJavelin"))
+            else if (type == mod.ProjectileType("SapphireJavelin"))
             {
-                if (i == 1)
+                if (item.knockBack == 0f)
                 {
                     item.damage -= 5;
-                    item.knockBack -= 0.5f;
-                    item.useTime -= 12;
-                    item.crit = 3;
+                    item.useTime -= 10;
+                    item.useAnimation -= 10;
+                    item.knockBack = 0.1f;
                 }
-                else if (k == 0)
+                if (item.knockBack == 0.1f)
                 {
-                    item.damage -= 5;
-                    item.knockBack -= 0.5f;
-                    item.useTime -= 17;
-                    item.crit = 3;
+                    Sapphire = true;
                 }
             }
 
-            else if (type == mod.ProjectileType("DiamondJavelin") || type == mod.ProjectileType("AmberJavelin") || type == mod.ProjectileType("MeteorJavelin") || type == mod.ProjectileType("JesterJavelin") || type == mod.ProjectileType("HellfireJavelin"))
+            else if (type == mod.ProjectileType("TrueDiamondJavelin") || type == mod.ProjectileType("TrueAmberJavelin"))
             {
-                if (k == 1)
+                if (item.knockBack == 0f)
                 {
-                    item.damage += 5;
-                    item.knockBack += 0.5f;
-                    item.useTime += 12;
-                    item.crit = 6;
+                    item.useTime -= 8;
+                    item.useAnimation -= 8;
+                    item.knockBack = 0.2f;
                 }
-                else if (i == 0)
+                if (item.knockBack == 0.2f)
                 {
-                    item.useTime -= 5;
-                    item.crit = 6;
+                    TrueDiamond = true;
                 }
             }
 
-            else //Neither useTime 8 or 20 javelins are shot
+            else if (type == mod.ProjectileType("DiamondJavelin") || type == mod.ProjectileType("AmberJavelin") || type == mod.ProjectileType("MeteorJavelin") || type == mod.ProjectileType("JesterJavelin") || type == mod.ProjectileType("HellfireJavelin") || type == mod.ProjectileType("TrueAmethystJavelin") || type == mod.ProjectileType("TrueTopazJavelin") || type == mod.ProjectileType("TrueEmeraldJavelin") || type == mod.ProjectileType("TrueRubyJavelin"))
             {
-                if (k == 1)
+                if (item.knockBack == 0f)
                 {
-                    item.damage += 5;
-                    item.knockBack += 0.5f;
-                    item.useTime += 17;
-                    item.crit = 0;
+                    item.useTime -= 4;
+                    item.useAnimation -= 4;
+                    item.knockBack = 0.5f;
                 }
-                else if (i == 1)
+                if (item.knockBack == 0.5f)
                 {
-                    item.useTime += 5;
-                    item.crit = 0;
+                    Diamond = true;
                 }
             }
-            item.useAnimation = item.useTime;
-            if (item.useAnimation < 2)
+
+            else
             {
+                if (item.knockBack == 0f)
+                {
+                    item.knockBack = 1f;
+                }
+                if (item.knockBack == 1f)
+                {
+                    Else = true;
+                }
+            }
+
+            if (item.knockBack == 0.05f && TrueSapphire == false)
+            {
+                item.damage += 10;
+                item.useTime += 14;
+                item.useAnimation += 14;
+                item.knockBack = 0f;
+            }
+            else if (item.knockBack == 0.1f && Sapphire == false)
+            {
+                item.damage += 5;
+                item.useTime += 10;
+                item.useAnimation += 10;
+                item.knockBack = 0f;
+            }
+            else if (item.knockBack == 0.2f && TrueDiamond == false)
+            {
+                item.useTime += 8;
+                item.useAnimation += 8;
+                item.knockBack = 0f;
+            }
+            else if (item.knockBack == 0.5f && Diamond == false)
+            {
+                item.useTime += 4;
+                item.useAnimation += 4;
+                item.knockBack = 0f;
+            }
+            else if (item.knockBack == 1f && Else == false)
+            {
+                item.knockBack = 0f;
+            }
+
+            if (item.useTime < 2 || item.useAnimation < 2)
+            {
+                item.useTime = 2;
                 item.useAnimation = 2;
             }
             Projectile.NewProjectile(position.X, position.Y, speedX, speedY, type, damage, knockBack, Main.myPlayer);
