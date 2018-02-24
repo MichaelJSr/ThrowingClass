@@ -29,7 +29,7 @@ namespace ThrowingClass.Items.Weapons.Launchers
             item.useStyle = 5;
             item.knockBack = 0.01f;
             item.value = Item.sellPrice(0, 8, 0, 0); // 5 times the sell price, in brackets it's (platinum coins, gold coins, silver coins, copper coins)*
-            item.rare = 7;
+            item.rare = 4;
             item.UseSound = SoundID.Item1;
             item.autoReuse = true;
             item.useAmmo = ItemID.Grenade;

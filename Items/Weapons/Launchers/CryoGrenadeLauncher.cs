@@ -8,33 +8,33 @@ using Terraria.ModLoader;
 
 namespace ThrowingClass.Items.Weapons.Launchers
 {
-    public class CryoJavelinLauncher : ModItem
+    public class CryoGrenadeLauncher : ModItem
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Cryo Javelin Launcher");
-            Tooltip.SetDefault("Uses mechanization to fire javelins at a much stronger and faster velocity\nRight click when using the weapon to switch it between throwing and ranged damage");
+            DisplayName.SetDefault("Cryo Grenade Launcher");
+            Tooltip.SetDefault("Uses mechanization to fire grenades at a much stronger velocity\nRight click when using the weapon to switch it between throwing and ranged damage");
         }
 
         public override void SetDefaults()
         {
-            item.damage = 24;
-            item.crit = 12;
+            item.damage = 48;
+            item.crit = 25;
             item.noMelee = true;
             item.ranged = true;
-            item.width = 40;
+            item.width = 56;
             item.height = 22;
-            item.useTime = 18;
-            item.useAnimation = 18;
+            item.useTime = 32;
+            item.useAnimation = 32;
             item.useStyle = 5;
             item.knockBack = 0.01f;
-            item.value = Item.sellPrice(0, 12, 0, 0); // 5 times the sell price, in brackets it's (platinum coins, gold coins, silver coins, copper coins)*
+            item.value = Item.sellPrice(0, 16, 0, 0); // 5 times the sell price, in brackets it's (platinum coins, gold coins, silver coins, copper coins)*
             item.rare = 8;
             item.UseSound = SoundID.Item1;
             item.autoReuse = true;
-            item.useAmmo = ItemID.Javelin;
+            item.useAmmo = ItemID.Grenade;
             item.shoot = 10;
-            item.shootSpeed = 10f; //How fast the projectile fires
+            item.shootSpeed = 16f; //How fast the projectile fires
         }
 
         public override void GetWeaponKnockback(Player player, ref float knockback)
@@ -47,66 +47,50 @@ namespace ThrowingClass.Items.Weapons.Launchers
 
         public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
-            bool TrueSapphire = false;
-            bool Sapphire = false;
-            bool TrueDiamond = false;
-            bool Diamond = false;
+            bool Happy = false;
+            bool Beenade = false;
+            bool Molotov = false;
             bool Else = false;
-            if (type == mod.ProjectileType("TrueSapphireJavelin"))
+            if (type == ProjectileID.HappyBomb)
             {
                 if (item.knockBack == 0.01f)
                 {
-                    item.damage -= 10;
-                    item.useTime -= 14;
-                    item.useAnimation -= 14;
-                    item.knockBack = 0.05f;
-                }
-                if (item.knockBack == 0.05f)
-                {
-                    TrueSapphire = true;
-                }
-            }
-
-            else if (type == mod.ProjectileType("SapphireJavelin"))
-            {
-                if (item.knockBack == 0.01f)
-                {
-                    item.damage -= 5;
-                    item.useTime -= 10;
-                    item.useAnimation -= 10;
+                    item.useTime -= 20;
+                    item.useAnimation -= 20;
                     item.knockBack = 0.1f;
                 }
                 if (item.knockBack == 0.1f)
                 {
-                    Sapphire = true;
+                    Happy = true;
                 }
             }
 
-            else if (type == mod.ProjectileType("TrueDiamondJavelin") || type == mod.ProjectileType("TrueAmberJavelin") || type == mod.ProjectileType("TrueHellfireJavelin") || type == mod.ProjectileType("TrueJesterJavelin") || type == mod.ProjectileType("TrueMeteorJavelin"))
+            else if (type == ProjectileID.Beenade || type == mod.ProjectileType("Waspnade"))
             {
                 if (item.knockBack == 0.01f)
                 {
-                    item.useTime -= 8;
-                    item.useAnimation -= 8;
-                    item.knockBack = 0.2f;
+                    item.damage -= 30;
+                    item.useTime -= 12;
+                    item.useAnimation -= 12;
+                    item.knockBack = 0.25f;
                 }
-                if (item.knockBack == 0.2f)
+                if (item.knockBack == 0.25f)
                 {
-                    TrueDiamond = true;
+                    Beenade = true;
                 }
             }
 
-            else if (type == mod.ProjectileType("DiamondJavelin") || type == mod.ProjectileType("AmberJavelin") || type == mod.ProjectileType("MeteorJavelin") || type == mod.ProjectileType("JesterJavelin") || type == mod.ProjectileType("HellfireJavelin") || type == mod.ProjectileType("TrueAmethystJavelin") || type == mod.ProjectileType("TrueTopazJavelin") || type == mod.ProjectileType("TrueEmeraldJavelin") || type == mod.ProjectileType("TrueRubyJavelin"))
+            else if (type == ProjectileID.BouncyGrenade || type == ProjectileID.MolotovCocktail)
             {
                 if (item.knockBack == 0.01f)
                 {
-                    item.useTime -= 4;
-                    item.useAnimation -= 4;
+                    item.useTime -= 5;
+                    item.useAnimation -= 5;
                     item.knockBack = 0.5f;
                 }
                 if (item.knockBack == 0.5f)
                 {
-                    Diamond = true;
+                    Molotov = true;
                 }
             }
 
@@ -122,30 +106,24 @@ namespace ThrowingClass.Items.Weapons.Launchers
                 }
             }
 
-            if (item.knockBack == 0.05f && TrueSapphire == false)
+            if (item.knockBack == 0.1f && Happy == false)
             {
-                item.damage += 10;
-                item.useTime += 14;
-                item.useAnimation += 14;
+
+                item.useTime += 20;
+                item.useAnimation += 20;
                 item.knockBack = 0.01f;
             }
-            else if (item.knockBack == 0.1f && Sapphire == false)
+            else if (item.knockBack == 0.25f && Beenade == false)
             {
-                item.damage += 5;
-                item.useTime += 10;
-                item.useAnimation += 10;
+                item.damage += 30;
+                item.useTime += 12;
+                item.useAnimation += 12;
                 item.knockBack = 0.01f;
             }
-            else if (item.knockBack == 0.2f && TrueDiamond == false)
+            else if (item.knockBack == 0.5f && Molotov == false)
             {
-                item.useTime += 8;
-                item.useAnimation += 8;
-                item.knockBack = 0.01f;
-            }
-            else if (item.knockBack == 0.5f && Diamond == false)
-            {
-                item.useTime += 4;
-                item.useAnimation += 4;
+                item.useTime += 5;
+                item.useAnimation += 5;
                 item.knockBack = 0.01f;
             }
             else if (item.knockBack == 1f && Else == false)
@@ -189,7 +167,7 @@ namespace ThrowingClass.Items.Weapons.Launchers
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(mod.GetItem("JavelinLauncher"), 1);
+            recipe.AddIngredient(mod.GetItem("ThrowingGrenadeLauncher"), 1);
             recipe.AddIngredient(mod.GetItem("CryoIngot"), 15);
             recipe.AddIngredient(mod.ItemType("FrozenLeaf"), 1);
             recipe.AddTile(TileID.MythrilAnvil);

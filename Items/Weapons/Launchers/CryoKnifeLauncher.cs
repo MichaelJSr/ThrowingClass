@@ -170,6 +170,7 @@ namespace ThrowingClass.Items.Weapons.Launchers
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(mod.GetItem("KnifeLauncher"), 1);
             recipe.AddIngredient(mod.GetItem("CryoIngot"), 15);
+            recipe.AddIngredient(mod.ItemType("FrozenLeaf"), 1);
             recipe.AddTile(TileID.MythrilAnvil);
             recipe.SetResult(this);
             recipe.AddRecipe();

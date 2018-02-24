@@ -4,7 +4,7 @@
 - 3 rebalanced sets of armor (gladiator, obsidian, and viking)
 - 8 new throwing variant helmets (hardmode ores)
 - 41 new throwing projectiles
-- 7 new throwing launchers
+- 8 new throwing launchers
 - 6 new throwing accessories
 - 1 new NPC
 
@@ -35,3 +35,4 @@ V 3.0: Added Cryo armor
 V 3.0.5: Added Cryo Launchers
 V 3.1: Added true javelins, many bug fixes
 V 3.2: Added more true javelins and more bug fixes
+V 3.2.5: Added Frozen Leafs and a Cryo grenade launcher

@@ -55,6 +55,7 @@ namespace ThrowingClass.Items.Armor
         {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(mod.ItemType("CryoIngot"), 12);
+            recipe.AddIngredient(mod.ItemType("FrozenLeaf"), 1);
             recipe.AddTile(TileID.MythrilAnvil);
             recipe.SetResult(this, 1);
             recipe.AddRecipe();
