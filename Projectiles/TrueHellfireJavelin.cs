@@ -8,20 +8,20 @@ using Terraria.ModLoader;
 
 namespace ThrowingClass.Projectiles
 {
-    public class HellfireJavelin : ModProjectile
+    public class TrueHellfireJavelin : ModProjectile
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("HellfireJavelin");
+            DisplayName.SetDefault("TrueHellfireJavelin");
         }
 
         public override void SetDefaults()
         {
             projectile.width = 56;
-            projectile.height = 15;
+            projectile.height = 16;
             projectile.aiStyle = -1;
             projectile.friendly = true;
-            projectile.penetrate = 1;
+            projectile.penetrate = 2;
             projectile.knockBack = 6f;
         }
 
@@ -58,6 +58,7 @@ namespace ThrowingClass.Projectiles
                 if (distance < 120f && !N.friendly && N.active)
                 {
                     N.StrikeNPC(projectile.damage, 0f, N.direction, false, false, false); //Damages and shows damage on the NPC, projectile accounts for the defense of the NPC as well.
+                    N.AddBuff(BuffID.OnFire, 300);
                 }
             }
             Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 14);
@@ -111,7 +112,7 @@ namespace ThrowingClass.Projectiles
 
         public override void AI()
         {
-            projectile.light = 0.1f;
+            projectile.light = 0.25f;
             // Slowly remove alpha as it is present
             if (projectile.alpha > 0)
             {
@@ -123,7 +124,7 @@ namespace ThrowingClass.Projectiles
                 projectile.alpha = 0;
             }
                 targetWhoAmI += 1f;
-                // For a little while, the javelin will travel with the same speed, but after this, the javelin drops velocity very quickly.
+                // For a little while, the javelin will travel with the same speed, but after projectile, the javelin drops velocity very quickly.
                 if (targetWhoAmI >= maxTicks)
                 {
                     // Change these multiplication factors to alter the javelin's movement change after reaching maxTicks
@@ -157,6 +158,7 @@ namespace ThrowingClass.Projectiles
                     if (distance < 120f && !N.friendly && N.active)
                     {
                         N.StrikeNPC(projectile.damage, 0f, N.direction, false, false, false); //Damages and shows damage on the NPC, projectile accounts for the defense of the NPC as well.
+                        N.AddBuff(BuffID.OnFire, 300);
                     }
                 }
                 Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 14);
@@ -199,7 +201,7 @@ namespace ThrowingClass.Projectiles
                 gore92.velocity.Y = gore92.velocity.Y - 1f;
             }
             projectile.width = 56;
-            projectile.height = 15;
+            projectile.height = 16;
         }
 
     }
