@@ -13,7 +13,7 @@ namespace ThrowingClass.Items.Weapons.Launchers
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Cryo Knife Launcher");
-            Tooltip.SetDefault("Uses mechanization to fire knives at a much stronger and faster velocity\nRight click when using the weapon to switch it between throwing and ranged damage");
+            Tooltip.SetDefault("Uses mechanization to fire knives at a much stronger and faster velocity\nHas a higher chance to shoot another projectile for accessories that add shots\nRight click when using the weapon to switch it between throwing and ranged damage");
         }
 
         public override void SetDefaults()
@@ -37,11 +37,32 @@ namespace ThrowingClass.Items.Weapons.Launchers
             item.shootSpeed = 10f; //How fast the projectile fires
         }
 
+        public int numberShots = 0;
+        public float chanceShots = 0.1f;
+        public bool munition1 = false;
+
         public override void GetWeaponKnockback(Player player, ref float knockback)
         {
             if (!(item.knockBack == 0.01f || item.knockBack == 0.05f || item.knockBack == 0.1f || item.knockBack == 0.2f || item.knockBack == 0.25f || item.knockBack == 0.5f || item.knockBack == 0.75f || item.knockBack == 1f))
             {
                 item.knockBack = 0.01f;
+            }
+        }
+
+        public override void HoldItem(Player player)
+        {
+            if (player.GetModPlayer<ThrowingPlayer>(mod).Munition1 == true && munition1 == false)
+            {
+                numberShots += 2;
+                chanceShots += 0.2f;
+                munition1 = true;
+            }
+
+            if (player.GetModPlayer<ThrowingPlayer>(mod).Munition1 == false && munition1 == true)
+            {
+                numberShots -= 2;
+                chanceShots -= 0.2f;
+                munition1 = false;
             }
         }
 
@@ -137,7 +158,51 @@ namespace ThrowingClass.Items.Weapons.Launchers
                 item.useTime = 2;
                 item.useAnimation = 2;
             }
-            Projectile.NewProjectile(position.X, position.Y, speedX, speedY, type, damage, knockBack, Main.myPlayer);
+
+            int actualShots = 1;
+            int chance = 0;
+            int fired = 0;
+            int odd = 0;
+            int checkOdd = 0;
+            int even = 0;
+            int checkEven = -1;
+            float rotation = MathHelper.ToRadians(15f);
+            position += Vector2.Normalize(new Vector2(speedX, speedY)) * 15f;
+            for (int shots = 0; shots < numberShots; shots++)
+            {
+                if (Main.rand.NextFloat() < chanceShots)
+                {
+                    chance += 1;
+                }
+            }
+            actualShots = chance + 1;
+            for (int shots = 0; shots < actualShots; shots++)
+            {
+                if (fired % 2 != 1 && actualShots % 2 != 1)
+                {
+                    even = 1;
+                }
+                if (fired == 0)
+                {
+                    checkEven -= 1;
+                }
+                Vector2 perturbedSpeed = new Vector2(speedX, speedY).RotatedBy(rotation / (1 - checkOdd - checkEven) * (fired - odd % 2 + even)); // Watch out for dividing by 0 if there is only 1 projectile.
+                Projectile.NewProjectile(position.X, position.Y, perturbedSpeed.X, perturbedSpeed.Y, type, damage, knockBack, player.whoAmI);
+                rotation = -rotation;
+                if (fired % 2 != 1)
+                {
+                    even = 0;
+                }
+                fired += 1;
+                if (fired != 1 && actualShots % 2 != 0)
+                {
+                    odd += 1;
+                }
+                if (fired == 1)
+                {
+                    checkOdd -= 1;
+                }
+            }
             return false;
         }
 

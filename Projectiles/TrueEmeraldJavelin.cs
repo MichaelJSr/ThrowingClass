@@ -98,5 +98,10 @@ namespace ThrowingClass.Projectiles
             target.AddBuff(BuffID.DryadsWardDebuff, 600);
             target.AddBuff(mod.BuffType("TruePoison"), 600);
         }
+
+        public override void OnHitPlayer(Player target, int damage, bool crit)
+        {
+            target.AddBuff(mod.BuffType("TruePoison"), 600, true);
+        }
     }
 }

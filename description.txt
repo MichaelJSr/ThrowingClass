@@ -5,7 +5,7 @@
 - 8 new throwing variant helmets (hardmode ores)
 - 41 new throwing projectiles
 - 8 new throwing launchers
-- 6 new throwing accessories
+- 8 new throwing accessories
 - 1 new NPC
 
 	Update Notes:
@@ -14,7 +14,7 @@ V 1.1: Added a mod icon
 V 1.5: Updated mod icon, Javelin Ballista, Amethyst Javelins
 v 1.6: Added Topaz and Sapphire Javelins
 V 1.7: Added Wooden Javelins and Shuriken Launcher
-V 1.8: Added a new npc: The Gladiator.
+V 1.8: Added a new npc: The Gladiator
 V 1.9: Fixed glitches, added shadowflame knives (Gladiator sells the throwing counterpart if you have the Shadowflame knife from the goblin invasion)
 V 2.0: Added Emerald, Diamond, and Amber javelins
 V 2.1: Added a config file, added Attuned Fossil accessory
@@ -36,3 +36,4 @@ V 3.0.5: Added Cryo Launchers
 V 3.1: Added true javelins, many bug fixes
 V 3.2: Added more true javelins and more bug fixes
 V 3.2.5: Added Frozen Leafs and a Cryo grenade launcher
+V 3.3: Made the Traveling Merchant sell a munitions pack at a 25% chance, added the munitions pack which adds a chance to shoot more shots

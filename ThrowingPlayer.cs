@@ -9,6 +9,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 using Terraria.GameInput;
+using ThrowingClass.Items.Weapons.Launchers;
 
 namespace ThrowingClass
 {
@@ -17,12 +18,14 @@ namespace ThrowingClass
         public bool TruePoison = false;
         public bool DiamondBreak = false;
         public bool TrueDiamondBreak = false;
+        public bool Munition1 = false;
 
         public override void ResetEffects()
         {
             TruePoison = false;
             DiamondBreak = false;
             TrueDiamondBreak = false;
+            Munition1 = false;
         }
 
         /*public override void clientClone(ModPlayer clientClone)
@@ -38,6 +41,7 @@ namespace ThrowingClass
             TruePoison = false;
             DiamondBreak = false;
             TrueDiamondBreak = false;
+            Munition1 = false;
         }
 
         public override void SetupStartInventory(IList<Item> items)

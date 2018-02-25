@@ -121,5 +121,19 @@ namespace AccessoriesNPC.NPCs
 
             }
         }
+
+        public override void SetupShop(int type, Chest shop, ref int nextSlot)
+        {
+            switch (type)
+            {
+                case NPCID.TravellingMerchant:
+                    if (Main.rand.NextFloat() < .25f)
+                    {
+                        shop.item[nextSlot].SetDefaults(mod.ItemType("MunitionsPack"));
+                        nextSlot++;
+                    }
+                    return;
+            }
         }
     }
+}
