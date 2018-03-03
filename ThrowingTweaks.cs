@@ -110,92 +110,94 @@ namespace ThrowingClass
             }
 
             if (ModLoader.GetLoadedMods().Contains("Infinity"))
+            {
                 if (item.type == ModLoader.GetMod("Infinity").ItemType("EndlessJavelin"))
                 {
                     item.ammo = ItemID.Javelin;
                     item.autoReuse = true;
                 }
-            if (item.type == ModLoader.GetMod("Infinity").ItemType("EndlessBoneJavelin"))
-            {
-                item.ammo = ItemID.Javelin;
-                item.autoReuse = true;
-            }
-            if (item.type == ModLoader.GetMod("Infinity").ItemType("EndlessShuriken"))
-            {
-                item.ammo = ItemID.Shuriken;
-                item.autoReuse = true;
-            }
-            if (item.type == ModLoader.GetMod("Infinity").ItemType("EndlessStarAnise"))
-            {
-                item.ammo = ItemID.Shuriken;
-                item.autoReuse = true;
-            }
-            if (item.type == ModLoader.GetMod("Infinity").ItemType("EndlessKnife"))
-            {
-                item.ammo = ItemID.ThrowingKnife;
-                item.autoReuse = true;
-            }
-            if (item.type == ModLoader.GetMod("Infinity").ItemType("EndlessKnifePoisoned"))
-            {
-                item.ammo = ItemID.ThrowingKnife;
-                item.autoReuse = true;
-            }
-            if (item.type == ModLoader.GetMod("Infinity").ItemType("EndlessBoneKnife"))
-            {
-                item.ammo = ItemID.ThrowingKnife;
-                item.autoReuse = true;
-            }
-            if (item.type == ModLoader.GetMod("Infinity").ItemType("EndlessFrostDaggerfish"))
-            {
-                item.ammo = ItemID.ThrowingKnife;
-                item.autoReuse = true;
-            }
-            if (item.type == ModLoader.GetMod("Infinity").ItemType("EndlessGrenade"))
-            {
-                item.ammo = ItemID.Grenade;
-                item.autoReuse = true;
-            }
-            if (item.type == ModLoader.GetMod("Infinity").ItemType("EndlessGrenadeSticky"))
-            {
-                item.ammo = ItemID.Grenade;
-                item.autoReuse = true;
-            }
-            if (item.type == ModLoader.GetMod("Infinity").ItemType("EndlessGrenadeBouncy"))
-            {
-                item.ammo = ItemID.Grenade;
-                item.autoReuse = true;
-            }
-            if (item.type == ModLoader.GetMod("Infinity").ItemType("EndlessPartyGirlGrenade"))
-            {
-                item.ammo = ItemID.Grenade;
-                item.autoReuse = true;
-            }
-            if (item.type == ModLoader.GetMod("Infinity").ItemType("EndlessBeenade"))
-            {
-                item.damage = 14;
-                item.useTime = 24;
-                item.ammo = ItemID.Grenade;
-                item.autoReuse = true;
-            }
-            if (item.type == ModLoader.GetMod("Infinity").ItemType("EndlessMolotovCocktail"))
-            {
-                item.ammo = ItemID.Grenade;
-                item.autoReuse = true;
-            }
-            if (item.type == ModLoader.GetMod("Infinity").ItemType("EndlessSpikyBall"))
-            {
-                item.ammo = ItemID.SpikyBall;
-                item.autoReuse = true;
-            }
-            if (item.type == ModLoader.GetMod("Infinity").ItemType("EndlessBone"))
-            {
-                item.ammo = ItemID.Bone;
-                item.autoReuse = true;
-            }
-            if (item.type == ModLoader.GetMod("Infinity").ItemType("EndlessRottenEgg"))
-            {
-                item.ammo = ItemID.RottenEgg;
-                item.autoReuse = true;
+                if (item.type == ModLoader.GetMod("Infinity").ItemType("EndlessBoneJavelin"))
+                {
+                    item.ammo = ItemID.Javelin;
+                    item.autoReuse = true;
+                }
+                if (item.type == ModLoader.GetMod("Infinity").ItemType("EndlessShuriken"))
+                {
+                    item.ammo = ItemID.Shuriken;
+                    item.autoReuse = true;
+                }
+                if (item.type == ModLoader.GetMod("Infinity").ItemType("EndlessStarAnise"))
+                {
+                    item.ammo = ItemID.Shuriken;
+                    item.autoReuse = true;
+                }
+                if (item.type == ModLoader.GetMod("Infinity").ItemType("EndlessKnife"))
+                {
+                    item.ammo = ItemID.ThrowingKnife;
+                    item.autoReuse = true;
+                }
+                if (item.type == ModLoader.GetMod("Infinity").ItemType("EndlessKnifePoisoned"))
+                {
+                    item.ammo = ItemID.ThrowingKnife;
+                    item.autoReuse = true;
+                }
+                if (item.type == ModLoader.GetMod("Infinity").ItemType("EndlessBoneKnife"))
+                {
+                    item.ammo = ItemID.ThrowingKnife;
+                    item.autoReuse = true;
+                }
+                if (item.type == ModLoader.GetMod("Infinity").ItemType("EndlessFrostDaggerfish"))
+                {
+                    item.ammo = ItemID.ThrowingKnife;
+                    item.autoReuse = true;
+                }
+                if (item.type == ModLoader.GetMod("Infinity").ItemType("EndlessGrenade"))
+                {
+                    item.ammo = ItemID.Grenade;
+                    item.autoReuse = true;
+                }
+                if (item.type == ModLoader.GetMod("Infinity").ItemType("EndlessGrenadeSticky"))
+                {
+                    item.ammo = ItemID.Grenade;
+                    item.autoReuse = true;
+                }
+                if (item.type == ModLoader.GetMod("Infinity").ItemType("EndlessGrenadeBouncy"))
+                {
+                    item.ammo = ItemID.Grenade;
+                    item.autoReuse = true;
+                }
+                if (item.type == ModLoader.GetMod("Infinity").ItemType("EndlessPartyGirlGrenade"))
+                {
+                    item.ammo = ItemID.Grenade;
+                    item.autoReuse = true;
+                }
+                if (item.type == ModLoader.GetMod("Infinity").ItemType("EndlessBeenade"))
+                {
+                    item.damage = 14;
+                    item.useTime = 24;
+                    item.ammo = ItemID.Grenade;
+                    item.autoReuse = true;
+                }
+                if (item.type == ModLoader.GetMod("Infinity").ItemType("EndlessMolotovCocktail"))
+                {
+                    item.ammo = ItemID.Grenade;
+                    item.autoReuse = true;
+                }
+                if (item.type == ModLoader.GetMod("Infinity").ItemType("EndlessSpikyBall"))
+                {
+                    item.ammo = ItemID.SpikyBall;
+                    item.autoReuse = true;
+                }
+                if (item.type == ModLoader.GetMod("Infinity").ItemType("EndlessBone"))
+                {
+                    item.ammo = ItemID.Bone;
+                    item.autoReuse = true;
+                }
+                if (item.type == ModLoader.GetMod("Infinity").ItemType("EndlessRottenEgg"))
+                {
+                    item.ammo = ItemID.RottenEgg;
+                    item.autoReuse = true;
+                }
             }
         }
 		
