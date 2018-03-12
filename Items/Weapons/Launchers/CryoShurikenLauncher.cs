@@ -21,7 +21,7 @@ namespace ThrowingClass.Items.Weapons.Launchers
             item.damage = 12;
             item.crit = 12;
             item.noMelee = true;
-            item.ranged = true;
+            item.thrown = true;
             item.width = 52;
             item.height = 26;
             item.useTime = 9;
@@ -115,7 +115,7 @@ namespace ThrowingClass.Items.Weapons.Launchers
             return false;
         }
 
-        public override bool AltFunctionUse(Player player)
+        /*public override bool AltFunctionUse(Player player)
         {
             return true;
         }
@@ -137,7 +137,7 @@ namespace ThrowingClass.Items.Weapons.Launchers
                 }
             }
             return base.CanUseItem(player);
-        }
+        }*/
 
         public override void AddRecipes()
         {
