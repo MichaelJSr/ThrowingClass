@@ -47,7 +47,7 @@ namespace ThrowingClass
         public override void SetupStartInventory(IList<Item> items)
         {
             Item item = new Item();
-            item.SetDefaults(mod.ItemType("WoodenJavelin"));
+            item.SetDefaults(mod.ItemType("WoodenJavelinWeapon"));
             item.stack = 40;
             items.Add(item);
         }

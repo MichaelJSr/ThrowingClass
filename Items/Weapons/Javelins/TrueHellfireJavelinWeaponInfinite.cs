@@ -18,7 +18,7 @@ namespace ThrowingClass.Items.Weapons.Javelins
         public override void SetDefaults()
         {
             item.shootSpeed = 18f;
-            item.damage = 56;
+            item.damage = 50;
             item.knockBack = 5f;
             item.useStyle = 1;
             item.useAnimation = 14;
