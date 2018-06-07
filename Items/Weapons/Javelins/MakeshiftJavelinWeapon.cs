@@ -12,7 +12,7 @@ namespace ThrowingClass.Items.Weapons.Javelins
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Make Shift Javelin");
+            DisplayName.SetDefault("Makeshift Javelin");
         }
         public override void SetDefaults()
         {
@@ -115,6 +115,8 @@ namespace ThrowingClass.Items.Weapons.Javelins
             recipe.AddIngredient(ItemID.JungleSpores, 1);
             recipe.AddIngredient(ItemID.Stinger, 1);
             recipe.AddIngredient(ItemID.Vine, 1);
+            recipe.AddIngredient(ItemID.Wood, 1);
+            recipe.anyWood = true;
             recipe.AddTile(TileID.WorkBenches);
             recipe.SetResult(this, 30);
             recipe.AddRecipe();

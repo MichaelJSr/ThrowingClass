@@ -12,7 +12,7 @@ namespace ThrowingClass.Items.Weapons.Javelins
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Infinite Make Shift Javelin");
+            DisplayName.SetDefault("Infinite Makeshift Javelin");
         }
         public override void SetDefaults()
         {

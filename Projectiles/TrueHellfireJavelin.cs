@@ -56,7 +56,7 @@ namespace ThrowingClass.Projectiles
                 float distance = (float)System.Math.Sqrt((double)(dX * dX + dY * dY));
 
                 //So if the distance between the killed projectile and the npc is less than 120 pixels...
-                if (distance < 120f && !N.friendly && N.active && (N.type != NPCID.DD2LanePortal))
+                if (distance < 120f && !N.friendly && N.active && (N.type != NPCID.DD2LanePortal) && (N.type != NPCID.CultistTablet))
                 {
                     N.StrikeNPC(projectile.damage, 0f, N.direction, false, false, false); //Damages and shows damage on the NPC, projectile accounts for the defense of the NPC as well.
                     N.AddBuff(BuffID.OnFire, 300);
@@ -156,7 +156,7 @@ namespace ThrowingClass.Projectiles
                     float distance = (float)System.Math.Sqrt((double)(dX * dX + dY * dY));
 
                     //So if the distance between the killed projectile and the npc is less than 120 pixels...
-                    if (distance < 120f && !N.friendly && N.active && (N.type != NPCID.DD2LanePortal))
+                    if (distance < 120f && !N.friendly && N.active && (N.type != NPCID.DD2LanePortal) && (N.type != NPCID.CultistTablet))
                     {
                         N.StrikeNPC(projectile.damage, 0f, N.direction, false, false, false); //Damages and shows damage on the NPC, projectile accounts for the defense of the NPC as well.
                         N.AddBuff(BuffID.OnFire, 300);
