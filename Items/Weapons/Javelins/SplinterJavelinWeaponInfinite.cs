@@ -8,36 +8,36 @@ using Terraria.ModLoader;
 
 namespace ThrowingClass.Items.Weapons.Javelins
 {
-    public class WoodenJavelinWeapon : ModItem
+    public class SplinterJavelinWeaponInfinite : ModItem
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Wooden Javelin");
-            Tooltip.SetDefault("Pointy");
+            DisplayName.SetDefault("Infinite Splinter Javelin");
+            Tooltip.SetDefault("How does this even work?...");
         }
         public override void SetDefaults()
         {
-            item.shootSpeed = 10f;
-            item.damage = 11;
-            item.knockBack = 4f;
+            item.shootSpeed = 12f;
+            item.damage = 40;
+            item.knockBack = 5f;
             item.useStyle = 1;
-            item.useAnimation = 25;
-            item.useTime = 25;
-            item.width = 16;
-            item.height = 16;
-            item.maxStack = 999;
-            item.rare = 0;
+            item.useAnimation = 20;
+            item.useTime = 20;
+            item.width = 38;
+            item.height = 36;
+            item.maxStack = 1;
+            item.rare = 5;
             item.ammo = ItemID.Javelin;
 
-            item.consumable = true;
+            item.consumable = false;
             item.noUseGraphic = true;
             item.noMelee = true;
             item.autoReuse = true;
             item.thrown = true;
 
             item.UseSound = SoundID.Item1;
-            item.shoot = mod.ProjectileType("WoodenJavelin");
-            item.value = Item.sellPrice(0, 0, 0, 0);
+            item.shoot = mod.ProjectileType("SplinterJavelin");
+            item.value = Item.sellPrice(0, 0, 8, 0);
         }
 
         public int numberShots = 0;
@@ -112,11 +112,14 @@ namespace ThrowingClass.Items.Weapons.Javelins
 
         public override void AddRecipes()
         {
-            ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemID.Wood, 1);
-            recipe.AddTile(TileID.WorkBenches);
-            recipe.SetResult(this, 15);
-            recipe.AddRecipe();
+            if (ThrowingConfig.InfiniteJavelins)
+            {
+                ModRecipe recipe = new ModRecipe(mod);
+                recipe.AddIngredient(mod.GetItem("SplinterJavelinWeapon"), 999);
+                recipe.AddTile(TileID.MythrilAnvil);
+                recipe.SetResult(this);
+                recipe.AddRecipe();
+            }
         }
     }
 }

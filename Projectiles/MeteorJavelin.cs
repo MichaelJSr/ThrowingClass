@@ -23,6 +23,7 @@ namespace ThrowingClass.Projectiles
             projectile.friendly = true;
             projectile.tileCollide = true; //Tells the game whether or not it can collide with a tile
             projectile.penetrate = 4;
+            projectile.thrown = true;
         }
 
         public override bool TileCollideStyle(ref int width, ref int height, ref bool fallThrough)

@@ -22,6 +22,7 @@ namespace ThrowingClass.Projectiles
             projectile.aiStyle = -1;
             projectile.friendly = true;
             projectile.penetrate = 15;
+            projectile.thrown = true;
         }
 
         public override bool TileCollideStyle(ref int width, ref int height, ref bool fallThrough)

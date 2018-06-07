@@ -13,7 +13,7 @@ namespace ThrowingClass.Items.Weapons.Javelins
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Infinite Wooden Javelin");
-            Tooltip.SetDefault("Pointy.");
+            Tooltip.SetDefault("Pointy");
         }
         public override void SetDefaults()
         {

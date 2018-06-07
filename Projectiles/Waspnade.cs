@@ -19,6 +19,7 @@ namespace ThrowingClass.Projectiles
         {
             projectile.CloneDefaults(ProjectileID.Beenade);
             aiType = ProjectileID.Beenade;
+            projectile.thrown = true;
         }
 
         public override bool? Colliding(Rectangle projHitbox, Rectangle targetHitbox)
@@ -43,7 +44,7 @@ namespace ThrowingClass.Projectiles
                 float distance = (float)System.Math.Sqrt((double)(dX * dX + dY * dY));
 
                 //So if the distance between the killed projectile and the npc is less than 80 pixels...
-                if (distance < 80f && !N.friendly && N.active)
+                if (distance < 80f && !N.friendly && N.active && (N.type != NPCID.DD2LanePortal))
                 {
                     N.StrikeNPC(projectile.damage, 0f, N.direction, false, false, false); //Damages and shows damage on the NPC, this accounts for the defense of the NPC as well.
                 }

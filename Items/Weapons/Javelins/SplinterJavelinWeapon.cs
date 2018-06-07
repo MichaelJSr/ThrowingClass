@@ -8,25 +8,25 @@ using Terraria.ModLoader;
 
 namespace ThrowingClass.Items.Weapons.Javelins
 {
-    public class WoodenJavelinWeapon : ModItem
+    public class SplinterJavelinWeapon : ModItem
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Wooden Javelin");
-            Tooltip.SetDefault("Pointy");
+            DisplayName.SetDefault("Splinter Javelin");
+            Tooltip.SetDefault("How does this even work?...");
         }
         public override void SetDefaults()
         {
-            item.shootSpeed = 10f;
-            item.damage = 11;
-            item.knockBack = 4f;
+            item.shootSpeed = 12f;
+            item.damage = 40;
+            item.knockBack = 5f;
             item.useStyle = 1;
-            item.useAnimation = 25;
-            item.useTime = 25;
-            item.width = 16;
-            item.height = 16;
+            item.useAnimation = 20;
+            item.useTime = 20;
+            item.width = 38;
+            item.height = 36;
             item.maxStack = 999;
-            item.rare = 0;
+            item.rare = 5;
             item.ammo = ItemID.Javelin;
 
             item.consumable = true;
@@ -36,8 +36,8 @@ namespace ThrowingClass.Items.Weapons.Javelins
             item.thrown = true;
 
             item.UseSound = SoundID.Item1;
-            item.shoot = mod.ProjectileType("WoodenJavelin");
-            item.value = Item.sellPrice(0, 0, 0, 0);
+            item.shoot = mod.ProjectileType("SplinterJavelin");
+            item.value = Item.sellPrice(0, 0, 0, 8);
         }
 
         public int numberShots = 0;
@@ -113,9 +113,10 @@ namespace ThrowingClass.Items.Weapons.Javelins
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemID.Wood, 1);
-            recipe.AddTile(TileID.WorkBenches);
-            recipe.SetResult(this, 15);
+            recipe.AddIngredient(mod.GetItem("MakeshiftJavelinWeapon"), 120);
+            recipe.AddIngredient(mod.GetItem("WickedTooth"), 1);
+            recipe.AddTile(TileID.MythrilAnvil);
+            recipe.SetResult(this, 30);
             recipe.AddRecipe();
         }
     }

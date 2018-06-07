@@ -3,7 +3,7 @@
 - 2 new sets of throwing armor
 - 3 rebalanced sets of armor (gladiator, obsidian, and viking)
 - 8 new throwing variant helmets (hardmode ores)
-- 41 new throwing projectiles
+- 42 new throwing projectiles
 - 8 new throwing launchers
 - 8 new throwing accessories
 - 1 new NPC
@@ -37,3 +37,4 @@ V 3.1: Added true javelins, many bug fixes
 V 3.2: Added more true javelins and more bug fixes
 V 3.2.5: Added Frozen Leafs and a Cryo grenade launcher
 V 3.3: Made the Traveling Merchant sell a munitions pack at a 25% chance, added the munitions pack which adds a chance to shoot more shots
+V 3.4: Added Makeshift Javelins and Splinter Javelins, fixed many bugs, made many balance changes
