@@ -13,7 +13,7 @@ namespace ThrowingClass.Items.Weapons.Launchers
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Knife Launcher");
-            Tooltip.SetDefault("Uses mechanization to fire knives at a much stronger velocity\nRight click when using the weapon to switch it between throwing and ranged damage");
+            Tooltip.SetDefault("Uses mechanization to fire knives at a much stronger velocity\n(With Calamity) Right click to change to ranged damage (reforge)");
         }
 
         public override void SetDefaults()
@@ -202,9 +202,16 @@ namespace ThrowingClass.Items.Weapons.Launchers
             return false;
         }
 
-        /*public override bool AltFunctionUse(Player player)
+        public override bool AltFunctionUse(Player player)
         {
-            return true;
+            if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public override bool CanUseItem(Player player)
@@ -224,7 +231,7 @@ namespace ThrowingClass.Items.Weapons.Launchers
                 }
             }
             return base.CanUseItem(player);
-        }*/
+        }
 
         public override void AddRecipes()
         {
