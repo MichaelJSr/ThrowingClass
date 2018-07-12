@@ -13,22 +13,22 @@ namespace AccessoriesNPC.NPCs
             //Attuned Fossil
             if (npc.type == NPCID.TombCrawlerHead)
             {
-                if (Main.rand.NextFloat() < .05f)
+                if (Main.rand.NextFloat() < .025f)
                     Item.NewItem(npc.getRect(), mod.ItemType("AttunedFossil"), 1);
             }
             if (npc.type == NPCID.WalkingAntlion)
             {
-                if (Main.rand.NextFloat() < .02f)
+                if (Main.rand.NextFloat() < .015f)
                     Item.NewItem(npc.getRect(), mod.ItemType("AttunedFossil"), 1);
             }
             if (npc.type == NPCID.DuneSplicerHead)
             {
-                if (Main.rand.NextFloat() < .05f)
+                if (Main.rand.NextFloat() < .025f)
                     Item.NewItem(npc.getRect(), mod.ItemType("AttunedFossil"), 1);
             }
             if (npc.type == NPCID.DesertBeast)
             {
-                if (Main.rand.NextFloat() < .02f)
+                if (Main.rand.NextFloat() < .015f)
                     Item.NewItem(npc.getRect(), mod.ItemType("AttunedFossil"), 1);
             }
 
@@ -127,9 +127,17 @@ namespace AccessoriesNPC.NPCs
             switch (type)
             {
                 case NPCID.TravellingMerchant:
-                    if (Main.rand.NextFloat() < .25f)
+                    if (Main.rand.NextFloat() < .15f)
                     {
                         shop.item[nextSlot].SetDefaults(mod.ItemType("MunitionsPack"));
+                        nextSlot++;
+                    }
+                    return;
+
+                case NPCID.SkeletonMerchant:
+                    if (Main.rand.NextFloat() < .5f)
+                    {
+                        shop.item[nextSlot].SetDefaults(mod.ItemType("ShinyRock"));
                         nextSlot++;
                     }
                     return;

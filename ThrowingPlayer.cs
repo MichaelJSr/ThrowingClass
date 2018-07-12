@@ -19,6 +19,7 @@ namespace ThrowingClass
         public bool DiamondBreak = false;
         public bool TrueDiamondBreak = false;
         public bool Munition1 = false;
+        public bool Penetration1 = false;
 
         public override void ResetEffects()
         {
@@ -26,6 +27,7 @@ namespace ThrowingClass
             DiamondBreak = false;
             TrueDiamondBreak = false;
             Munition1 = false;
+            Penetration1 = false;
         }
 
         /*public override void clientClone(ModPlayer clientClone)
@@ -42,6 +44,7 @@ namespace ThrowingClass
             DiamondBreak = false;
             TrueDiamondBreak = false;
             Munition1 = false;
+            Penetration1 = false;
         }
 
         public override void SetupStartInventory(IList<Item> items)

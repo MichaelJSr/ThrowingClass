@@ -33,7 +33,7 @@ namespace Gladiator.NPCs
             NPCID.Sets.AttackType[npc.type] = 0;
             NPCID.Sets.AttackTime[npc.type] = 90;
             NPCID.Sets.AttackAverageChance[npc.type] = 30;
-            NPCID.Sets.HatOffsetY[npc.type] = 12;
+            NPCID.Sets.HatOffsetY[npc.type] = 0;
         }
 
         public override void SetDefaults()

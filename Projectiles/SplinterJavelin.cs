@@ -29,6 +29,22 @@ namespace ThrowingClass.Projectiles
         public int numberShots = 12;
         public float chanceShots = 0.2f;
         public bool munition1 = false;
+        public bool penetration1 = false;
+
+        public override void AI()
+        {
+            if (Main.player[projectile.owner].GetModPlayer<ThrowingPlayer>(mod).Penetration1 == true && penetration1 == false)
+            {
+                projectile.penetrate += 1;
+                penetration1 = true;
+            }
+
+            if (Main.player[projectile.owner].GetModPlayer<ThrowingPlayer>(mod).Penetration1 == false && penetration1 == true)
+            {
+                projectile.penetrate -= 1;
+                penetration1 = false;
+            }
+        }
 
         public override void Kill(int timeLeft)
         {

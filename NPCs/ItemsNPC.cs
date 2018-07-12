@@ -13,32 +13,32 @@ namespace ItemsNPC.NPCs
             //Cryo Shards
             if (npc.type == NPCID.ArmoredViking)
             {
-                if (Main.rand.NextFloat() < .02f)
+                if (Main.rand.NextFloat() < .015f)
                     Item.NewItem(npc.getRect(), mod.ItemType("CryoShard"), 1);
             }
             if (npc.type == NPCID.IceTortoise)
             {
-                if (Main.rand.NextFloat() < .04f)
+                if (Main.rand.NextFloat() < .03f)
                     Item.NewItem(npc.getRect(), mod.ItemType("CryoShard"), 1);
             }
             if (npc.type == NPCID.IceElemental)
             {
-                if (Main.rand.NextFloat() < .02f)
+                if (Main.rand.NextFloat() < .015f)
                     Item.NewItem(npc.getRect(), mod.ItemType("CryoShard"), 1);
             }
             if (npc.type == NPCID.IcyMerman)
             {
-                if (Main.rand.NextFloat() < .03f)
+                if (Main.rand.NextFloat() < .015f)
                     Item.NewItem(npc.getRect(), mod.ItemType("CryoShard"), 1);
             }
             if (npc.type == NPCID.IceGolem)
             {
-                if (Main.rand.NextFloat() < .05f)
+                if (Main.rand.NextFloat() < 1f)
                     Item.NewItem(npc.getRect(), mod.ItemType("CryoShard"), 1);
             }
             if (npc.type == NPCID.Wolf)
             {
-                if (Main.rand.NextFloat() < .025f)
+                if (Main.rand.NextFloat() < .015f)
                     Item.NewItem(npc.getRect(), mod.ItemType("CryoShard"), 1);
             }
 
