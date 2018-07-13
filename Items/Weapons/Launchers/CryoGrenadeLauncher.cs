@@ -140,7 +140,7 @@ namespace ThrowingClass.Items.Weapons.Launchers
             return false;
         }
 
-        public override bool AltFunctionUse(Player player)
+        /*public override bool AltFunctionUse(Player player)
         {
             if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
             {
@@ -169,7 +169,7 @@ namespace ThrowingClass.Items.Weapons.Launchers
                 }
             }
             return base.CanUseItem(player);
-        }
+        }*/
 
         public override void AddRecipes()
         {
