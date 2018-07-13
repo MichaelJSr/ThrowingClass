@@ -4,7 +4,7 @@ using ThrowingClass.NPCs;
 
 namespace ThrowingClass.Buff
 {
-    public class Penetration1 : ModBuff
+    public class Sharp1 : ModBuff
     {
         public override void SetDefaults()
         {
@@ -18,7 +18,7 @@ namespace ThrowingClass.Buff
 
         public override void Update(Player player, ref int buffIndex)
         {
-            player.GetModPlayer<ThrowingPlayer>(mod).Penetration1 = true;
+            player.GetModPlayer<ThrowingPlayer>(mod).Sharp1 = true;
         }
     }
 }

@@ -39,3 +39,4 @@ V 3.2.5: Added Frozen Leafs and a Cryo grenade launcher
 V 3.3: Made the Traveling Merchant sell a munitions pack at a 25% chance, added the munitions pack which adds a chance to shoot more shots
 V 3.4: Added Makeshift Javelins and Splinter Javelins, fixed many bugs, made many balance changes
 V 3.4.5: Added the Shiny Rock, an accessory sold by the Skeleton Merchant that adds 1 penetration
+V 3.5: A lot of quality of life changes

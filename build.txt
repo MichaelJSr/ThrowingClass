@@ -1,5 +1,5 @@
 author = Grodus
-version = 3.4.5
+version = 3.5
 displayName = The Throwing Expansion
 homepage = https://forums.terraria.org/index.php?threads/the-throwing-expansion.67082/
 hideCode = false

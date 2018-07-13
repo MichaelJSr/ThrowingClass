@@ -15,11 +15,15 @@ namespace ThrowingClass
 {
     public class ThrowingPlayer : ModPlayer
     {
+        public int numberShots = 0;
+        public float chanceShots = 0.1f;
+        public int penetration = 0;
         public bool TruePoison = false;
         public bool DiamondBreak = false;
         public bool TrueDiamondBreak = false;
         public bool Munition1 = false;
-        public bool Penetration1 = false;
+        public bool Sharp1 = false;
+        public bool PalladiumGalea = false;
 
         public override void ResetEffects()
         {
@@ -27,7 +31,202 @@ namespace ThrowingClass
             DiamondBreak = false;
             TrueDiamondBreak = false;
             Munition1 = false;
-            Penetration1 = false;
+            Sharp1 = false;
+            PalladiumGalea = false;
+        }
+
+        public override bool Shoot(Item item, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
+        {
+            if (item.thrown)
+            {
+                int actualShots = 1;
+                int chance = 0;
+                int fired = 0;
+                int odd = 0;
+                int checkOdd = 0;
+                int even = 0;
+                int checkEven = -1;
+                float rotation = MathHelper.ToRadians(5f);
+                position += Vector2.Normalize(new Vector2(speedX, speedY)) * 5f;
+                for (int shots = 0; shots < numberShots; shots++)
+                {
+                    if (Main.rand.NextFloat() < chanceShots)
+                    {
+                        chance += 1;
+                    }
+                }
+                actualShots = chance + 1;
+                for (int shots = 0; shots < actualShots; shots++)
+                {
+                    if (fired % 2 != 1 && actualShots % 2 != 1)
+                    {
+                        even = 1;
+                    }
+                    if (fired == 0)
+                    {
+                        checkEven -= 1;
+                    }
+                    Vector2 perturbedSpeed = new Vector2(speedX, speedY).RotatedBy(rotation / (1 - checkOdd - checkEven) * (fired - odd % 2 + even)); // Watch out for dividing by 0 if there is only 1 projectile.
+                    Projectile.NewProjectile(position.X, position.Y, perturbedSpeed.X, perturbedSpeed.Y, type, damage, knockBack, player.whoAmI);
+                    rotation = -rotation;
+                    if (fired % 2 != 1)
+                    {
+                        even = 0;
+                    }
+                    fired += 1;
+                    if (fired != 1 && actualShots % 2 != 0)
+                    {
+                        odd += 1;
+                    }
+                    if (fired == 1)
+                    {
+                        checkOdd -= 1;
+                    }
+                }
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        public override void OnHitNPCWithProj(Projectile proj, NPC target, int damage, float knockback, bool crit)
+        {
+            if ((proj.thrown) && (proj.penetrate != -1) && !proj.noEnchantments)
+            {
+                proj.penetrate += penetration;
+            }
+            if ((proj.type == mod.ProjectileType("SplinterJavelin")) || (proj.type == mod.ProjectileType("MakeshiftJavelin")))
+            {
+                int actualShots = 1;
+                int chance = 4;
+                float perturbedSpeedX = 0f;
+                float perturbedSpeedY = 0f;
+                int counter = 0;
+                int sectorOne = 0;
+                for (int shots = 0; shots < numberShots; shots++)
+                {
+                    if (Main.rand.NextFloat() < chanceShots)
+                    {
+                        chance += 1;
+                    }
+                }
+                actualShots = chance + 1;
+                for (int shots = 0; shots < actualShots; shots++)
+                {
+                    counter++;
+                    //Sector 1
+                    if (shots == 0)
+                    {
+                        perturbedSpeedX = MathHelper.ToRadians(90);
+                        perturbedSpeedY = -MathHelper.ToRadians(0);
+                        sectorOne++;
+                    }
+                    else if ((360 / actualShots) * (counter - 1) < 90)
+                    {
+                        perturbedSpeedX = MathHelper.ToRadians(90 - ((360 / actualShots) * sectorOne));
+                        perturbedSpeedY = -MathHelper.ToRadians((360 / actualShots) * sectorOne);
+                        sectorOne++;
+                    }
+                    //Sector 2
+                    else if (((counter - 1) * (360 / actualShots)) == 180)
+                    {
+                        perturbedSpeedX = -MathHelper.ToRadians(90);
+                        perturbedSpeedY = -MathHelper.ToRadians(0);
+                    }
+                    else if ((360 / actualShots) * (counter - 1) < 180)
+                    {
+                        if ((90 - ((360 / actualShots) * (counter - sectorOne))) < 0)
+                        {
+                            perturbedSpeedX = -MathHelper.ToRadians(180 - Math.Abs((360 / actualShots) * (counter - sectorOne)));
+                            perturbedSpeedY = -MathHelper.ToRadians(Math.Abs(((360 / actualShots) * (counter - sectorOne)) - 90));
+                        }
+                        else
+                        {
+                            perturbedSpeedX = -MathHelper.ToRadians(90 - ((360 / actualShots) * (counter - sectorOne)));
+                            perturbedSpeedY = -MathHelper.ToRadians((360 / actualShots) * (counter - sectorOne));
+                        }
+                    }
+                    //Sector 3
+                    else if (((counter - 1) * (360 / actualShots)) == 270)
+                    {
+                        perturbedSpeedX = -MathHelper.ToRadians(0);
+                        perturbedSpeedY = MathHelper.ToRadians(90);
+                    }
+                    else if ((360 / actualShots) * (counter - 1) < 270)
+                    {
+                        if ((180 - ((360 / actualShots) * (counter - sectorOne))) < 0)
+                        {
+                            perturbedSpeedX = -MathHelper.ToRadians(270 - Math.Abs((360 / actualShots) * (counter - sectorOne)));
+                            perturbedSpeedY = MathHelper.ToRadians(Math.Abs(((360 / actualShots) * (counter - sectorOne)) - 180));
+                        }
+                        else
+                        {
+                            if (actualShots == 8)
+                            {
+                                perturbedSpeedX = -MathHelper.ToRadians(45);
+                                perturbedSpeedY = MathHelper.ToRadians(45);
+                            }
+                            else
+                            {
+                                perturbedSpeedX = -MathHelper.ToRadians(90 - ((360 / actualShots) * (counter - sectorOne * 2)));
+                                perturbedSpeedY = MathHelper.ToRadians((360 / actualShots) * (counter - sectorOne * 2));
+                            }
+                        }
+                    }
+                    //Sector 4
+                    else if (((counter - 1) * (360 / actualShots)) == 360)
+                    {
+                        perturbedSpeedX = MathHelper.ToRadians(90);
+                        perturbedSpeedY = MathHelper.ToRadians(0);
+                    }
+                    else if ((360 / actualShots) * (counter - 1) <= 360)
+                    {
+                        if ((270 - ((360 / actualShots) * (counter - sectorOne))) < 0)
+                        {
+                            perturbedSpeedX = MathHelper.ToRadians(360 - Math.Abs((360 / actualShots) * (counter - sectorOne)));
+                            perturbedSpeedY = MathHelper.ToRadians(Math.Abs(((360 / actualShots) * (counter - sectorOne)) - 270));
+                        }
+                        else if (actualShots == 6)
+                        {
+                            perturbedSpeedX = MathHelper.ToRadians(30);
+                            perturbedSpeedY = MathHelper.ToRadians(60);
+                        }
+                        else if (actualShots == 8)
+                        {
+                            perturbedSpeedX = MathHelper.ToRadians(30);
+                            perturbedSpeedY = MathHelper.ToRadians(60);
+                        }
+                        else if (actualShots == 16)
+                        {
+                            perturbedSpeedX = MathHelper.ToRadians(90 - ((360 / actualShots) * (counter - sectorOne * 2.5f)));
+                            perturbedSpeedY = MathHelper.ToRadians((360 / actualShots) * (counter - sectorOne * 2.5f));
+                        }
+                        else
+                        {
+                            perturbedSpeedX = MathHelper.ToRadians(90 - ((360 / actualShots) * (counter % sectorOne)));
+                            perturbedSpeedY = MathHelper.ToRadians((360 / actualShots) * (counter % sectorOne));
+                        }
+                    }
+                    //Failsafe
+                    else
+                    {
+                        perturbedSpeedX = Main.rand.Next(-6, 6);
+                        perturbedSpeedY = Main.rand.Next(-6, 6);
+                    }
+                    //Check which splitting javelin is being used
+                    if (proj.type == mod.ProjectileType("MakeshiftJavelin"))
+                    {
+                        Projectile.NewProjectile(proj.position.X, proj.position.Y, perturbedSpeedX * 3f, perturbedSpeedY * 3f, mod.ProjectileType("Splinter"), proj.damage - 10, 0.2f, Main.myPlayer);
+                    }
+                    else if (proj.type == mod.ProjectileType("SplinterJavelin"))
+                    {
+
+                        Projectile.NewProjectile(proj.position.X, proj.position.Y, perturbedSpeedX * 3f, perturbedSpeedY * 3f, mod.ProjectileType("MakeshiftJavelin"), proj.damage - 20, 0.2f, Main.myPlayer);
+                    }
+                }
+            }
         }
 
         /*public override void clientClone(ModPlayer clientClone)
@@ -44,7 +243,8 @@ namespace ThrowingClass
             DiamondBreak = false;
             TrueDiamondBreak = false;
             Munition1 = false;
-            Penetration1 = false;
+            Sharp1 = false;
+            PalladiumGalea = false;
         }
 
         public override void SetupStartInventory(IList<Item> items)
@@ -95,6 +295,43 @@ namespace ThrowingClass
                 Main.dust[dust].scale *= 1f;
                 Main.dust[dust].noGravity = true;
                 Lighting.AddLight(player.position, 0.1f, 0.2f, 0.7f);
+            }
+        }
+
+        public bool Munition1Equip = false;
+        public bool Sharp1Equip = false;
+
+        public override void PostUpdateBuffs()
+        {
+            if ((Munition1 == true) && (Munition1Equip == false))
+            {
+                numberShots += 2;
+                chanceShots += 0.2f;
+                Munition1Equip = true;
+            }
+            else if ((Munition1 == false) && (Munition1Equip == true))
+            {
+                numberShots -= 2;
+                chanceShots -= 0.2f;
+                Munition1Equip = false;
+            }
+            if ((Sharp1 == true) && (Sharp1Equip == false))
+            {
+                penetration += 1;
+                Sharp1Equip = true;
+            }
+            else if ((Sharp1 == false) && (Sharp1Equip == true))
+            {
+                penetration -= 1;
+                Sharp1Equip = false;
+            }
+        }
+
+        public override void OnHitNPC(Item item, NPC target, int damage, float knockback, bool crit)
+        {
+            if (PalladiumGalea == true)
+            {
+                player.AddBuff(BuffID.RapidHealing, 180);
             }
         }
     }

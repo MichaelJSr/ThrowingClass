@@ -37,7 +37,7 @@ namespace ThrowingClass.Items.Armor
         public override void UpdateArmorSet(Player player)
         {
             player.setBonus = "Greatly increases life regeneration after striking an enemy";
-            player.AddBuff(BuffID.RapidHealing, 1);
+            player.GetModPlayer<ThrowingPlayer>(mod).PalladiumGalea = true;
         }
 
         public override void AddRecipes()

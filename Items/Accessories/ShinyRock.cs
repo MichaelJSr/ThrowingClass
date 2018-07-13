@@ -27,7 +27,7 @@ namespace ThrowingClass.Items.Accessories
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            player.AddBuff(mod.BuffType("Penetration1"), 60);
+            player.AddBuff(mod.BuffType("Sharp1"), 60);
         }
     }
 }

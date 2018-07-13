@@ -8,7 +8,7 @@ namespace ThrowingClass.Buff
     {
         public override void SetDefaults()
         {
-            DisplayName.SetDefault("Not enough ammo 1");
+            DisplayName.SetDefault("Munition 1");
             Description.SetDefault("+20% chance to shoot up to 2 more shots");
             Main.debuff[Type] = true;
             Main.pvpBuff[Type] = false;

@@ -26,8 +26,6 @@ namespace ThrowingClass.Projectiles
             projectile.thrown = true;
         }
 
-        public bool penetration1 = false;
-
         public override bool TileCollideStyle(ref int width, ref int height, ref bool fallThrough)
         {
             // For going through platforms and such, javelins use a tad smaller size
@@ -115,17 +113,6 @@ namespace ThrowingClass.Projectiles
 
         public override void AI()
         {
-            if (Main.player[projectile.owner].GetModPlayer<ThrowingPlayer>(mod).Penetration1 == true && penetration1 == false)
-            {
-                projectile.penetrate += 1;
-                penetration1 = true;
-            }
-
-            if (Main.player[projectile.owner].GetModPlayer<ThrowingPlayer>(mod).Penetration1 == false && penetration1 == true)
-            {
-                projectile.penetrate -= 1;
-                penetration1 = false;
-            }
             projectile.light = 0.25f;
             // Slowly remove alpha as it is present
             if (projectile.alpha > 0)

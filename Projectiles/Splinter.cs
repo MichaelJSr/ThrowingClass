@@ -25,21 +25,8 @@ namespace ThrowingClass.Projectiles
             projectile.aiStyle = 0; //How the projectile works, this is no AI, it just goes a straight path
         }
 
-        public bool penetration1 = false;
-
         public override void AI()
         {
-            if (Main.player[projectile.owner].GetModPlayer<ThrowingPlayer>(mod).Penetration1 == true && penetration1 == false)
-            {
-                projectile.penetrate += 1;
-                penetration1 = true;
-            }
-
-            if (Main.player[projectile.owner].GetModPlayer<ThrowingPlayer>(mod).Penetration1 == false && penetration1 == true)
-            {
-                projectile.penetrate -= 1;
-                penetration1 = false;
-            }
             // Make sure to set the rotation accordingly to the velocity, and add some to work around the sprite's rotation
             projectile.rotation =
                 projectile.velocity.ToRotation() +
