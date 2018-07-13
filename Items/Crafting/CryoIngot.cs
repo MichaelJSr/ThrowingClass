@@ -2,7 +2,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace ThrowingClass.Items
+namespace ThrowingClass.Items.Crafting
 {
     public class CryoIngot : ModItem
     {

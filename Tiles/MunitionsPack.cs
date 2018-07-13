@@ -23,22 +23,14 @@ namespace ThrowingClass.Tiles
             TileObjectData.newTile.CopyFrom(TileObjectData.Style2x2);
             TileObjectData.addTile(Type);
 
-            //AddMapEntry(new Color(200, 200, 200));
+            ModTranslation name = CreateMapEntryName();
+            name.SetDefault("Munitions Pack");
+            AddMapEntry(new Color(200, 200, 200), name);
         }
 
         public override void KillMultiTile(int i, int j, int frameX, int frameY)
         {
-            Item.NewItem(i * 16, j * 16, 16, 16, DropType(frameX));
-        }
-
-        public int DropType(int frameX)
-        {
-            int style = frameX / 32;
-            switch (style)
-            {
-                case 0: return mod.ItemType("MunitionsPack");
-                default: return 0;
-            }
+            Item.NewItem(i * 16, j * 16, 32, 16, mod.ItemType("MunitionsPack"));
         }
 
         public override void MouseOver(int i, int j)

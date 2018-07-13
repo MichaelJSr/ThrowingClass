@@ -20,6 +20,7 @@ namespace ThrowingClass.Items.Placeable
             item.rare = 3;
             item.value = Item.buyPrice(0, 15, 0, 0);
             item.createTile = mod.TileType("MunitionsPack");
+            item.placeStyle = 0;
         }
     }
 }

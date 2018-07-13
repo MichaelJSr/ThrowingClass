@@ -27,7 +27,9 @@ namespace ThrowingClass.Tiles
             TileObjectData.addAlternate(1); //facing right will use the second texture style
             TileObjectData.addTile(Type);
 
-            AddMapEntry(new Color(200, 200, 200));
+            ModTranslation name = CreateMapEntryName();
+            name.SetDefault("Javelin Ballista");
+            AddMapEntry(new Color(200, 200, 200), name);
         }
 
         public override void KillMultiTile(int i, int j, int frameX, int frameY)
