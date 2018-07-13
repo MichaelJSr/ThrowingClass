@@ -8,11 +8,11 @@ using Terraria.ModLoader;
 
 namespace ThrowingClass.Items.Accessories
 {
-    public class MunitionsPack : ModItem
+    public class JavelinQuiver : ModItem
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Munitions Pack");
+            DisplayName.SetDefault("Javelin Quiver");
             Tooltip.SetDefault("Adds a 20% chance to shoot up to 2 more shots for throwing weapons");
         }
 
@@ -20,8 +20,8 @@ namespace ThrowingClass.Items.Accessories
         {
             item.width = 32;
             item.height = 32;
-            item.value = Item.buyPrice(0, 15, 0, 0);
-            item.rare = 5;
+            item.value = Item.buyPrice(0, 10, 0, 0);
+            item.rare = 4;
             item.accessory = true;
         }
 

@@ -21,8 +21,13 @@ namespace ThrowingClass
         public bool TruePoison = false;
         public bool DiamondBreak = false;
         public bool TrueDiamondBreak = false;
+        //20% Chance for 2 shots
         public bool Munition1 = false;
+        //20% Chance not to consume ammo
+        public bool Munition2 = false;
+        //+1 Penetration
         public bool Sharp1 = false;
+        //Heals for 3 seconds if you hit an enemy
         public bool PalladiumGalea = false;
 
         public override void ResetEffects()
@@ -31,6 +36,7 @@ namespace ThrowingClass
             DiamondBreak = false;
             TrueDiamondBreak = false;
             Munition1 = false;
+            Munition2 = false;
             Sharp1 = false;
             PalladiumGalea = false;
         }
@@ -243,6 +249,7 @@ namespace ThrowingClass
             DiamondBreak = false;
             TrueDiamondBreak = false;
             Munition1 = false;
+            Munition2 = false;
             Sharp1 = false;
             PalladiumGalea = false;
         }
@@ -333,6 +340,15 @@ namespace ThrowingClass
             {
                 player.AddBuff(BuffID.RapidHealing, 180);
             }
+        }
+
+        public override bool ConsumeAmmo(Item weapon, Item ammo)
+        {
+            if (Munition2 == true && weapon.thrown == true)
+            {
+                return Main.rand.NextFloat() >= .2f;
+            }
+            return true;
         }
     }
 }

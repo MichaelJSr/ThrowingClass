@@ -124,22 +124,22 @@ namespace ThrowingClass.Projectiles
             {
                 projectile.alpha = 0;
             }
-                targetWhoAmI += 1f;
-                // For a little while, the javelin will travel with the same speed, but after projectile, the javelin drops velocity very quickly.
-                if (targetWhoAmI >= maxTicks)
-                {
-                    // Change these multiplication factors to alter the javelin's movement change after reaching maxTicks
-                    float velXmult = 0.98f; // x velocity factor, every AI update the x velocity will be 98% of the original speed
-                    float
-                        velYmult = 0.35f; // y velocity factor, every AI update the y velocity will be be 0.35f bigger of the original speed, causing the javelin to drop to the ground
-                    targetWhoAmI = maxTicks; // set ai1 to maxTicks continuously
-                    projectile.velocity.X = projectile.velocity.X * velXmult;
-                    projectile.velocity.Y = projectile.velocity.Y + velYmult;
-                }
-                // Make sure to set the rotation accordingly to the velocity, and add some to work around the sprite's rotation
-                projectile.rotation =
-                    projectile.velocity.ToRotation() +
-                    MathHelper.ToRadians(0f); // Please notice the MathHelper usage, offset the rotation by 90 degrees (to radians because rotation uses radians) because the sprite's rotation is not aligned!
+            targetWhoAmI += 1f;
+            // For a little while, the javelin will travel with the same speed, but after projectile, the javelin drops velocity very quickly.
+            if (targetWhoAmI >= maxTicks)
+            {
+                // Change these multiplication factors to alter the javelin's movement change after reaching maxTicks
+                float velXmult = 0.98f; // x velocity factor, every AI update the x velocity will be 98% of the original speed
+                float
+                    velYmult = 0.35f; // y velocity factor, every AI update the y velocity will be be 0.35f bigger of the original speed, causing the javelin to drop to the ground
+                targetWhoAmI = maxTicks; // set ai1 to maxTicks continuously
+                projectile.velocity.X = projectile.velocity.X * velXmult;
+                projectile.velocity.Y = projectile.velocity.Y + velYmult;
+            }
+            // Make sure to set the rotation accordingly to the velocity, and add some to work around the sprite's rotation
+            projectile.rotation =
+                projectile.velocity.ToRotation() +
+                MathHelper.ToRadians(0f); // Please notice the MathHelper usage, offset the rotation by 90 degrees (to radians because rotation uses radians) because the sprite's rotation is not aligned!
         }
 
         public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)

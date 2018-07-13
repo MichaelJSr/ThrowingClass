@@ -177,6 +177,8 @@ namespace Gladiator.NPCs
         {
             shop.item[nextSlot].SetDefaults(ItemID.Javelin);  //this is an example of how to add your item
             nextSlot++;
+            shop.item[nextSlot].SetDefaults(mod.ItemType("JavelinQuiver"));  //this is an example of how to add your item
+            nextSlot++;
 
             for (int k = 0; k < 255; k++)
             {
