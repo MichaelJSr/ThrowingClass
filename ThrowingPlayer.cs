@@ -41,10 +41,110 @@ namespace ThrowingClass
             PalladiumGalea = false;
         }
 
+        int tempType = 0;
+        bool tempTypeTrue = false;
+        int tempDmg = 0;
+        int tempUseTime = 0;
+        int tempUseAnimation = 0;
+        int tempDmg2 = 0;
+        int tempUseTime2 = 0;
+        int tempUseAnimation2 = 0;
+
         public override bool Shoot(Item item, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
             if (item.thrown)
             {
+                if (item.shoot == 10)
+                {
+                    //Javelins
+                    if (type == mod.ProjectileType("TrueSapphireJavelin"))
+                    {
+                        tempDmg = 10;
+                        tempUseTime = 14;
+                        tempUseAnimation = 14;
+                    }
+
+                    else if (type == mod.ProjectileType("SapphireJavelin"))
+                    {
+                        tempDmg = 5;
+                        tempUseTime = 10;
+                        tempUseAnimation = 10;
+                    }
+
+                    else if (type == mod.ProjectileType("TrueDiamondJavelin") || type == mod.ProjectileType("TrueAmberJavelin") || type == mod.ProjectileType("TrueHellfireJavelin") || type == mod.ProjectileType("TrueJesterJavelin") || type == mod.ProjectileType("TrueMeteorJavelin"))
+                    {
+                        tempUseTime = 8;
+                        tempUseAnimation = 8;
+                    }
+
+                    else if (type == mod.ProjectileType("DiamondJavelin") || type == mod.ProjectileType("AmberJavelin") || type == mod.ProjectileType("MeteorJavelin") || type == mod.ProjectileType("JesterJavelin") || type == mod.ProjectileType("HellfireJavelin") || type == mod.ProjectileType("TrueAmethystJavelin") || type == mod.ProjectileType("TrueTopazJavelin") || type == mod.ProjectileType("TrueEmeraldJavelin") || type == mod.ProjectileType("TrueRubyJavelin") || type == mod.ProjectileType("SplinterJavelin"))
+                    {
+                        tempUseTime = 4;
+                        tempUseAnimation = 4;
+                    }
+                    //Grenades
+                    if (type == ProjectileID.HappyBomb)
+                    {
+                        tempUseTime = 20;
+                        tempUseAnimation = 20;
+                    }
+
+                    else if (type == ProjectileID.Beenade || type == mod.ProjectileType("Waspnade"))
+                    {
+                        tempDmg = 30;
+                        tempUseTime = 12;
+                        tempUseAnimation = 12;
+                    }
+
+                    else if (type == ProjectileID.BouncyGrenade || type == ProjectileID.MolotovCocktail)
+                    {
+                        tempUseTime = 5;
+                        tempUseAnimation = 5;
+                    }
+                    //Knives
+                    if (type == ProjectileID.ShadowFlameKnife)
+                    {
+                        tempUseTime = 3;
+                        tempUseAnimation = 3;
+                    }
+
+                    else if (type == ProjectileID.FrostDaggerfish)
+                    {
+                        tempUseTime = 2;
+                        tempUseAnimation = 2;
+                    }
+
+                    else if (type == ProjectileID.BoneDagger)
+                    {
+                        tempUseTime = 1;
+                        tempUseAnimation = 1;
+                    }
+
+                    if ((tempType != type) && tempTypeTrue == false)
+                    {
+                        tempDmg2 = tempDmg;
+                        tempUseTime2 = tempUseTime;
+                        tempUseAnimation2 = tempUseAnimation;
+                        item.damage -= tempDmg;
+                        item.useTime -= tempUseTime;
+                        item.useAnimation -= tempUseAnimation;
+                        tempTypeTrue = true;
+                        tempType = type;
+                    }
+                    else if ((tempType != type) && tempTypeTrue == true)
+                    {
+                        item.damage += tempDmg2;
+                        item.useTime += tempUseTime2;
+                        item.useAnimation += tempUseAnimation2;
+                        tempTypeTrue = false;
+                    }
+
+                    if (item.useTime < 2 || item.useAnimation < 2)
+                    {
+                        item.useTime = 2;
+                        item.useAnimation = 2;
+                    }
+                }
                 int actualShots = 1;
                 int chance = 0;
                 int fired = 0;
