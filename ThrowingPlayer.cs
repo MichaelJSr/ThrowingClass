@@ -16,7 +16,7 @@ namespace ThrowingClass
     public class ThrowingPlayer : ModPlayer
     {
         public int numberShots = 0;
-        public float chanceShots = 0.1f;
+        public float chanceShots = 0.05f;
         public int penetration = 0;
         public bool TruePoison = false;
         public bool DiamondBreak = false;
@@ -333,6 +333,11 @@ namespace ThrowingClass
                     }
                 }
             }
+
+            if (PalladiumGalea == true)
+            {
+                player.AddBuff(BuffID.RapidHealing, 180);
+            }
         }
 
         /*public override void clientClone(ModPlayer clientClone)
@@ -431,14 +436,6 @@ namespace ThrowingClass
             {
                 penetration -= 1;
                 Sharp1Equip = false;
-            }
-        }
-
-        public override void OnHitNPC(Item item, NPC target, int damage, float knockback, bool crit)
-        {
-            if (PalladiumGalea == true)
-            {
-                player.AddBuff(BuffID.RapidHealing, 180);
             }
         }
 

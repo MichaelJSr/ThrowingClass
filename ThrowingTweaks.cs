@@ -11,24 +11,24 @@ using Terraria.UI;
 
 namespace ThrowingClass
 {
-	public class ThrowingTweaks : GlobalItem
-	{
-		const string GladiatorSet = "throwing gladiator";
-		const string ObsidianSet = "throwing obsidian";
-		
-		public override void SetDefaults(Item item)
-		{
-			switch(item.type)
-			{
-				case ItemID.GladiatorHelmet:
-					item.rare = 1;
-					item.defense = 4;
-					return;
+    public class ThrowingTweaks : GlobalItem
+    {
+        const string GladiatorSet = "throwing gladiator";
+        const string ObsidianSet = "throwing obsidian";
 
-				case ItemID.GladiatorBreastplate:
-					item.rare = 1;
-					item.defense = 5;
-					return;
+        public override void SetDefaults(Item item)
+        {
+            switch (item.type)
+            {
+                case ItemID.GladiatorHelmet:
+                    item.rare = 1;
+                    item.defense = 4;
+                    return;
+
+                case ItemID.GladiatorBreastplate:
+                    item.rare = 1;
+                    item.defense = 5;
+                    return;
 
                 case ItemID.GladiatorLeggings:
                     item.rare = 1;
@@ -48,15 +48,15 @@ namespace ThrowingClass
                     item.rare = 1;
                     return;
 
-				case ItemID.ObsidianShirt:
+                case ItemID.ObsidianShirt:
                     item.defense = 4;
                     item.rare = 1;
                     return;
 
-				case ItemID.ObsidianPants:
+                case ItemID.ObsidianPants:
                     item.defense = 3;
-				    item.rare = 1;
-					return;
+                    item.rare = 1;
+                    return;
 
                 case ItemID.Javelin:
                 case ItemID.BoneJavelin:
@@ -90,12 +90,12 @@ namespace ThrowingClass
                     return;
 
                 case ItemID.SpikyBall:
-                        item.autoReuse = true;
-                        item.ammo = ItemID.SpikyBall;
+                    item.autoReuse = true;
+                    item.ammo = ItemID.SpikyBall;
                     return;
 
                 case ItemID.Snowball:
-                        item.autoReuse = true;
+                    item.autoReuse = true;
                     return;
 
                 case ItemID.Bone:
@@ -200,32 +200,32 @@ namespace ThrowingClass
                 }
             }
         }
-		
-		public override void UpdateEquip(Item item, Player player)
-		{
-			switch(item.type)
-			{
-				case ItemID.ObsidianHelm:
-				case ItemID.ObsidianShirt:
-				case ItemID.ObsidianPants:
-						player.thrownCrit += 3;
-					return;
+
+        public override void UpdateEquip(Item item, Player player)
+        {
+            switch (item.type)
+            {
+                case ItemID.ObsidianHelm:
+                case ItemID.ObsidianShirt:
+                case ItemID.ObsidianPants:
+                    player.thrownCrit += 3;
+                    return;
 
                 case ItemID.GladiatorHelmet:
                 case ItemID.GladiatorBreastplate:
                 case ItemID.GladiatorLeggings:
-                        player.meleeCrit += 2;
-                        player.thrownCrit += 2;
-                        player.meleeDamage += 0.02f;
-                        player.thrownDamage += 0.02f;
+                    player.meleeCrit += 2;
+                    player.thrownCrit += 2;
+                    player.meleeDamage += 0.02f;
+                    player.thrownDamage += 0.02f;
                     return;
 
                 case ItemID.VikingHelmet:
-                        player.thrownDamage += 0.02f;
-                        player.meleeDamage += 0.02f;
+                    player.thrownDamage += 0.02f;
+                    player.meleeDamage += 0.02f;
                     return;
-			}
-		}
+            }
+        }
 
         public override string IsArmorSet(Item head, Item body, Item legs)
         {
@@ -238,21 +238,21 @@ namespace ThrowingClass
         }
 
         public override void UpdateArmorSet(Player player, string armorSet)
-		{
-			if (armorSet == GladiatorSet)
-			{
-				player.setBonus = Language.GetTextValue("Mods.ThrowingClass.ArmorSet.Gladiator");
-				player.meleeCrit += 10;
-				player.thrownCrit += 10;
+        {
+            if (armorSet == GladiatorSet)
+            {
+                player.setBonus = Language.GetTextValue("Mods.ThrowingClass.ArmorSet.Gladiator");
+                player.meleeCrit += 10;
+                player.thrownCrit += 10;
                 player.meleeDamage += 0.1f;
                 player.thrownDamage += 0.1f;
             }
             else if (armorSet == ObsidianSet)
-			{
-				player.setBonus = Language.GetTextValue("Mods.ThrowingClass.ArmorSet.Obsidian");
-				player.moveSpeed += 0.1f;
+            {
+                player.setBonus = Language.GetTextValue("Mods.ThrowingClass.ArmorSet.Obsidian");
+                player.moveSpeed += 0.1f;
                 player.thrownDamage += 0.1f;
             }
-		}
+        }
     }
 }
