@@ -41,3 +41,4 @@ V 3.4: Added Makeshift Javelins and Splinter Javelins, fixed many bugs, made man
 V 3.4.5: Added the Shiny Rock, an accessory sold by the Skeleton Merchant that adds 1 penetration
 V 3.5: A lot of quality of life changes
 V 3.5.5: Added a Munitions Pack tile, Added Javelin Quiver accessory, new fishing crate and throwing potion
+V 3.5.9: Bug Fixes

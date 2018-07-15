@@ -39,73 +39,75 @@ namespace ThrowingClass.Items.Crates
             if (Main.hardMode)
             {
                 //Gauranteed javelins
-                int Choose = Main.rand.Next(11);
+                int Choose = Main.rand.Next(10);
                 if (Choose == 0)
                 {
-                    player.QuickSpawnItem(ItemID.Javelin, Main.rand.Next(40, 120));
+                    player.QuickSpawnItem(mod.ItemType("TrueAmethystJavelinWeapon"), Main.rand.Next(40, 100));
                 }
                 else if (Choose == 1)
                 {
-                    player.QuickSpawnItem(mod.ItemType("TrueAmethystJavelinWeapon"), Main.rand.Next(20, 80));
+                    player.QuickSpawnItem(mod.ItemType("TrueDiamondJavelinWeapon"), Main.rand.Next(40, 100));
                 }
                 else if (Choose == 2)
                 {
-                    player.QuickSpawnItem(mod.ItemType("TrueDiamondJavelinWeapon"), Main.rand.Next(20, 80));
+                    player.QuickSpawnItem(mod.ItemType("TrueEmeraldJavelinWeapon"), Main.rand.Next(40, 100));
                 }
                 else if (Choose == 3)
                 {
-                    player.QuickSpawnItem(mod.ItemType("TrueEmeraldJavelinWeapon"), Main.rand.Next(20, 80));
+                    player.QuickSpawnItem(mod.ItemType("TrueHellfireJavelinWeapon"), Main.rand.Next(40, 100));
                 }
                 else if (Choose == 4)
                 {
-                    player.QuickSpawnItem(mod.ItemType("TrueHellfireJavelinWeapon"), Main.rand.Next(20, 80));
+                    player.QuickSpawnItem(mod.ItemType("TrueJesterJavelinWeapon"), Main.rand.Next(40, 100));
                 }
                 else if (Choose == 5)
                 {
-                    player.QuickSpawnItem(mod.ItemType("TrueJesterJavelinWeapon"), Main.rand.Next(20, 80));
+                    player.QuickSpawnItem(mod.ItemType("SplinterJavelinWeapon"), Main.rand.Next(40, 100));
                 }
                 else if (Choose == 6)
                 {
-                    player.QuickSpawnItem(mod.ItemType("SplinterJavelinWeapon"), Main.rand.Next(20, 80));
+                    player.QuickSpawnItem(mod.ItemType("TrueMeteorJavelinWeapon"), Main.rand.Next(40, 100));
                 }
                 else if (Choose == 7)
                 {
-                    player.QuickSpawnItem(mod.ItemType("TrueMeteorJavelinWeapon"), Main.rand.Next(20, 80));
+                    player.QuickSpawnItem(mod.ItemType("TrueRubyJavelinWeapon"), Main.rand.Next(40, 100));
                 }
                 else if (Choose == 8)
                 {
-                    player.QuickSpawnItem(mod.ItemType("TrueRubyJavelinWeapon"), Main.rand.Next(20, 80));
+                    player.QuickSpawnItem(mod.ItemType("TrueSapphireJavelinWeapon"), Main.rand.Next(40, 100));
                 }
                 else if (Choose == 9)
                 {
-                    player.QuickSpawnItem(mod.ItemType("TrueSapphireJavelinWeapon"), Main.rand.Next(20, 80));
+                    player.QuickSpawnItem(mod.ItemType("TrueTopazJavelinWeapon"), Main.rand.Next(40, 100));
                 }
                 else if (Choose == 10)
                 {
-                    player.QuickSpawnItem(mod.ItemType("TrueTopazJavelinWeapon"), Main.rand.Next(20, 80));
-                }
-                else if (Choose == 11)
-                {
-                    player.QuickSpawnItem(mod.ItemType("TrueAmberJavelinWeapon"), Main.rand.Next(20, 80));
+                    player.QuickSpawnItem(mod.ItemType("TrueAmberJavelinWeapon"), Main.rand.Next(40, 100));
                 }
                 //Not gauranteed
                 if (Main.rand.NextFloat() < .2f)
-                    player.QuickSpawnItem(mod.ItemType("ThrowingPotion"), Main.rand.Next(1, 4));
+                    player.QuickSpawnItem(mod.ItemType("ThrowingPotion"), Main.rand.Next(2, 5));
                 if (Main.rand.NextFloat() < .02f)
                     player.QuickSpawnItem(mod.ItemType("MunitionsPack"), 1);
+                if (Main.rand.NextFloat() < .1f)
+                    player.QuickSpawnItem(mod.ItemType("WickedTooth"), Main.rand.Next(2, 4));
+                if (Main.rand.NextFloat() < .05f)
+                    player.QuickSpawnItem(mod.ItemType("CryoShard"), Main.rand.Next(1, 2));
+                if (Main.rand.NextFloat() < .01f)
+                    player.QuickSpawnItem(mod.ItemType("CryoIngot"), Main.rand.Next(2, 3));
                 //Drops gauranteed money
                 Choose = Main.rand.Next(100);
                 if (Choose > 90)
                 {
-                    player.QuickSpawnItem(ItemID.PlatinumCoin, 1);
+                    player.QuickSpawnItem(ItemID.PlatinumCoin, Main.rand.Next(1, 2));
                 }
                 else if (Choose > 65)
                 {
-                    player.QuickSpawnItem(ItemID.GoldCoin, Main.rand.Next(1, 8));
+                    player.QuickSpawnItem(ItemID.GoldCoin, Main.rand.Next(4, 8));
                 }
                 else if (Choose > 30)
                 {
-                    player.QuickSpawnItem(ItemID.SilverCoin, Main.rand.Next(1, 50));
+                    player.QuickSpawnItem(ItemID.SilverCoin, Main.rand.Next(1, 99));
                 }
                 else if (Choose > 0)
                 {
@@ -119,59 +121,61 @@ namespace ThrowingClass.Items.Crates
                 int Choose = Main.rand.Next(11);
                 if (Choose == 0)
                 {
-                    player.QuickSpawnItem(ItemID.Javelin, Main.rand.Next(40, 120));
+                    player.QuickSpawnItem(ItemID.Javelin, Main.rand.Next(60, 120));
                 }
                 else if (Choose == 1)
                 {
-                    player.QuickSpawnItem(mod.ItemType("AmethystJavelinWeapon"), Main.rand.Next(20, 80));
+                    player.QuickSpawnItem(mod.ItemType("AmethystJavelinWeapon"), Main.rand.Next(40, 100));
                 }
                 else if (Choose == 2)
                 {
-                    player.QuickSpawnItem(mod.ItemType("DiamondJavelinWeapon"), Main.rand.Next(20, 80));
+                    player.QuickSpawnItem(mod.ItemType("DiamondJavelinWeapon"), Main.rand.Next(40, 100));
                 }
                 else if (Choose == 3)
                 {
-                    player.QuickSpawnItem(mod.ItemType("EmeraldJavelinWeapon"), Main.rand.Next(20, 80));
+                    player.QuickSpawnItem(mod.ItemType("EmeraldJavelinWeapon"), Main.rand.Next(40, 100));
                 }
                 else if (Choose == 4)
                 {
-                    player.QuickSpawnItem(mod.ItemType("HellfireJavelinWeapon"), Main.rand.Next(20, 80));
+                    player.QuickSpawnItem(mod.ItemType("HellfireJavelinWeapon"), Main.rand.Next(40, 100));
                 }
                 else if (Choose == 5)
                 {
-                    player.QuickSpawnItem(mod.ItemType("JesterJavelinWeapon"), Main.rand.Next(20, 80));
+                    player.QuickSpawnItem(mod.ItemType("JesterJavelinWeapon"), Main.rand.Next(40, 100));
                 }
                 else if (Choose == 6)
                 {
-                    player.QuickSpawnItem(mod.ItemType("MakeshiftJavelinWeapon"), Main.rand.Next(20, 80));
+                    player.QuickSpawnItem(mod.ItemType("MakeshiftJavelinWeapon"), Main.rand.Next(40, 100));
                 }
                 else if (Choose == 7)
                 {
-                    player.QuickSpawnItem(mod.ItemType("MeteorJavelinWeapon"), Main.rand.Next(20, 80));
+                    player.QuickSpawnItem(mod.ItemType("MeteorJavelinWeapon"), Main.rand.Next(40, 100));
                 }
                 else if (Choose == 8)
                 {
-                    player.QuickSpawnItem(mod.ItemType("RubyJavelinWeapon"), Main.rand.Next(20, 80));
+                    player.QuickSpawnItem(mod.ItemType("RubyJavelinWeapon"), Main.rand.Next(40, 100));
                 }
                 else if (Choose == 9)
                 {
-                    player.QuickSpawnItem(mod.ItemType("SapphireJavelinWeapon"), Main.rand.Next(20, 80));
+                    player.QuickSpawnItem(mod.ItemType("SapphireJavelinWeapon"), Main.rand.Next(40, 100));
                 }
                 else if (Choose == 10)
                 {
-                    player.QuickSpawnItem(mod.ItemType("TopazJavelinWeapon"), Main.rand.Next(20, 80));
+                    player.QuickSpawnItem(mod.ItemType("TopazJavelinWeapon"), Main.rand.Next(40, 100));
                 }
                 else if (Choose == 11)
                 {
-                    player.QuickSpawnItem(mod.ItemType("AmberJavelinWeapon"), Main.rand.Next(20, 80));
+                    player.QuickSpawnItem(mod.ItemType("AmberJavelinWeapon"), Main.rand.Next(40, 100));
                 }
                 //Not gauranteed
                 if (Main.rand.NextFloat() < .02f)
-                    player.QuickSpawnItem(mod.ItemType("SplinterJavelinWeapon"), Main.rand.Next(1, 10));
+                    player.QuickSpawnItem(mod.ItemType("SplinterJavelinWeapon"), Main.rand.Next(10, 20));
                 if (Main.rand.NextFloat() < .2f)
                     player.QuickSpawnItem(mod.ItemType("ThrowingPotion"), Main.rand.Next(1, 4));
                 if (Main.rand.NextFloat() < .02f)
                     player.QuickSpawnItem(mod.ItemType("MunitionsPack"), 1);
+                if (Main.rand.NextFloat() < .1f)
+                    player.QuickSpawnItem(mod.ItemType("WickedTooth"), Main.rand.Next(1, 2));
                 //Drops gauranteed money
                 Choose = Main.rand.Next(100);
                 if (Choose > 95)

@@ -77,29 +77,13 @@ namespace Gladiator.NPCs
                     }
                 }
             }
+
+            if (NPC.downedBoss2)
+            {
+                return true;
+            }
             return false;
         }
-
-        /*public override bool CheckConditions(int left, int right, int top, int bottom)
-        {
-            int score = 0;
-            for (int x = left; x <= right; x++)
-            {
-                for (int y = top; y <= bottom; y++)
-                {
-                    int type = Main.tile[x, y].type;
-                    if (type == mod.TileType("ExampleBlock") || type == mod.TileType("ExampleChair") || type == mod.TileType("ExampleWorkbench") || type == mod.TileType("ExampleBed") || type == mod.TileType("ExampleDoorOpen") || type == mod.TileType("ExampleDoorClosed"))
-                    {
-                        score++;
-                    }
-                    if (Main.tile[x, y].wall == mod.WallType("ExampleWall"))
-                    {
-                        score++;
-                    }
-                }
-            }
-            return score >= (right - left) * (bottom - top) / 2;
-        }*/
 
         public override string TownNPCName()
         {
@@ -139,26 +123,26 @@ namespace Gladiator.NPCs
 			}*/
         }
 
-		// Consider using this alternate approach to choosing a random thing. Very useful for a variety of use cases.
-		// The WeightedRandom class needs "using Terraria.Utilities;" to use
-		public override string GetChat()
-		{
-			WeightedRandom<string> chat = new WeightedRandom<string>();
-			int partyGirl = NPC.FindFirstNPC(NPCID.PartyGirl);
+        // Consider using this alternate approach to choosing a random thing. Very useful for a variety of use cases.
+        // The WeightedRandom class needs "using Terraria.Utilities;" to use
+        public override string GetChat()
+        {
+            WeightedRandom<string> chat = new WeightedRandom<string>();
+            int partyGirl = NPC.FindFirstNPC(NPCID.PartyGirl);
             int armsDealer = NPC.FindFirstNPC(NPCID.ArmsDealer);
             if (partyGirl >= 0 && Main.rand.Next(4) == 0)
-			{
-				chat.Add("Can you please tell " + Main.npc[partyGirl].GivenName + " to stop decorating my house with colors?");
-			}
+            {
+                chat.Add("Can you please tell " + Main.npc[partyGirl].GivenName + " to stop decorating my house with colors?");
+            }
             if (armsDealer > 0 && Main.rand.Next(4) == 0)
             {
                 chat.Add(Main.npc[armsDealer].GivenName + " thinks he's so great with his guns? Let's see him shoot after getting stabbed in the eye with a javelin.");
             }
-			chat.Add("I will never lay down my weapon.");
+            chat.Add("I will never lay down my weapon.");
             chat.Add("This. Is. Sparta!!!");
             chat.Add("I need to find the way to Uganda in order to claim my prize.", 0.1);
-			return chat; // chat is implicitly cast to a string. You can also do "return chat.Get();" if that makes you feel better
-		}
+            return chat; // chat is implicitly cast to a string. You can also do "return chat.Get();" if that makes you feel better
+        }
 
         public override void SetChatButtons(ref string button, ref string button2)
         {

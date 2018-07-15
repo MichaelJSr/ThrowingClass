@@ -460,7 +460,10 @@ namespace ThrowingClass
             // Do catch stuff here
             if (isCrate)
             {
-                caughtType = mod.ItemType("ThrowingCrate");
+                if (uncommon)
+                {
+                    caughtType = mod.ItemType("ThrowingCrate");
+                }
             }
         }
 
