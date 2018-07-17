@@ -8,8 +8,8 @@ namespace ThrowingClass.Items.Placeable
     {
         public override void SetDefaults()
         {
-            item.width = 24;
-            item.height = 16;
+            item.width = 78;
+            item.height = 40;
             item.maxStack = 999;
             item.useTurn = true;
             item.autoReuse = true;

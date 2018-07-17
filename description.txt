@@ -42,3 +42,4 @@ V 3.4.5: Added the Shiny Rock, an accessory sold by the Skeleton Merchant that a
 V 3.5: A lot of quality of life changes
 V 3.5.5: Added a Munitions Pack tile, Added Javelin Quiver accessory, new fishing crate and throwing potion
 V 3.5.9: Bug Fixes
+V 3.6: Bug Fixes, completed Javelin Ballista

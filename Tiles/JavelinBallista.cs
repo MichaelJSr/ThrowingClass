@@ -23,7 +23,7 @@ namespace ThrowingClass.Tiles
             TileObjectData.newTile.CopyFrom(TileObjectData.Style4x2);
             TileObjectData.newTile.Direction = TileObjectDirection.PlaceLeft;
             TileObjectData.newAlternate.CopyFrom(TileObjectData.newTile);
-            TileObjectData.newAlternate.Direction = TileObjectDirection.PlaceRight; //allows me to place example chairs facing the same way as the player
+            TileObjectData.newAlternate.Direction = TileObjectDirection.PlaceRight;
             TileObjectData.addAlternate(1); //facing right will use the second texture style
             TileObjectData.addTile(Type);
 
@@ -55,6 +55,39 @@ namespace ThrowingClass.Tiles
 
             Main.LocalPlayer.showItemIcon2 = ItemID.Javelin;
             Main.LocalPlayer.showItemIcon = true;
+        }
+
+        public bool shot = false;
+
+        public override void RightClick(int i, int j)
+        {
+            Tile tile = Main.tile[i, j];
+            for (int k = 0; k < 58; k++)
+            {
+                var localItem = Main.player[Main.myPlayer].inventory[k];
+                if (localItem.ammo == ItemID.Javelin && localItem.stack > 0 && shot == false)
+                {
+                    if (localItem.consumable)
+                        localItem.stack--;
+                    if (localItem.stack <= 0)
+                    {
+                        localItem.SetDefaults(0, false);
+                    }
+
+                    int ammo = localItem.shoot;
+                    if (tile.frameX > 70)
+                    {
+                        Projectile.NewProjectile(i * 16, j * 16, localItem.shootSpeed * 1.5f, 0f, localItem.shoot, localItem.damage * 2, localItem.knockBack * 2, Main.myPlayer);
+                    }
+                    else
+                    {
+                        Projectile.NewProjectile(i * 16, j * 16, localItem.shootSpeed * -1.5f, 0f, localItem.shoot, localItem.damage * 2, localItem.knockBack * 2, Main.myPlayer);
+                    }
+                    Main.PlaySound(SoundID.Item56); // Boing
+                    shot = true;
+                }
+            }
+            shot = false;
         }
     }
 }

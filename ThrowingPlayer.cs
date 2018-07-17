@@ -52,6 +52,7 @@ namespace ThrowingClass
 
         public override bool Shoot(Item item, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
+            penCount = 0;
             if (item.thrown)
             {
                 if (item.shoot == 10)
@@ -152,8 +153,8 @@ namespace ThrowingClass
                 int checkOdd = 0;
                 int even = 0;
                 int checkEven = -1;
-                float rotation = MathHelper.ToRadians(5f);
-                position += Vector2.Normalize(new Vector2(speedX, speedY)) * 5f;
+                float rotation = MathHelper.ToRadians(6f);
+                position += Vector2.Normalize(new Vector2(speedX, speedY)) * 6f;
                 for (int shots = 0; shots < numberShots; shots++)
                 {
                     if (Main.rand.NextFloat() < chanceShots)
@@ -188,6 +189,7 @@ namespace ThrowingClass
                     {
                         checkOdd -= 1;
                     }
+                    penCount += 1;
                 }
                 return false;
             }
@@ -197,11 +199,14 @@ namespace ThrowingClass
             }
         }
 
+        int penCount = 0;
+
         public override void OnHitNPCWithProj(Projectile proj, NPC target, int damage, float knockback, bool crit)
         {
-            if ((proj.thrown) && (proj.penetrate != -1) && !proj.noEnchantments)
+            if ((proj.thrown) && (proj.penetrate != -1) && !proj.noEnchantments && penCount > 0)
             {
                 proj.penetrate += penetration;
+                penCount -= 1;
             }
             if ((proj.type == mod.ProjectileType("SplinterJavelin")) || (proj.type == mod.ProjectileType("MakeshiftJavelin")))
             {
