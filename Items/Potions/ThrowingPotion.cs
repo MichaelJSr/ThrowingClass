@@ -23,12 +23,8 @@ namespace ThrowingClass.Items.Potions
             item.maxStack = 999;
             item.value = Item.sellPrice(0, 0, 40, 0);
             item.rare = 1;
-        }
-
-        public override bool UseItem(Player player)
-        {
-            player.AddBuff(mod.BuffType("ThrowingPotion1"), 14400);
-            return true;
+            item.buffType = mod.BuffType("ThrowingPotion1");
+            item.buffTime = 14400;
         }
 
         public override void AddRecipes()
