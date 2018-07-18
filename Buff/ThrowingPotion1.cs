@@ -9,17 +9,16 @@ namespace ThrowingClass.Buff
         public override void SetDefaults()
         {
             DisplayName.SetDefault("Enhanced Throwing");
-            Description.SetDefault("+20% Throwing damage and velocity");
-            Main.debuff[Type] = true;
-            Main.pvpBuff[Type] = false;
-            Main.buffNoSave[Type] = true;
-            longerExpertDebuff = false;
+            Description.SetDefault("+10% Thrown damage, velocity, crit, and speed");
+            Main.buffNoSave[Type] = false;
         }
 
         public override void Update(Player player, ref int buffIndex)
         {
-            player.thrownDamage += 0.2f;
-            player.thrownVelocity += 0.2f;
+            player.thrownDamage += 0.1f;
+            player.thrownVelocity += 0.1f;
+            player.thrownCrit += 10;
+            player.GetModPlayer<ThrowingPlayer>(mod).thrownSpeed += 0.1f;
         }
     }
 }

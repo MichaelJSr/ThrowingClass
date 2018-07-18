@@ -10,10 +10,7 @@ namespace ThrowingClass.Buff
         {
             DisplayName.SetDefault("Munition 2");
             Description.SetDefault("+20% Chance to not consume ammo");
-            Main.debuff[Type] = true;
-            Main.pvpBuff[Type] = false;
             Main.buffNoSave[Type] = true;
-            longerExpertDebuff = false;
         }
 
         public override void Update(Player player, ref int buffIndex)

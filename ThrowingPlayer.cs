@@ -15,6 +15,7 @@ namespace ThrowingClass
 {
     public class ThrowingPlayer : ModPlayer
     {
+        public float thrownSpeed = 1f;
         public int numberShots = 0;
         public float chanceShots = 0.05f;
         public int penetration = 0;
@@ -32,6 +33,7 @@ namespace ThrowingClass
 
         public override void ResetEffects()
         {
+            thrownSpeed = 1f;
             TruePoison = false;
             DiamondBreak = false;
             TrueDiamondBreak = false;
@@ -62,7 +64,7 @@ namespace ThrowingClass
                     {
                         tempDmg = 10;
                         tempUseTime = 14;
-                        tempUseAnimation = 14;
+                        tempUseAnimation = 12;
                     }
 
                     else if (type == mod.ProjectileType("SapphireJavelin"))
@@ -355,6 +357,7 @@ namespace ThrowingClass
 
         public override void UpdateDead()
         {
+            thrownSpeed = 1f;
             TruePoison = false;
             DiamondBreak = false;
             TrueDiamondBreak = false;
@@ -451,6 +454,18 @@ namespace ThrowingClass
                 return Main.rand.NextFloat() >= .2f;
             }
             return true;
+        }
+
+        public override float UseTimeMultiplier(Item item)
+        {
+            if (item.thrown && item.useAnimation > 2)
+            {
+                return thrownSpeed;
+            }
+            else
+            {
+                return 1f;
+            }
         }
 
         public override void CatchFish(Item fishingRod, Item bait, int power, int liquidType, int poolSize, int worldLayer, int questFish, ref int caughtType, ref bool junk)

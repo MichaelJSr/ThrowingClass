@@ -10,10 +10,8 @@ namespace ThrowingClass.Buff
         {
             DisplayName.SetDefault("Munition 1");
             Description.SetDefault("+20% chance to shoot up to 2 more shots");
-            Main.debuff[Type] = true;
-            Main.pvpBuff[Type] = false;
             Main.buffNoSave[Type] = true;
-            longerExpertDebuff = false;
+            Main.buffNoTimeDisplay[Type] = true;
         }
 
         public override void Update(Player player, ref int buffIndex)

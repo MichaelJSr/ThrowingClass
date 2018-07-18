@@ -10,10 +10,8 @@ namespace ThrowingClass.Buff
         {
             DisplayName.SetDefault("Penetration 1");
             Description.SetDefault("+1 Penetration");
-            Main.debuff[Type] = true;
-            Main.pvpBuff[Type] = false;
             Main.buffNoSave[Type] = true;
-            longerExpertDebuff = false;
+            Main.buffNoTimeDisplay[Type] = true;
         }
 
         public override void Update(Player player, ref int buffIndex)
