@@ -18,19 +18,19 @@ namespace ThrowingClass.Buff
         public override void Update(NPC npc, ref int buffIndex)
         {
             int num1 = Dust.NewDust(npc.position, npc.width, npc.height, 16);    //this is the dust/flame effect that will apear on npc or player if is hit by this buff  
-            Main.dust[num1].scale = 1.5f; //the dust scale , the higher is the value the large is the dust
+            Main.dust[num1].scale = 2.5f; //the dust scale , the higher is the value the large is the dust
             Main.dust[num1].velocity *= 1f; //the dust velocity
             Main.dust[num1].noGravity = true;
-            npc.defense -= 10;
+            npc.defense -= 15;
         }
 
         public override void Update(Player player, ref int buffIndex)
         {
             int num1 = Dust.NewDust(player.position, player.width, player.height, 16);    //this is the dust/flame effect that will apear on npc or player if is hit by this buff  
-            Main.dust[num1].scale = 1.5f; //the dust scale , the higher is the value the large is the dust
+            Main.dust[num1].scale = 2.5f; //the dust scale , the higher is the value the large is the dust
             Main.dust[num1].velocity *= 1f; //the dust velocity
             Main.dust[num1].noGravity = true;
-            player.statDefense -= 10;
+            player.statDefense -= 15;
         }
     }
 }
