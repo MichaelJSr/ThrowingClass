@@ -32,7 +32,7 @@ namespace ThrowingClass.Projectiles
             return true;
         }
 
-        public int numberShots = 12;
+        public int numberShots = 8;
         public float chanceShots = 0.2f;
 
         public override bool OnTileCollide(Vector2 oldVelocity)

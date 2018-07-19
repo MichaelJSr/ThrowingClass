@@ -57,7 +57,7 @@ namespace ThrowingClass
             penCount = 0;
             if (item.thrown)
             {
-                if (item.shoot == 10)
+                if ((item.useAmmo == ItemID.Javelin) || (item.useAmmo == ItemID.ThrowingKnife) || (item.useAmmo == ItemID.Shuriken) || (item.useAmmo == ItemID.Grenade))
                 {
                     //Javelins
                     if (type == mod.ProjectileType("TrueSapphireJavelin"))
@@ -213,7 +213,7 @@ namespace ThrowingClass
             if ((proj.type == mod.ProjectileType("SplinterJavelin")) || (proj.type == mod.ProjectileType("MakeshiftJavelin")))
             {
                 int actualShots = 1;
-                int chance = 4;
+                int chance = 2;
                 float perturbedSpeedX = 0f;
                 float perturbedSpeedY = 0f;
                 int counter = 0;
