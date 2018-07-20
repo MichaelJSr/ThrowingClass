@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using ThrowingClass.Buff;
 
 namespace ThrowingClass.NPCs
 {
@@ -17,11 +18,21 @@ namespace ThrowingClass.NPCs
             }
         }
 
+        //Diamond Break reduces between 10 - 30 defense
+        public bool DiamondBreak = false;
+        public int maxDefDB = 10;
+        public float maxScaleDB = 1.5f;
+        //True Diamond Break reduces between 30 - 60 defense
+        public bool TrueDiamondBreak = false;
+        public int maxDefTDB = 30;
+        public float maxScaleTDB = 1.75f;
         public bool TruePoison = false;
         public bool DoTJavelin = false;
 
         public override void ResetEffects(NPC npc)
         {
+            DiamondBreak = false;
+            TrueDiamondBreak = false;
             TruePoison = false;
             DoTJavelin = false;
         }
@@ -61,6 +72,20 @@ namespace ThrowingClass.NPCs
                 {
                     damage = 4;
                 }
+            }
+        }
+
+        public override void OnHitByProjectile(NPC npc, Projectile projectile, int damage, float knockback, bool crit)
+        {
+            if (DiamondBreak == false)
+            {
+                maxDefDB = 10;
+                maxScaleDB = 1.5f;
+            }
+            if (TrueDiamondBreak == false)
+            {
+                maxDefTDB = 30;
+                maxScaleTDB = 1.75f;
             }
         }
 

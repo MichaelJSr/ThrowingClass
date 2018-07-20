@@ -12,7 +12,7 @@ namespace ThrowingClass.Items.Armor
         {
             base.SetStaticDefaults();
             DisplayName.SetDefault("Cryo Hat");
-            Tooltip.SetDefault("20% increased throwing speed\n15% increased movement speed\n15% increased throwing velocity");
+            Tooltip.SetDefault("20% increased throwing speed\n20% increased movement speed\n20% increased throwing velocity");
         }
 
         public override void SetDefaults()
@@ -27,8 +27,8 @@ namespace ThrowingClass.Items.Armor
         public override void UpdateEquip(Player player)
         {
             player.GetModPlayer<ThrowingPlayer>(mod).thrownSpeed += 0.2f;
-            player.moveSpeed += 0.15f;
-            player.thrownVelocity += 0.15f;
+            player.moveSpeed += 0.2f;
+            player.thrownVelocity += 0.2f;
         }
 
         public override bool IsArmorSet(Item head, Item body, Item legs)
@@ -43,7 +43,7 @@ namespace ThrowingClass.Items.Armor
             player.moveSpeed += 0.15f;
             player.runAcceleration += 0.5f;
             player.runSlowdown += 0.5f;
-            player.maxRunSpeed += 3f;
+            player.maxRunSpeed *= 2.25f;
             player.thrownVelocity += 0.25f;
             player.GetModPlayer<ThrowingPlayer>(mod).thrownSpeed += 0.05f;
         }

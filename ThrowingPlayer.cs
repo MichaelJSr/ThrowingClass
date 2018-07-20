@@ -16,6 +16,7 @@ namespace ThrowingClass
     public class ThrowingPlayer : ModPlayer
     {
         public float thrownSpeed = 1f;
+        public float thrownAmmoChance = 0f;
         public int numberShots = 0;
         public float chanceShots = 0.05f;
         public int penetration = 0;
@@ -24,23 +25,23 @@ namespace ThrowingClass
         public bool TrueDiamondBreak = false;
         //20% Chance for 2 shots
         public bool Munition1 = false;
-        //20% Chance not to consume ammo
-        public bool Munition2 = false;
         //+1 Penetration
         public bool Sharp1 = false;
         //Heals for 3 seconds if you hit an enemy
         public bool PalladiumGalea = false;
+        public bool TitaniumGalea = false;
 
         public override void ResetEffects()
         {
             thrownSpeed = 1f;
+            thrownAmmoChance = 0f;
             TruePoison = false;
             DiamondBreak = false;
             TrueDiamondBreak = false;
             Munition1 = false;
-            Munition2 = false;
             Sharp1 = false;
             PalladiumGalea = false;
+            TitaniumGalea = false;
         }
 
         int tempType = 0;
@@ -345,6 +346,18 @@ namespace ThrowingClass
             {
                 player.AddBuff(BuffID.RapidHealing, 180);
             }
+            if (TitaniumGalea == true)
+            {
+                player.AddBuff(BuffID.ShadowDodge, 1800);
+            }
+        }
+
+        public override void PostHurt(bool pvp, bool quiet, double damage, int hitDirection, bool crit)
+        {
+            if (TitaniumGalea == true)
+            {
+                player.AddBuff(BuffID.ShadowDodge, 0);
+            }
         }
 
         /*public override void clientClone(ModPlayer clientClone)
@@ -358,13 +371,14 @@ namespace ThrowingClass
         public override void UpdateDead()
         {
             thrownSpeed = 1f;
+            thrownAmmoChance = 0f;
             TruePoison = false;
             DiamondBreak = false;
             TrueDiamondBreak = false;
             Munition1 = false;
-            Munition2 = false;
             Sharp1 = false;
             PalladiumGalea = false;
+            TitaniumGalea = false;
         }
 
         public override void SetupStartInventory(IList<Item> items)
@@ -449,9 +463,9 @@ namespace ThrowingClass
 
         public override bool ConsumeAmmo(Item weapon, Item ammo)
         {
-            if (Munition2 == true && weapon.thrown == true)
+            if (weapon.thrown == true)
             {
-                return Main.rand.NextFloat() >= .2f;
+                return Main.rand.NextFloat() >= thrownAmmoChance;
             }
             return true;
         }

@@ -11,7 +11,7 @@ namespace ThrowingClass.Items.Armor
         {
             base.SetStaticDefaults();
             DisplayName.SetDefault("Chlorophyte Galea");
-            Tooltip.SetDefault("20% increased throwing damage\n12% increased throwing speed\n10% increased throwing velocity");
+            Tooltip.SetDefault("20% increased throwing damage\n10% increased throwing speed\n10% increased throwing velocity");
         }
 
         public override void SetDefaults()
@@ -31,14 +31,14 @@ namespace ThrowingClass.Items.Armor
         public override void UpdateEquip(Player player)
         {
             player.thrownDamage += 0.2f;
-            player.GetModPlayer<ThrowingPlayer>(mod).thrownSpeed += 0.12f;
+            player.GetModPlayer<ThrowingPlayer>(mod).thrownSpeed += 0.1f;
             player.thrownVelocity += 0.1f;
         }
 
         public override void UpdateArmorSet(Player player)
         {
-            player.setBonus = "10% increased throwing velocity\n12% increased throwing damage\nSummons a powerful leaf crystal to shoot at nearby enemies";
-            player.GetModPlayer<ThrowingPlayer>(mod).thrownSpeed += 0.12f;
+            player.setBonus = "10% increased throwing speed\n10% increased throwing velocity\nSummons a powerful leaf crystal to shoot at nearby enemies";
+            player.GetModPlayer<ThrowingPlayer>(mod).thrownSpeed += 0.1f;
             player.thrownVelocity += 0.1f;
             player.AddBuff(BuffID.LeafCrystal, 1);
         }

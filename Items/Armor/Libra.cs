@@ -12,7 +12,7 @@ namespace ThrowingClass.Items.Armor
         {
             base.SetStaticDefaults();
             DisplayName.SetDefault("Libra");
-            Tooltip.SetDefault("20% increased throwing damage\n+50 max health\n20% decreased throwing speed\n15% decreased movement and throwing speed");
+            Tooltip.SetDefault("20% increased throwing damage\n+50 max health\n20% decreased throwing speed\n15% decreased movement and throwing velocity");
         }
 
         public override void SetDefaults()
@@ -40,7 +40,7 @@ namespace ThrowingClass.Items.Armor
 
         public override void UpdateArmorSet(Player player)
         {
-            player.setBonus = "20% increased throwing damage and critical strike chance\n20% increased throwing speed\n15% increased movement and throwing speed\n10% increased damage reduction\n+50 max health\nYou emanate divine light";
+            player.setBonus = "20% increased throwing damage and critical strike chance\n20% increased throwing speed\n15% increased movement and throwing velocity\n10% increased damage reduction\n+50 max health\nYou emanate divine light";
             player.thrownDamage += 0.2f;
             player.GetModPlayer<ThrowingPlayer>(mod).thrownSpeed += 0.2f;
             player.thrownCrit += 20;

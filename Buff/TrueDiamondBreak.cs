@@ -1,6 +1,7 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using ThrowingClass.NPCs;
 
 namespace ThrowingClass.Buff
 {
@@ -17,20 +18,26 @@ namespace ThrowingClass.Buff
 
         public override void Update(NPC npc, ref int buffIndex)
         {
+            npc.GetGlobalNPC<ThrowingGlobalNPC>().TrueDiamondBreak = true;
             int num1 = Dust.NewDust(npc.position, npc.width, npc.height, 20);    //this is the dust/flame effect that will apear on npc or player if is hit by this buff  
-            Main.dust[num1].scale = 2.5f; //the dust scale , the higher is the value the large is the dust
+            Main.dust[num1].scale = npc.GetGlobalNPC<ThrowingGlobalNPC>().maxScaleTDB; //the dust scale , the higher is the value the large is the dust
             Main.dust[num1].velocity *= 1f; //the dust velocity
             Main.dust[num1].noGravity = true;
-            npc.defense -= 30;
+            npc.defense -= npc.GetGlobalNPC<ThrowingGlobalNPC>().maxDefTDB;
         }
 
-        public override void Update(Player player, ref int buffIndex)
+        public override bool ReApply(NPC npc, int time, int buffIndex)
         {
-            int num1 = Dust.NewDust(player.position, player.width, player.height, 20);    //this is the dust/flame effect that will apear on npc or player if is hit by this buff  
-            Main.dust[num1].scale = 2.5f; //the dust scale , the higher is the value the large is the dust
-            Main.dust[num1].velocity *= 1f; //the dust velocity
-            Main.dust[num1].noGravity = true;
-            player.statDefense -= 30;
+            if (npc.GetGlobalNPC<ThrowingGlobalNPC>().maxDefTDB < 60)
+            {
+                npc.GetGlobalNPC<ThrowingGlobalNPC>().maxDefTDB = (int)(npc.GetGlobalNPC<ThrowingGlobalNPC>().maxDefTDB * 1.25f);
+                npc.GetGlobalNPC<ThrowingGlobalNPC>().maxScaleTDB *= 1.25f;
+            }
+            else
+            {
+                npc.GetGlobalNPC<ThrowingGlobalNPC>().maxDefTDB = 60;
+            }
+            return false;
         }
     }
 }

@@ -11,7 +11,7 @@ namespace ThrowingClass.Items.Armor
         {
             base.SetStaticDefaults();
             DisplayName.SetDefault("Libra Leggings");
-            Tooltip.SetDefault("20% increased throwing speed\n15% Increased movement and throwing speed\n20% decreased throwing critical strike chance\n10% decreased damage reduction");
+            Tooltip.SetDefault("20% increased throwing speed\n15% Increased movement and throwing velocity\n20% decreased throwing critical strike chance\n10% decreased damage reduction");
         }
 
         public override void SetDefaults()

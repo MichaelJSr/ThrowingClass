@@ -15,7 +15,7 @@ namespace ThrowingClass.Buff
 
         public override void Update(Player player, ref int buffIndex)
         {
-            player.GetModPlayer<ThrowingPlayer>(mod).Munition2 = true;
+            player.GetModPlayer<ThrowingPlayer>(mod).thrownAmmoChance += 0.2f;
         }
     }
 }

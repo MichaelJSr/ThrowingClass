@@ -147,7 +147,7 @@ namespace ThrowingClass.Projectiles
                     perturbedSpeedX = Main.rand.Next(-6, 6);
                     perturbedSpeedY = Main.rand.Next(-6, 6);
                 }
-                Projectile.NewProjectile(projectile.position.X, projectile.position.Y, perturbedSpeedX * 3f, perturbedSpeedY * 3f, mod.ProjectileType("MakeshiftJavelin"), projectile.damage - 20, 0.2f, Main.myPlayer);
+                Projectile.NewProjectile(projectile.position.X, projectile.position.Y, perturbedSpeedX * 3f, perturbedSpeedY * 3f, mod.ProjectileType("MakeshiftJavelin"), projectile.damage - 25, 0.2f, Main.myPlayer);
                 Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 10, 0.4f);
             }
             return true;

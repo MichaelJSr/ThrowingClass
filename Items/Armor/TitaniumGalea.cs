@@ -37,9 +37,15 @@ namespace ThrowingClass.Items.Armor
 
         public override void UpdateArmorSet(Player player)
         {
-            player.setBonus = "16% increased throwing damage\n9% increased throwing speed";
-            player.thrownDamage += 0.16f;
+            player.setBonus = "	Briefly become invulnerable after striking an enemy\n9% increased throwing speed";
+            player.GetModPlayer<ThrowingPlayer>(mod).TitaniumGalea = true;
             player.GetModPlayer<ThrowingPlayer>(mod).thrownSpeed += 0.09f;
+        }
+
+        public override void ArmorSetShadows(Player player)
+        {
+            player.armorEffectDrawShadowLokis = true;
+            player.armorEffectDrawShadowBasilisk = true;
         }
 
         public override void AddRecipes()

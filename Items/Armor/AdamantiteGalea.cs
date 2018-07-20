@@ -37,9 +37,15 @@ namespace ThrowingClass.Items.Armor
 
         public override void UpdateArmorSet(Player player)
         {
-            player.setBonus = "16% increased throwing damage\n8% increased throwing speed";
-            player.thrownDamage += 0.16f;
+            player.setBonus = "25% chance not to consume ammo\n8% increased throwing speed";
+            player.GetModPlayer<ThrowingPlayer>(mod).thrownAmmoChance += 0.25f;
             player.GetModPlayer<ThrowingPlayer>(mod).thrownSpeed += 0.08f;
+        }
+
+        public override void ArmorSetShadows(Player player)
+        {
+            player.armorEffectDrawOutlines = true;
+            player.armorEffectDrawOutlinesForbidden = true;
         }
 
         public override void AddRecipes()
