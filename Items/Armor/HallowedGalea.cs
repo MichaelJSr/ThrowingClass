@@ -11,7 +11,7 @@ namespace ThrowingClass.Items.Armor
         {
             base.SetStaticDefaults();
             DisplayName.SetDefault("Hallowed Galea");
-            Tooltip.SetDefault("15% increased throwing damage\n8% 10% increased throwing speed\nincreased throwing velocity");
+            Tooltip.SetDefault("15% increased throwing damage\n10% increased throwing speed\nincreased throwing velocity");
         }
 
         public override void SetDefaults()
