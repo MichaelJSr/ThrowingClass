@@ -11,7 +11,7 @@ namespace ThrowingClass.Items.Armor
         {
             base.SetStaticDefaults();
             DisplayName.SetDefault("Mythril Galea");
-            Tooltip.SetDefault("12% increased throwing damage\n7% increased throwing velocity\n6% increased throwing speed");
+            Tooltip.SetDefault("12% increased throwing damage\n6% increased throwing speed\n7% increased throwing velocity");
         }
 
         public override void SetDefaults()

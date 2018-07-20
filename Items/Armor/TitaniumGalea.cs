@@ -37,7 +37,7 @@ namespace ThrowingClass.Items.Armor
 
         public override void UpdateArmorSet(Player player)
         {
-            player.setBonus = "	Briefly become invulnerable after striking an enemy\n9% increased throwing speed";
+            player.setBonus = "Briefly become invulnerable after striking an enemy\n9% increased throwing speed";
             player.GetModPlayer<ThrowingPlayer>(mod).TitaniumGalea = true;
             player.GetModPlayer<ThrowingPlayer>(mod).thrownSpeed += 0.09f;
         }

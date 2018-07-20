@@ -9,7 +9,7 @@ namespace ThrowingClass.Items.Potions
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Infinite Throwing Potion");
-            Tooltip.SetDefault("20% increased throwing damage and velocity");
+            Tooltip.SetDefault("10% increased throwing damage, speed, velocity, and crit");
         }
 
         public override void SetDefaults()

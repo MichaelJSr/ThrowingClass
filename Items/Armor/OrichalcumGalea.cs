@@ -37,8 +37,9 @@ namespace ThrowingClass.Items.Armor
 
         public override void UpdateArmorSet(Player player)
         {
-            player.setBonus = "7% increased throwing speed\n10% increased throwing velocity";
+            player.setBonus = "7% increased throwing speed\n4% increased movement speed\n10% increased throwing velocity";
             player.GetModPlayer<ThrowingPlayer>(mod).thrownSpeed += 0.07f;
+            player.moveSpeed += 0.04f;
             player.thrownVelocity += 0.1f;
         }
 

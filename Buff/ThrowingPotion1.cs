@@ -9,7 +9,7 @@ namespace ThrowingClass.Buff
         public override void SetDefaults()
         {
             DisplayName.SetDefault("Enhanced Throwing");
-            Description.SetDefault("+10% Thrown damage, velocity, crit, and speed");
+            Description.SetDefault("10% increased throwing damage, speed, velocity, and crit");
             Main.buffNoSave[Type] = false;
         }
 
