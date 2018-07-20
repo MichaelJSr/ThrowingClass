@@ -14,7 +14,7 @@ namespace ThrowingClass.Items.Accessories
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Spartan Shield");
-            Tooltip.SetDefault("5% increased throwing damage and velocity\nGrants the ability to dash");
+            Tooltip.SetDefault("5% increased throwing damage and velocity\n5% increased throwing speed\nGrants the ability to dash");
         }
 
         public override void SetDefaults()
@@ -30,6 +30,7 @@ namespace ThrowingClass.Items.Accessories
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
             player.thrownDamage += 0.05f;
+            player.GetModPlayer<ThrowingPlayer>(mod).thrownSpeed += 0.05f;
             player.thrownVelocity += 0.05f;
             player.dash = 2;
             /*if (Main.rand.Next(250) == 0) //On a 1/250 chance every tick, it'll spawn a projectile (to prevent lag)

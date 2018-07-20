@@ -11,7 +11,7 @@ namespace ThrowingClass.Items.Armor
         {
             base.SetStaticDefaults();
             DisplayName.SetDefault("Libra Leggings");
-            Tooltip.SetDefault("15% Increased movement and throwing speed\n20% decreased throwing critical strike chance\n8% decreased damage reduction");
+            Tooltip.SetDefault("20% increased throwing speed\n15% Increased movement and throwing speed\n20% decreased throwing critical strike chance\n10% decreased damage reduction");
         }
 
         public override void SetDefaults()
@@ -25,10 +25,11 @@ namespace ThrowingClass.Items.Armor
 
         public override void UpdateEquip(Player player)
         {
+            player.GetModPlayer<ThrowingPlayer>(mod).thrownSpeed += 0.2f;
             player.moveSpeed += 0.15f;
             player.thrownVelocity += 0.15f;
             player.thrownCrit -= 20;
-            player.endurance -= 0.08f;
+            player.endurance -= 0.1f;
         }
 
         public override void AddRecipes()

@@ -13,7 +13,7 @@ namespace ThrowingClass.Items.Accessories
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Spartan Ankh Shield");
-            Tooltip.SetDefault("15% increased throwing damage and velocity\nGrants the ability to dash\nGrants immunity to knockback and fire blocks\nGrants immunity to most debuffs");
+            Tooltip.SetDefault("15% increased throwing damage and velocity\n10% increased throwing speed\nGrants the ability to dash\nGrants immunity to knockback and fire blocks\nGrants immunity to most debuffs");
         }
 
         public override void SetDefaults()
@@ -29,6 +29,7 @@ namespace ThrowingClass.Items.Accessories
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
             player.thrownDamage += 0.15f;
+            player.GetModPlayer<ThrowingPlayer>(mod).thrownSpeed += 0.1f;
             player.thrownVelocity += 0.15f;
             player.dash = 2;
             player.noKnockback = true;

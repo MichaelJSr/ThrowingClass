@@ -11,7 +11,7 @@ namespace ThrowingClass.Items.Armor
         {
             base.SetStaticDefaults();
             DisplayName.SetDefault("Cryo Legs");
-            Tooltip.SetDefault("15% increased throwing critical strike chance\n10% increased throwing velocity\n5% increased movement speed");
+            Tooltip.SetDefault("10% increased throwing speed\n15% increased throwing critical strike chance\n10% increased throwing velocity\n5% increased movement speed");
         }
 
         public override void SetDefaults()
@@ -25,6 +25,7 @@ namespace ThrowingClass.Items.Armor
 
         public override void UpdateEquip(Player player)
         {
+            player.GetModPlayer<ThrowingPlayer>(mod).thrownSpeed += 0.1f;
             player.thrownCrit += 15;
             player.thrownVelocity += 0.1f;
             player.moveSpeed += 0.05f;

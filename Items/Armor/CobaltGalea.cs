@@ -11,7 +11,7 @@ namespace ThrowingClass.Items.Armor
         {
             base.SetStaticDefaults();
             DisplayName.SetDefault("Cobalt Galea");
-            Tooltip.SetDefault("10% increased throwing damage\n6% increased throwing velocity");
+            Tooltip.SetDefault("10% increased throwing damage\n4% increased throwing speed\n6% increased throwing velocity");
         }
 
         public override void SetDefaults()
@@ -31,13 +31,15 @@ namespace ThrowingClass.Items.Armor
         public override void UpdateEquip(Player player)
         {
             player.thrownDamage += 0.1f;
+            player.GetModPlayer<ThrowingPlayer>(mod).thrownSpeed += 0.04f;
             player.thrownVelocity += 0.06f;
         }
 
         public override void UpdateArmorSet(Player player)
         {
-            player.setBonus = "12% increased throwing damage";
+            player.setBonus = "12% increased throwing damage\n4% increased throwing speed";
             player.thrownDamage += 0.12f;
+            player.GetModPlayer<ThrowingPlayer>(mod).thrownSpeed += 0.04f;
         }
 
         public override void AddRecipes()

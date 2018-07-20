@@ -11,7 +11,7 @@ namespace ThrowingClass.Items.Armor
         {
             base.SetStaticDefaults();
             DisplayName.SetDefault("Palladium Galea");
-            Tooltip.SetDefault("9% increased throwing damage\n9% increased throwing velocity");
+            Tooltip.SetDefault("9% increased throwing damage\n5% increased throwing speed\n9% increased throwing velocity");
         }
 
         public override void SetDefaults()
@@ -31,13 +31,15 @@ namespace ThrowingClass.Items.Armor
         public override void UpdateEquip(Player player)
         {
             player.thrownDamage += 0.09f;
+            player.GetModPlayer<ThrowingPlayer>(mod).thrownSpeed += 0.05f;
             player.thrownVelocity += 0.09f;
         }
 
         public override void UpdateArmorSet(Player player)
         {
-            player.setBonus = "Greatly increases life regeneration after striking an enemy";
+            player.setBonus = "Greatly increases life regeneration after striking an enemy\n5% increased throwing speed";
             player.GetModPlayer<ThrowingPlayer>(mod).PalladiumGalea = true;
+            player.GetModPlayer<ThrowingPlayer>(mod).thrownSpeed += 0.05f;
         }
 
         public override void AddRecipes()

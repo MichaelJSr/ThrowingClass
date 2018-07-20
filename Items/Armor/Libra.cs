@@ -12,7 +12,7 @@ namespace ThrowingClass.Items.Armor
         {
             base.SetStaticDefaults();
             DisplayName.SetDefault("Libra");
-            Tooltip.SetDefault("20% increased throwing damage\n+50 max health\n15% decreased movement and throwing speed");
+            Tooltip.SetDefault("20% increased throwing damage\n+50 max health\n20% decreased throwing speed\n15% decreased movement and throwing speed");
         }
 
         public override void SetDefaults()
@@ -29,6 +29,7 @@ namespace ThrowingClass.Items.Armor
             player.thrownDamage += 0.2f;
             player.statLifeMax2 += 50;
             player.moveSpeed -= 0.15f;
+            player.GetModPlayer<ThrowingPlayer>(mod).thrownSpeed -= 0.2f;
             player.thrownVelocity -= 0.15f;
         }
 
@@ -39,14 +40,15 @@ namespace ThrowingClass.Items.Armor
 
         public override void UpdateArmorSet(Player player)
         {
-            player.setBonus = "20% increased throwing damage and critical strike chance\n15% increased movement and throwing speed\n8% increased damage reduction\n+50 max health\nYou emanate divine light";
+            player.setBonus = "20% increased throwing damage and critical strike chance\n20% increased throwing speed\n15% increased movement and throwing speed\n10% increased damage reduction\n+50 max health\nYou emanate divine light";
             player.thrownDamage += 0.2f;
+            player.GetModPlayer<ThrowingPlayer>(mod).thrownSpeed += 0.2f;
             player.thrownCrit += 20;
             player.moveSpeed += 0.15f;
             player.thrownVelocity += 0.15f;
-            player.endurance += 0.08f;
+            player.endurance += 0.1f;
             player.statLifeMax2 += 50;
-            Lighting.AddLight(player.position, 1f, 1f, 1f);
+            Lighting.AddLight(player.position, 1.25f, 1.25f, 1.25f);
         }
 
         public override void Update(ref float gravity, ref float maxFallSpeed)

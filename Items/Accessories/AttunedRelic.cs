@@ -13,7 +13,7 @@ namespace ThrowingClass.Items.Accessories
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Attuned Relic");
-            Tooltip.SetDefault("10% increased throwing damage and velocity");
+            Tooltip.SetDefault("10% increased throwing damage and velocity\n5% increased throwing speed");
         }
 
         public override void SetDefaults()
@@ -28,6 +28,7 @@ namespace ThrowingClass.Items.Accessories
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
             player.thrownDamage += 0.1f;
+            player.GetModPlayer<ThrowingPlayer>(mod).thrownSpeed += 0.05f;
             player.thrownVelocity += 0.1f;
         }
 

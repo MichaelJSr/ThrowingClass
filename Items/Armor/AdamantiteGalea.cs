@@ -11,7 +11,7 @@ namespace ThrowingClass.Items.Armor
         {
             base.SetStaticDefaults();
             DisplayName.SetDefault("Adamantite Galea");
-            Tooltip.SetDefault("14% increased throwing damage\n8% increased throwing velocity");
+            Tooltip.SetDefault("14% increased throwing damage\n8% increased throwing speed\n8% increased throwing velocity");
         }
 
         public override void SetDefaults()
@@ -31,13 +31,15 @@ namespace ThrowingClass.Items.Armor
         public override void UpdateEquip(Player player)
         {
             player.thrownDamage += 0.14f;
+            player.GetModPlayer<ThrowingPlayer>(mod).thrownSpeed += 0.08f;
             player.thrownVelocity += 0.08f;
         }
 
         public override void UpdateArmorSet(Player player)
         {
-            player.setBonus = "16% increased throwing damage";
+            player.setBonus = "16% increased throwing damage\n8% increased throwing speed";
             player.thrownDamage += 0.16f;
+            player.GetModPlayer<ThrowingPlayer>(mod).thrownSpeed += 0.08f;
         }
 
         public override void AddRecipes()

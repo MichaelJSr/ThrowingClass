@@ -11,7 +11,7 @@ namespace ThrowingClass.Items.Armor
         {
             base.SetStaticDefaults();
             DisplayName.SetDefault("Hallowed Galea");
-            Tooltip.SetDefault("15% increased throwing damage\n8% increased throwing velocity");
+            Tooltip.SetDefault("15% increased throwing damage\n8% 10% increased throwing speed\nincreased throwing velocity");
         }
 
         public override void SetDefaults()
@@ -31,13 +31,15 @@ namespace ThrowingClass.Items.Armor
         public override void UpdateEquip(Player player)
         {
             player.thrownDamage += 0.15f;
+            player.GetModPlayer<ThrowingPlayer>(mod).thrownSpeed += 0.1f;
             player.thrownVelocity += 0.08f;
         }
 
         public override void UpdateArmorSet(Player player)
         {
-            player.setBonus = "20% increased throwing damage\n6% increased throwing velocity";
+            player.setBonus = "20% increased throwing damage\n10% increased throwing speed\n6% increased throwing velocity";
             player.thrownDamage += 0.2f;
+            player.GetModPlayer<ThrowingPlayer>(mod).thrownSpeed += 0.1f;
             player.thrownVelocity += 0.06f;
         }
 

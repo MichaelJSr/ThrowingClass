@@ -11,7 +11,7 @@ namespace ThrowingClass.Items.Armor
         {
             base.SetStaticDefaults();
             DisplayName.SetDefault("Libra Breastplate");
-            Tooltip.SetDefault("20% increased throwing critical strike chance\n8% increased damage reduction\n20% decreased throwing damage\n-50 max health");
+            Tooltip.SetDefault("20% increased throwing critical strike chance\n10% increased damage reduction\n20% decreased throwing damage\n-50 max health");
         }
 
         public override void SetDefaults()
@@ -26,7 +26,7 @@ namespace ThrowingClass.Items.Armor
         public override void UpdateEquip(Player player)
         {
             player.thrownCrit += 20;
-            player.endurance += 0.08f;
+            player.endurance += 0.1f;
             player.thrownDamage -= 0.2f;
             player.statLifeMax2 -= 50;
         }

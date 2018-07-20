@@ -12,7 +12,7 @@ namespace ThrowingClass.Items.Armor
         {
             base.SetStaticDefaults();
             DisplayName.SetDefault("Cryo Galea");
-            Tooltip.SetDefault("15% increased throwing damage\n10% increased throwing critical strike chance");
+            Tooltip.SetDefault("15% increased throwing damage\n10% increased throwing speed\n10% increased throwing critical strike chance");
         }
 
         public override void SetDefaults()
@@ -27,6 +27,7 @@ namespace ThrowingClass.Items.Armor
         public override void UpdateEquip(Player player)
         {
             player.thrownDamage += 0.15f;
+            player.GetModPlayer<ThrowingPlayer>(mod).thrownSpeed += 0.1f;
             player.thrownCrit += 10;
         }
 
@@ -37,8 +38,9 @@ namespace ThrowingClass.Items.Armor
 
         public override void UpdateArmorSet(Player player)
         {
-            player.setBonus = "20% increased throwing damage\n15% increased throwing critical strike chance";
+            player.setBonus = "20% increased throwing damage\n10% increased throwing speed\n15% increased throwing critical strike chance";
             player.thrownDamage += 0.2f;
+            player.GetModPlayer<ThrowingPlayer>(mod).thrownSpeed += 0.1f;
             player.thrownCrit += 15;
         }
 

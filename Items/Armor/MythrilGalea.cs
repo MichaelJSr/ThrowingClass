@@ -11,7 +11,7 @@ namespace ThrowingClass.Items.Armor
         {
             base.SetStaticDefaults();
             DisplayName.SetDefault("Mythril Galea");
-            Tooltip.SetDefault("12% increased throwing damage\n7% increased throwing velocity");
+            Tooltip.SetDefault("12% increased throwing damage\n7% increased throwing velocity\n6% increased throwing speed");
         }
 
         public override void SetDefaults()
@@ -31,13 +31,15 @@ namespace ThrowingClass.Items.Armor
         public override void UpdateEquip(Player player)
         {
             player.thrownDamage += 0.12f;
+            player.GetModPlayer<ThrowingPlayer>(mod).thrownSpeed += 0.06f;
             player.thrownVelocity += 0.07f;
         }
 
         public override void UpdateArmorSet(Player player)
         {
-            player.setBonus = "14% increased throwing damage";
+            player.setBonus = "14% increased throwing damage\n6% increased throwing speed";
             player.thrownDamage += 0.14f;
+            player.GetModPlayer<ThrowingPlayer>(mod).thrownSpeed += 0.06f;
         }
 
         public override void AddRecipes()
