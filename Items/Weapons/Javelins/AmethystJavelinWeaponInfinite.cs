@@ -51,7 +51,6 @@ namespace ThrowingClass.Items.Weapons.Javelins
             {
                 ModRecipe recipe = new ModRecipe(mod);
                 recipe.AddIngredient(mod.GetItem("AmethystJavelinWeapon"), 999);
-                recipe.AddTile(TileID.Anvils);
                 recipe.SetResult(this);
                 recipe.AddRecipe();
             }

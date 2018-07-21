@@ -44,3 +44,4 @@ V 3.5.5: Added a Munitions Pack tile, Added Javelin Quiver accessory, new fishin
 V 3.5.9: Bug Fixes
 V 3.6: Bug Fixes, completed Javelin Ballista
 V 3.6.8: Fixed many bugs, overhauled the armors, and changed some buffs
+V 3.7: Added Ichor Grenades, Cursed Grenades, and ShroomNades. Also made the Diamond Break debuffs take longer to proc

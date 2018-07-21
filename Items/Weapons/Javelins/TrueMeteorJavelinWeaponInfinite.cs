@@ -50,7 +50,6 @@ namespace ThrowingClass.Items.Weapons.Javelins
             {
                 ModRecipe recipe = new ModRecipe(mod);
                 recipe.AddIngredient(mod.GetItem("TrueMeteorJavelinWeapon"), 999);
-                recipe.AddTile(TileID.MythrilAnvil);
                 recipe.SetResult(this);
                 recipe.AddRecipe();
             }

@@ -51,7 +51,6 @@ namespace ThrowingClass.Items.Weapons.Javelins
             {
                 ModRecipe recipe = new ModRecipe(mod);
                 recipe.AddIngredient(mod.GetItem("HellfireJavelinWeapon"), 999);
-                recipe.AddTile(TileID.Hellforge);
                 recipe.SetResult(this);
                 recipe.AddRecipe();
             }

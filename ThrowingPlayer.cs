@@ -95,9 +95,27 @@ namespace ThrowingClass
 
                     else if (type == ProjectileID.Beenade || type == mod.ProjectileType("Waspnade"))
                     {
-                        tempDmg = 30;
+                        tempDmg = 20;
+                        tempUseTime = 20;
+                        tempUseAnimation = 20;
+                    }
+
+                    else if (type == mod.ProjectileType("ShroomNade"))
+                    {
+                        tempUseTime = 10;
+                        tempUseAnimation = 10;
+                    }
+
+                    else if (type == mod.ProjectileType("IchorGrenade"))
+                    {
                         tempUseTime = 12;
                         tempUseAnimation = 12;
+                    }
+
+                    else if (type == mod.ProjectileType("CursedGrenade"))
+                    {
+                        tempUseTime = 14;
+                        tempUseAnimation = 14;
                     }
 
                     else if (type == ProjectileID.BouncyGrenade || type == ProjectileID.MolotovCocktail)

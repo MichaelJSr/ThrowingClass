@@ -50,7 +50,6 @@ namespace ThrowingClass.Items.Weapons.Javelins
             {
                 ModRecipe recipe = new ModRecipe(mod);
                 recipe.AddIngredient(mod.GetItem("EbonJavelinWeapon"), 999);
-                recipe.AddTile(TileID.WorkBenches);
                 recipe.SetResult(this);
                 recipe.AddRecipe();
             }

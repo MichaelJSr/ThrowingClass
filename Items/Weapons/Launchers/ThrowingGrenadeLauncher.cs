@@ -19,7 +19,7 @@ namespace ThrowingClass.Items.Weapons.Launchers
 
         public override void SetDefaults()
         {
-            item.damage = 24;
+            item.damage = 20;
             item.crit = 15;
             item.noMelee = true;
             item.thrown = true;

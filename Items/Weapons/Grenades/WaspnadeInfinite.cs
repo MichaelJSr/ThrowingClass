@@ -41,18 +41,12 @@ namespace ThrowingClass.Items.Weapons.Grenades
             item.value = Item.sellPrice(0, 2, 0, 0);
         }
 
-        public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
-        {
-            return false;
-        }
-
         public override void AddRecipes()
         {
             if (ThrowingConfig.InfiniteElse)
             {
                 ModRecipe recipe = new ModRecipe(mod);
                 recipe.AddIngredient(mod.GetItem("Waspnade"), 999);
-                recipe.AddTile(TileID.TinkerersWorkbench);
                 recipe.SetResult(this);
                 recipe.AddRecipe();
             }

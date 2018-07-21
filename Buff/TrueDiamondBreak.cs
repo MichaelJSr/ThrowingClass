@@ -30,8 +30,8 @@ namespace ThrowingClass.Buff
         {
             if (npc.GetGlobalNPC<ThrowingGlobalNPC>().maxDefTDB < 60)
             {
-                npc.GetGlobalNPC<ThrowingGlobalNPC>().maxDefTDB = (int)(npc.GetGlobalNPC<ThrowingGlobalNPC>().maxDefTDB * 1.25f);
-                npc.GetGlobalNPC<ThrowingGlobalNPC>().maxScaleTDB *= 1.25f;
+                npc.GetGlobalNPC<ThrowingGlobalNPC>().maxDefTDB = (int)(npc.GetGlobalNPC<ThrowingGlobalNPC>().maxDefTDB * 1.1f);
+                npc.GetGlobalNPC<ThrowingGlobalNPC>().maxScaleTDB *= 1.1f;
             }
             else
             {
