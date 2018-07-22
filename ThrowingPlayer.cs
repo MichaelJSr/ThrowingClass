@@ -44,121 +44,94 @@ namespace ThrowingClass
             TitaniumGalea = false;
         }
 
-        int tempType = 0;
-        bool tempTypeTrue = false;
-        int tempDmg = 0;
-        int tempUseTime = 0;
-        int tempUseAnimation = 0;
-        int tempDmg2 = 0;
-        int tempUseTime2 = 0;
-        int tempUseAnimation2 = 0;
+        //Javelins
+        int tempTypeJavelin = 0;
+        bool tempTypeTrueJavelin = false;
+        int tempDmgJavelin = 0;
+        int tempUseTimeJavelin = 0;
+        int tempUseAnimationJavelin = 0;
+        int tempDmgJavelin2 = 0;
+        int tempUseTimeJavelin2 = 0;
+        int tempUseAnimationJavelin2 = 0;
+        //Throwing Knives
+        int tempTypeKnife = 0;
+        bool tempTypeKnifeTrue = false;
+        int tempDmgKnife = 0;
+        int tempUseTimeKnife = 0;
+        int tempUseAnimationKnife = 0;
+        int tempDmgKnife2 = 0;
+        int tempUseTimeKnife2 = 0;
+        int tempUseAnimationKnife2 = 0;
+        //Shurikens
+        int tempTypeShuriken = 0;
+        bool tempTypeShurikenTrue = false;
+        int tempDmgShuriken = 0;
+        int tempUseTimeShuriken = 0;
+        int tempUseAnimationShuriken = 0;
+        int tempDmgShuriken2 = 0;
+        int tempUseTimeShuriken2 = 0;
+        int tempUseAnimationShuriken2 = 0;
+        //Grenades
+        int tempTypeGrenade = 0;
+        bool tempTypeGrenadeTrue = false;
+        int tempDmgGrenade = 0;
+        int tempUseTimeGrenade = 0;
+        int tempUseAnimationGrenade = 0;
+        int tempDmgGrenade2 = 0;
+        int tempUseTimeGrenade2 = 0;
+        int tempUseAnimationGrenade2 = 0;
 
         public override bool Shoot(Item item, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
             penCount = 0;
             if (item.thrown)
             {
-                if ((item.useAmmo == ItemID.Javelin) || (item.useAmmo == ItemID.ThrowingKnife) || (item.useAmmo == ItemID.Shuriken) || (item.useAmmo == ItemID.Grenade))
+                if (item.useAmmo == ItemID.Javelin)
                 {
                     //Javelins
                     if (type == mod.ProjectileType("TrueSapphireJavelin"))
                     {
-                        tempDmg = 10;
-                        tempUseTime = 14;
-                        tempUseAnimation = 12;
+                        tempDmgJavelin = 10;
+                        tempUseTimeJavelin = 14;
+                        tempUseAnimationJavelin = 12;
                     }
 
                     else if (type == mod.ProjectileType("SapphireJavelin"))
                     {
-                        tempDmg = 5;
-                        tempUseTime = 10;
-                        tempUseAnimation = 10;
+                        tempDmgJavelin = 5;
+                        tempUseTimeJavelin = 10;
+                        tempUseAnimationJavelin = 10;
                     }
 
                     else if (type == mod.ProjectileType("TrueDiamondJavelin") || type == mod.ProjectileType("TrueAmberJavelin") || type == mod.ProjectileType("TrueHellfireJavelin") || type == mod.ProjectileType("TrueJesterJavelin") || type == mod.ProjectileType("TrueMeteorJavelin"))
                     {
-                        tempUseTime = 8;
-                        tempUseAnimation = 8;
+                        tempUseTimeJavelin = 8;
+                        tempUseAnimationJavelin = 8;
                     }
 
                     else if (type == mod.ProjectileType("DiamondJavelin") || type == mod.ProjectileType("AmberJavelin") || type == mod.ProjectileType("MeteorJavelin") || type == mod.ProjectileType("JesterJavelin") || type == mod.ProjectileType("HellfireJavelin") || type == mod.ProjectileType("TrueAmethystJavelin") || type == mod.ProjectileType("TrueTopazJavelin") || type == mod.ProjectileType("TrueEmeraldJavelin") || type == mod.ProjectileType("TrueRubyJavelin") || type == mod.ProjectileType("SplinterJavelin"))
                     {
-                        tempUseTime = 4;
-                        tempUseAnimation = 4;
-                    }
-                    //Grenades
-                    if (type == ProjectileID.HappyBomb)
-                    {
-                        tempUseTime = 20;
-                        tempUseAnimation = 20;
+                        tempUseTimeJavelin = 4;
+                        tempUseAnimationJavelin = 4;
                     }
 
-                    else if (type == ProjectileID.Beenade || type == mod.ProjectileType("Waspnade"))
+                    if ((tempTypeJavelin != type) && tempTypeTrueJavelin == false)
                     {
-                        tempDmg = 20;
-                        tempUseTime = 20;
-                        tempUseAnimation = 20;
+                        tempDmgJavelin2 = tempDmgJavelin;
+                        tempUseTimeJavelin2 = tempUseTimeJavelin;
+                        tempUseAnimationJavelin2 = tempUseAnimationJavelin;
+                        item.damage -= tempDmgJavelin;
+                        item.useTime -= tempUseTimeJavelin;
+                        item.useAnimation -= tempUseAnimationJavelin;
+                        tempTypeTrueJavelin = true;
+                        tempTypeJavelin = type;
                     }
-
-                    else if (type == mod.ProjectileType("ShroomNade"))
+                    else if ((tempTypeJavelin != type) && tempTypeTrueJavelin == true)
                     {
-                        tempUseTime = 10;
-                        tempUseAnimation = 10;
-                    }
-
-                    else if (type == mod.ProjectileType("IchorGrenade"))
-                    {
-                        tempUseTime = 12;
-                        tempUseAnimation = 12;
-                    }
-
-                    else if (type == mod.ProjectileType("CursedGrenade"))
-                    {
-                        tempUseTime = 14;
-                        tempUseAnimation = 14;
-                    }
-
-                    else if (type == ProjectileID.BouncyGrenade || type == ProjectileID.MolotovCocktail)
-                    {
-                        tempUseTime = 5;
-                        tempUseAnimation = 5;
-                    }
-                    //Knives
-                    if (type == ProjectileID.ShadowFlameKnife)
-                    {
-                        tempUseTime = 3;
-                        tempUseAnimation = 3;
-                    }
-
-                    else if (type == ProjectileID.FrostDaggerfish)
-                    {
-                        tempUseTime = 2;
-                        tempUseAnimation = 2;
-                    }
-
-                    else if (type == ProjectileID.BoneDagger)
-                    {
-                        tempUseTime = 1;
-                        tempUseAnimation = 1;
-                    }
-
-                    if ((tempType != type) && tempTypeTrue == false)
-                    {
-                        tempDmg2 = tempDmg;
-                        tempUseTime2 = tempUseTime;
-                        tempUseAnimation2 = tempUseAnimation;
-                        item.damage -= tempDmg;
-                        item.useTime -= tempUseTime;
-                        item.useAnimation -= tempUseAnimation;
-                        tempTypeTrue = true;
-                        tempType = type;
-                    }
-                    else if ((tempType != type) && tempTypeTrue == true)
-                    {
-                        item.damage += tempDmg2;
-                        item.useTime += tempUseTime2;
-                        item.useAnimation += tempUseAnimation2;
-                        tempTypeTrue = false;
+                        item.damage += tempDmgJavelin2;
+                        item.useTime += tempUseTimeJavelin2;
+                        item.useAnimation += tempUseAnimationJavelin2;
+                        tempTypeTrueJavelin = false;
                     }
 
                     if (item.useTime < 2 || item.useAnimation < 2)
@@ -167,6 +140,148 @@ namespace ThrowingClass
                         item.useAnimation = 2;
                     }
                 }
+
+                else if (item.useAmmo == ItemID.ThrowingKnife)
+                {
+                    //Knives
+                    if (type == ProjectileID.ShadowFlameKnife)
+                    {
+                        tempUseTimeKnife = 3;
+                        tempUseAnimationKnife = 3;
+                    }
+
+                    else if (type == ProjectileID.FrostDaggerfish)
+                    {
+                        tempUseTimeKnife = 2;
+                        tempUseAnimationKnife = 2;
+                    }
+
+                    else if (type == ProjectileID.BoneDagger)
+                    {
+                        tempUseTimeKnife = 1;
+                        tempUseAnimationKnife = 1;
+                    }
+
+                    if ((tempTypeKnife != type) && tempTypeKnifeTrue == false)
+                    {
+                        tempDmgKnife2 = tempDmgKnife;
+                        tempUseTimeKnife2 = tempUseTimeKnife;
+                        tempUseAnimationKnife2 = tempUseAnimationKnife;
+                        item.damage -= tempDmgKnife;
+                        item.useTime -= tempUseTimeKnife;
+                        item.useAnimation -= tempUseAnimationKnife;
+                        tempTypeKnifeTrue = true;
+                        tempTypeKnife = type;
+                    }
+                    else if ((tempTypeKnife != type) && tempTypeKnifeTrue == true)
+                    {
+                        item.damage += tempDmgKnife2;
+                        item.useTime += tempUseTimeKnife2;
+                        item.useAnimation += tempUseAnimationKnife2;
+                        tempTypeKnifeTrue = false;
+                    }
+
+                    if (item.useTime < 2 || item.useAnimation < 2)
+                    {
+                        item.useTime = 2;
+                        item.useAnimation = 2;
+                    }
+                }
+
+                else if (item.useAmmo == ItemID.Shuriken)
+                {
+                    if ((tempTypeShuriken != type) && tempTypeShurikenTrue == false)
+                    {
+                        tempDmgShuriken2 = tempDmgShuriken;
+                        tempUseTimeShuriken2 = tempUseTimeShuriken;
+                        tempUseAnimationShuriken2 = tempUseAnimationShuriken;
+                        item.damage -= tempDmgShuriken;
+                        item.useTime -= tempUseTimeShuriken;
+                        item.useAnimation -= tempUseAnimationShuriken;
+                        tempTypeShurikenTrue = true;
+                        tempTypeShuriken = type;
+                    }
+                    else if ((tempTypeShuriken != type) && tempTypeShurikenTrue == true)
+                    {
+                        item.damage += tempDmgShuriken2;
+                        item.useTime += tempUseTimeShuriken2;
+                        item.useAnimation += tempUseAnimationShuriken2;
+                        tempTypeShurikenTrue = false;
+                    }
+
+                    if (item.useTime < 2 || item.useAnimation < 2)
+                    {
+                        item.useTime = 2;
+                        item.useAnimation = 2;
+                    }
+                }
+
+                else if (item.useAmmo == ItemID.Grenade)
+                {
+                    //Grenades
+                    if (type == ProjectileID.HappyBomb)
+                    {
+                        tempUseTimeGrenade = 20;
+                        tempUseAnimationGrenade = 20;
+                    }
+
+                    else if (type == ProjectileID.Beenade || type == mod.ProjectileType("Waspnade"))
+                    {
+                        tempDmgGrenade = 20;
+                        tempUseTimeGrenade = 20;
+                        tempUseAnimationGrenade = 20;
+                    }
+
+                    else if (type == mod.ProjectileType("ShroomNade"))
+                    {
+                        tempUseTimeGrenade = 10;
+                        tempUseAnimationGrenade = 10;
+                    }
+
+                    else if (type == mod.ProjectileType("IchorGrenade"))
+                    {
+                        tempUseTimeGrenade = 12;
+                        tempUseAnimationGrenade = 12;
+                    }
+
+                    else if (type == mod.ProjectileType("CursedGrenade"))
+                    {
+                        tempUseTimeGrenade = 14;
+                        tempUseAnimationGrenade = 14;
+                    }
+
+                    else if (type == ProjectileID.BouncyGrenade || type == ProjectileID.MolotovCocktail)
+                    {
+                        tempUseTimeGrenade = 5;
+                        tempUseAnimationGrenade = 5;
+                    }
+
+                    if ((tempTypeGrenade != type) && tempTypeGrenadeTrue == false)
+                    {
+                        tempDmgGrenade2 = tempDmgGrenade;
+                        tempUseTimeGrenade2 = tempUseTimeGrenade;
+                        tempUseAnimationGrenade2 = tempUseAnimationGrenade;
+                        item.damage -= tempDmgGrenade;
+                        item.useTime -= tempUseTimeGrenade;
+                        item.useAnimation -= tempUseAnimationGrenade;
+                        tempTypeGrenadeTrue = true;
+                        tempTypeGrenade = type;
+                    }
+                    else if ((tempTypeGrenade != type) && tempTypeGrenadeTrue == true)
+                    {
+                        item.damage += tempDmgGrenade2;
+                        item.useTime += tempUseTimeGrenade2;
+                        item.useAnimation += tempUseAnimationGrenade2;
+                        tempTypeGrenadeTrue = false;
+                    }
+
+                    if (item.useTime < 2 || item.useAnimation < 2)
+                    {
+                        item.useTime = 2;
+                        item.useAnimation = 2;
+                    }
+                }
+
                 int actualShots = 1;
                 int chance = 0;
                 int fired = 0;
