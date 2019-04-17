@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.IO;
 using Microsoft.Xna.Framework;
@@ -29,7 +30,9 @@ namespace ThrowingClass
         public bool Sharp1 = false;
         //Heals for 3 seconds if you hit an enemy
         public bool PalladiumGalea = false;
+        //Become invincible for 2 seconds upon being hit
         public bool TitaniumGalea = false;
+        public bool TitaniumGaleaHit = false;
 
         public override void ResetEffects()
         {
@@ -42,7 +45,8 @@ namespace ThrowingClass
             Sharp1 = false;
             PalladiumGalea = false;
             TitaniumGalea = false;
-        }
+            TitaniumGaleaHit = false;
+    }
 
         //Javelins
         int tempTypeJavelin = 0;
@@ -109,7 +113,7 @@ namespace ThrowingClass
                         tempUseAnimationJavelin = 8;
                     }
 
-                    else if (type == mod.ProjectileType("DiamondJavelin") || type == mod.ProjectileType("AmberJavelin") || type == mod.ProjectileType("MeteorJavelin") || type == mod.ProjectileType("JesterJavelin") || type == mod.ProjectileType("HellfireJavelin") || type == mod.ProjectileType("TrueAmethystJavelin") || type == mod.ProjectileType("TrueTopazJavelin") || type == mod.ProjectileType("TrueEmeraldJavelin") || type == mod.ProjectileType("TrueRubyJavelin") || type == mod.ProjectileType("SplinterJavelin"))
+                    else if (type == mod.ProjectileType("DiamondJavelin") || type == mod.ProjectileType("AmberJavelin") || type == mod.ProjectileType("TrueAmethystJavelin") || type == mod.ProjectileType("TrueTopazJavelin") || type == mod.ProjectileType("TrueEmeraldJavelin") || type == mod.ProjectileType("TrueRubyJavelin") || type == mod.ProjectileType("SplinterJavelin"))
                     {
                         tempUseTimeJavelin = 4;
                         tempUseAnimationJavelin = 4;
@@ -160,6 +164,15 @@ namespace ThrowingClass
                     {
                         tempUseTimeKnife = 1;
                         tempUseAnimationKnife = 1;
+                    }
+
+                    else if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+                    {
+                        if (type == ModLoader.GetMod("ThoriumMod").ProjectileType("BlackDaggerPro"))
+                        {
+                            tempUseTimeKnife = 6;
+                            tempUseAnimationKnife = 6;
+                        }
                     }
 
                     if ((tempTypeKnife != type) && tempTypeKnifeTrue == false)
@@ -479,17 +492,18 @@ namespace ThrowingClass
             {
                 player.AddBuff(BuffID.RapidHealing, 180);
             }
-            if (TitaniumGalea == true)
+            if (TitaniumGalea == true && TitaniumGaleaHit == false)
             {
                 player.AddBuff(BuffID.ShadowDodge, 1800);
+                player.AddBuff(mod.BuffType("TitaniumGaleaHit"), 180);
             }
         }
 
         public override void PostHurt(bool pvp, bool quiet, double damage, int hitDirection, bool crit)
         {
-            if (TitaniumGalea == true)
+            if (TitaniumGalea == true && (player.FindBuffIndex(BuffID.ShadowDodge) != -1))
             {
-                player.AddBuff(BuffID.ShadowDodge, 0);
+                player.DelBuff(BuffID.ShadowDodge);
             }
         }
 
@@ -512,6 +526,7 @@ namespace ThrowingClass
             Sharp1 = false;
             PalladiumGalea = false;
             TitaniumGalea = false;
+            TitaniumGaleaHit = false;
         }
 
         public override void SetupStartInventory(IList<Item> items)

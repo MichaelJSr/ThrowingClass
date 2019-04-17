@@ -17,7 +17,7 @@ namespace ThrowingClass.Items.Weapons.Javelins
         public override void SetDefaults()
         {
             item.shootSpeed = 12f;
-            item.damage = 20;
+            item.damage = 18;
             item.knockBack = 5f;
             item.useStyle = 1;
             item.useAnimation = 25;
@@ -47,13 +47,13 @@ namespace ThrowingClass.Items.Weapons.Javelins
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemID.JungleSpores, 1);
+            recipe.AddIngredient(ItemID.JungleSpores, 3);
             recipe.AddIngredient(ItemID.Stinger, 1);
             recipe.AddIngredient(ItemID.Vine, 1);
-            recipe.AddIngredient(ItemID.Wood, 1);
-            recipe.anyWood = true;
+            recipe.AddIngredient(ItemID.RichMahogany, 10);
+            recipe.anyWood = false;
             recipe.AddTile(TileID.WorkBenches);
-            recipe.SetResult(this, 30);
+            recipe.SetResult(this, 100);
             recipe.AddRecipe();
         }
     }

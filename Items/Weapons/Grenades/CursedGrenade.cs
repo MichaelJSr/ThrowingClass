@@ -44,7 +44,7 @@ namespace ThrowingClass.Items.Weapons.Grenades
         {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(ItemID.Grenade, 40);
-            recipe.AddIngredient(ItemID.CursedFlames, 1);
+            recipe.AddIngredient(ItemID.CursedFlame, 1);
             recipe.SetResult(this, 40);
             recipe.AddRecipe();
         }

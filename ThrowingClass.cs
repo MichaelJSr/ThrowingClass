@@ -9,7 +9,6 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.UI;
 using Terraria.Localization;
-using ThrowingClass.Tiles;
 
 namespace ThrowingClass
 {

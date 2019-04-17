@@ -20,8 +20,8 @@ namespace ThrowingClass.Items.Weapons.Javelins
             item.damage = 24;
             item.knockBack = 4f;
             item.useStyle = 1;
-            item.useAnimation = 20;
-            item.useTime = 20;
+            item.useAnimation = 25;
+            item.useTime = 25;
             item.width = 16;
             item.height = 16;
             item.maxStack = 1;

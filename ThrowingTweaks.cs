@@ -109,6 +109,14 @@ namespace ThrowingClass
                     return;
             }
 
+            if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+            {
+                if (item.type == ModLoader.GetMod("ThoriumMod").ItemType("BlackDagger"))
+                {
+                    item.ammo = ItemID.ThrowingKnife;
+                }
+            }
+
             if (ModLoader.GetLoadedMods().Contains("Infinity"))
             {
                 if (item.type == ModLoader.GetMod("Infinity").ItemType("EndlessJavelin"))
