@@ -109,7 +109,7 @@ namespace ThrowingClass
                     return;
             }
 
-            if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+            if (ModLoader.GetMod("ThoriumMod") != null)
             {
                 if (item.type == ModLoader.GetMod("ThoriumMod").ItemType("BlackDagger"))
                 {
@@ -117,7 +117,7 @@ namespace ThrowingClass
                 }
             }
 
-            if (ModLoader.GetLoadedMods().Contains("Infinity"))
+            if (ModLoader.GetMod("Infinity") != null)
             {
                 if (item.type == ModLoader.GetMod("Infinity").ItemType("EndlessJavelin"))
                 {

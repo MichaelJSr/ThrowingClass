@@ -166,7 +166,7 @@ namespace ThrowingClass
                         tempUseAnimationKnife = 1;
                     }
 
-                    else if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+                    else if (ModLoader.GetMod("ThoriumMod") != null)
                     {
                         if (type == ModLoader.GetMod("ThoriumMod").ProjectileType("BlackDaggerPro"))
                         {

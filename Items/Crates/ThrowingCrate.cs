@@ -91,6 +91,8 @@ namespace ThrowingClass.Items.Crates
                     player.QuickSpawnItem(mod.ItemType("MunitionsPack"), 1);
                 if (Main.rand.NextFloat() < .1f)
                     player.QuickSpawnItem(mod.ItemType("WickedTooth"), Main.rand.Next(2, 4));
+                if (Main.rand.NextFloat() < .1f)
+                    player.QuickSpawnItem(ItemID.LifeCrystal, Main.rand.Next(1, 2));
                 if (Main.rand.NextFloat() < .05f)
                     player.QuickSpawnItem(mod.ItemType("CryoShard"), Main.rand.Next(1, 2));
                 if (Main.rand.NextFloat() < .01f)
@@ -176,6 +178,8 @@ namespace ThrowingClass.Items.Crates
                     player.QuickSpawnItem(mod.ItemType("MunitionsPack"), 1);
                 if (Main.rand.NextFloat() < .1f)
                     player.QuickSpawnItem(mod.ItemType("WickedTooth"), Main.rand.Next(1, 2));
+                if (Main.rand.NextFloat() < .1f)
+                    player.QuickSpawnItem(ItemID.LifeCrystal, Main.rand.Next(1, 2));
                 //Drops gauranteed money
                 Choose = Main.rand.Next(100);
                 if (Choose > 95)
